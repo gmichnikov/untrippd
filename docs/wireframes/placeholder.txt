@@ -1,1 +1,15 @@
-testing wireframes folder
+List of all needed views
+
+Logged out home page - Links to log in or sign up
+Logged in home page - The Terminal / The Departure Lounge /
+Login Page
+Sign up Page
+Global Feed Page - checkboxes to filter for followed users/places/food/attraction/noteworthy
+Local Feed Page (a single place), links to related place
+Place search results page
+New review page
+Individual review show page
+Individual user page (link to follow, trips, review feed)
+Trip page (another filtered version of feed)
+My Followed users page
+My Trips Page

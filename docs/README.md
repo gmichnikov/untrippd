@@ -15,8 +15,8 @@ Untrippd is a web application that allows users to easily share travel recommend
 - [ ] Reviews (of places), with optional boolean tags of food, attraction, and noteworthy
 - [ ] Follows (of other users, and of places)
 - [ ] Feed (all reviews, with checkboxes for followed users/places/food/attraction/noteworthy only), with infinite scroll or pagination
-- [ ] Collections/Guidebooks
-- [ ] Basic User profiles (all of their reviews, followers/following, list of places)
+- [ ] Collections/Guidebooks/Trips
+- [ ] Basic User profiles (all of their reviews, followers/following, list of places, trips)
 - [ ] Production README
 - [ ] Bonus: Users can mark places as visited/unvisited and use this as an additional filter (also compare visited placed with friends/followed users).
 - [ ] Bonus: Feed pulls in external information (e.g. NYT's 36 hours in ___, Zagat, Michelin)
@@ -42,7 +42,7 @@ Untrippd is a web application that allows users to easily share travel recommend
 
 ## Implementation Timeline
 
-### Phase 1: Backend setup and Front End User Authentication (2 days)
+### Phase 1: Backend setup and Front End User Authentication (1 day, Day 1)
 
 **Objective:** Functioning rails project with front-end Authentication
 
@@ -59,10 +59,9 @@ Untrippd is a web application that allows users to easily share travel recommend
 - [ ] Seed users
 - [ ] Review phase 1
 
-### Phase 2: Notes Model, API, and components (2 days)
+### Phase 2: Places and Reviews Model, API, and components (2 days, Days 2-3)
 
-**Objective:** Notes can be created, read, edited and destroyed through
-the API.
+**Objective:** All places entered into DB. Reviews can be created, read, edited and destroyed through the API.
 
 - [ ] `Note` model
 - [ ] Seed database with a small amount of test data
