@@ -33,12 +33,12 @@ Untrippd is a web application that allows users to easily share travel recommend
 * [DB schema][schema]
 * [Sample State][sample-state]
 
-[wireframes]: docs/wireframes
-[api-endpoints]: docs/api-endpoints.md
-[components]: docs/component-hierarchy.md
-[redux-structure]: docs/redux-structure.md
-[sample-state]: docs/sample-state.md
-[schema]: docs/schema.md
+[wireframes]: wireframes
+[api-endpoints]: api-endpoints.md
+[components]: component-hierarchy.md
+[redux-structure]: redux-structure.md
+[sample-state]: sample-state.md
+[schema]: schema.md
 
 ## Implementation Timeline
 
