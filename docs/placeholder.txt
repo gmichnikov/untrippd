@@ -44,3 +44,6 @@ Logged in: profile photo with dropdown
     My Places
     My Trips
     My reviews
+
+Other thoughts
+  Need to add a place to add guidebooks

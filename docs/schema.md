@@ -10,6 +10,7 @@ last_name       | string    | not null
 email           | string    | not null, indexed, unique
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
+image_url       | string    | 
 
 ## place_types
 column name | data type | details

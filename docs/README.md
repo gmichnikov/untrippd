@@ -24,6 +24,7 @@ Untrippd is a web application that allows users to easily share travel recommend
 - [ ] Bonus: CSV export of guidebooks.
 - [ ] Bonus: text search of nuggets
 - [ ] Bonus: comment/like nuggets
+- [ ] Bonus: place names in URL's?
 
 
 
