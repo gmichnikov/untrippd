@@ -26,7 +26,7 @@
 
 
 ### Places
-
+- I anticipate adding all places myself and not allowing additions. Not sure if this requires a `POST` API endpoint.
 - `GET /api/places`
   - Places index (to show most reviewed places) / search (to allow users to find places)
   - accepts `place_name` query param to allow users to search for places
@@ -55,4 +55,22 @@
 - `POST /api/guidebooks`
 - `GET /api/guidebooks/:id`
   - to show all of the reviews in a single guidebook (or is this really part of reviews?)
+- `PATCH /api/guidebooks/:id`
 - `DELETE /api/guidebooks/:id`
+
+
+
+### User-Follows
+
+- `POST /users/:user_id/user_follow`
+- `DELETE /users/:user_id/user_follow`
+
+### Place-Follows
+
+- `POST /places/:place_id/place_follow`
+- `DELETE /places/:place_id/place_follow`
+
+### Guidebook-Entries
+- I am not sure how best to structure this, this could be totally wrong
+- `POST /suggestions/:suggestion_id/guidebook_entry/:guidebook_id`
+- `DELETE /suggestions/:suggestion_id/guidebook_entry:guidebook_id`
