@@ -11,12 +11,12 @@ Untrippd is a web application that allows users to easily share travel recommend
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
 - [ ] Places, including parent_places
-- [ ] Search for places to nugget
-- [ ] Nuggets (about places), with optional boolean tags of food, attraction, and noteworthy
+- [ ] Search for places to write suggetions about
+- [ ] Nuggets/Suggestions (about places), with optional boolean tags of food, attraction, and noteworthy/highlight
 - [ ] Follows (of other users, and of places)
 - [ ] Feed (all nuggets, with checkboxes for followed users/places/food/attraction/noteworthy only), with infinite scroll or pagination
-- [ ] Collections/Guidebooks/Trips
-- [ ] Basic User profiles (all of their nuggets, followers/following, list of places, trips)
+- [ ] Guidebooks
+- [ ] Basic User profiles (all of their nuggets, followers/following, list of places, guidebooks)
 - [ ] Production README
 - [ ] Bonus: Users can mark places as visited/unvisited and use this as an additional filter (also compare visited placed with friends/followed users).
 - [ ] Bonus: Feed pulls in external information (e.g. NYT's 36 hours in ___, Zagat, Michelin)
