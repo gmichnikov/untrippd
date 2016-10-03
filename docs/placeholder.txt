@@ -47,3 +47,4 @@ Logged in: profile photo with dropdown
 
 Other thoughts
   Need to add a place to add guidebooks
+  Need a way to update previous suggestions
