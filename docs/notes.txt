@@ -1,0 +1,31 @@
+const success = (data) => console.log("success", data);
+const error = (data) => console.log("error", data);
+
+Sign up
+
+$.ajax({
+  method: 'POST',
+  url: '/api/user',
+  data: {user: {username: "liam", password: "lialia", first_name: "Liam", last_name: "Michnikov", email: "liam.michnikov@gmail.com"}},
+  success,
+  error
+});
+
+Sign in
+
+$.ajax({
+  method: 'POST',
+  url: '/api/session',
+  data: {user: {username: "greg", password: "gregre"}},
+  success,
+  error
+});
+
+Sign out
+
+$.ajax({
+  method: 'DELETE',
+  url: '/api/session',
+  success,
+  error,
+});
