@@ -97,3 +97,10 @@ Components
 Redux cycle
   "popular places" vs "places that match the search request"
   Since guidebooks index is always going to be a specific user's guidebooks, I am not sure if it would make sense to include a user_id in the API url?
+
+
+Some next steps
+  Setup login form
+  style both forms properly
+  header only visible on home route
+  sign up for domain

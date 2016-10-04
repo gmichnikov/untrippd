@@ -13,7 +13,7 @@ const sessionLinks = () => {
 const welcomeAndLogout = (currentUser, logout) => {
   return (
     <div className="welcome-and-logout">
-      Welcome {currentUser.username}! You are logged in.
+      Welcome {currentUser.username}!
       <button onClick={logout}>Log out!</button>
     </div>
   )

@@ -8,8 +8,8 @@ class SignupForm extends React.Component {
     this.state = {
       username: "",
       password: "",
-      firstName: "",
-      lastName: "",
+      first_name: "",
+      last_name: "",
       email: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,12 +19,12 @@ class SignupForm extends React.Component {
     e.preventDefault();
     const user = this.state;
     console.log("submit attempt", user);
-    this.props.processSignupForm(user);
+    this.props.processSignupForm({user: user});
     this.state = {
       username: "",
       password: "",
-      firstName: "",
-      lastName: "",
+      first_name: "",
+      last_name: "",
       email: "",
     };
   }
@@ -42,9 +42,9 @@ class SignupForm extends React.Component {
     } else if (property === 'password') {
       return e => this.setState({password: e.target.value});
     } else if (property === 'firstName') {
-      return e => this.setState({firstName: e.target.value});
+      return e => this.setState({first_name: e.target.value});
     } else if (property === 'lastName') {
-      return e => this.setState({lastName: e.target.value});
+      return e => this.setState({last_name: e.target.value});
     } else if (property === 'email') {
       return e => this.setState({email: e.target.value});
     } else {
@@ -62,7 +62,7 @@ class SignupForm extends React.Component {
 
     return (
       <section className="section-for-signup-form">
-        <h1>{header}</h1>
+        <div className="signup-image"></div>
         <ul>{errorList}</ul>
         <form className="signup-form" onSubmit={this.handleSubmit}>
           Username:<br/>
@@ -83,7 +83,7 @@ class SignupForm extends React.Component {
           First Name:<br/>
           <input
             type="text"
-            value={this.state.firstName}
+            value={this.state.first_name}
             placeholder="First Name"
             onChange={this.update('firstName')}
           />
@@ -91,7 +91,7 @@ class SignupForm extends React.Component {
           Last Name:<br/>
           <input
             type="text"
-            value={this.state.lastName}
+            value={this.state.last_name}
             placeholder="Last Name"
             onChange={this.update('lastName')}
           />
@@ -106,8 +106,6 @@ class SignupForm extends React.Component {
           <br/>
         <button>{header}</button>
         </form>
-        <br />
-        {linkToOtherPage}
       </section>
     );
   }
