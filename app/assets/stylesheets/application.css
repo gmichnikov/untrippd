@@ -84,3 +84,7 @@ header li {
   content: "search";
   color: black;
 }
+
+.signup-form {
+  background-color: red;
+}

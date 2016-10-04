@@ -5,7 +5,6 @@ const App = ({ children }) => {
   return (
     <div className="app">
       <HeaderContainer />
-      <h1>Untrippd!</h1>
       {children}
     </div>
   );

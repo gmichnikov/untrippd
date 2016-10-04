@@ -28,7 +28,7 @@ const Header = ({currentUser, logout}) => {
     <header>
       <nav className="header-nav">
         <ul className="group">
-          <li id="logo">Untrippd</li>
+          <li id="logo"><a href="/">Untrippd</a></li>
           <li>The Feed</li>
           <li>Top Places</li>
           <li>Write a Review</li>
