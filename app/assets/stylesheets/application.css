@@ -13,3 +13,74 @@
  *= require_tree .
  *= require_self
  */
+
+ /* --- RESET --- */
+
+html, body, header, nav, h1, a, ul, li,
+strong, main, section, img, div, h2, p,
+form, fieldset, label, input, textarea,
+button, article, footer, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  box-sizing: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+/* --- CLEARFIX --- */
+
+.group:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+header {
+  background-color: rgb(255, 204, 0);
+  color: #fff;
+  font-size: 20px;
+}
+
+.header-nav {
+  width: 900px;
+  margin: 0 auto;
+}
+
+header li {
+  float: left;
+  padding: 20px;
+}
+
+.session-links a {
+  padding: 20px;
+  color: blue;
+}
+
+#header-search-bar {
+  display: block;
+  background-color: white;
+  width: 100px;
+  height: 30px;
+  margin-top: 20px;
+  padding: 0;
+}
+
+#header-search-bar:after {
+  content: "search";
+  color: black;
+}

@@ -223,7 +223,10 @@
   0. the `UsersReducer` updates `profiledUser` in the application's state.
 
 
-### GuidebookEntries API Response Actions
+## GuidebookEntries Cycles
+
+
+### GuidebookEntries API Request Actions
 
 * `createGuidebookEntry`
   0. invoked from `AddToGuidebook` button `onClick` on every suggestion
@@ -235,12 +238,12 @@
   0. `DELETE /suggestions/:suggestion_id/guidebook_entry:guidebook_id` is called.
   0. `removeGuidebookEntry` is set as the success callback.
 
-### PlaceFollows API Response Actions
+### GuidebookEntries API Response Actions
 
 * `receiveGuidebookEntry`
   0. invoked from an API callback
   0. this may need to invoke another API request action (?) to get an updated list of suggestions that should be in a given feed. It should also update the Suggestions[id] portion of state associated with this item
 
-* `removePlaceFollow`
+* `removeGuidebookEntry`
   0. invoked from an API callback
   0. this may need to invoke another API request action (?) to get an updated list of suggestions that should be in a given feed. It should also update the Suggestions[id] portion of state associated with this item

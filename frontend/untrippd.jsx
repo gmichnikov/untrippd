@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import configureStore from './store/store';
+import Root from './components/root';
 
 // testing session API
 // import * as SESSION_API from './util/session_api_util';
@@ -25,8 +26,9 @@ window.logout = SESSION_ACTIONS.logout;
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    window.store = configureStore();
+    // window.store = configureStore();
+    let store = configureStore();
 
     const root = document.getElementById('root');
-    ReactDOM.render(<h1>Welcome to Untrippd</h1>, root);
+    ReactDOM.render(<Root store={store}/>, root);
 });
