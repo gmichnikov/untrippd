@@ -13,11 +13,14 @@ import configureStore from './store/store';
 
 // testing session actions and reducer
 import * as SESSION_ACTIONS from './actions/session_actions';
+// window.receiveCurrentUser = SESSION_ACTIONS.receiveCurrentUser;
+// window.removeCurrentUser = SESSION_ACTIONS.removeCurrentUser;
+// window.receiveErrors = SESSION_ACTIONS.receiveErrors;
+
+// testing session middleware
+window.signup = SESSION_ACTIONS.signup;
 window.login = SESSION_ACTIONS.login;
 window.logout = SESSION_ACTIONS.logout;
-window.signup = SESSION_ACTIONS.signup;
-window.receiveCurrentUser = SESSION_ACTIONS.receiveCurrentUser;
-window.receiveErrors = SESSION_ACTIONS.receiveErrors;
 
 
 document.addEventListener('DOMContentLoaded', () => {

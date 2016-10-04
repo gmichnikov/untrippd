@@ -11,7 +11,7 @@ const SessionReducer = (oldstate = default_session_state, action) => {
       return {currentUser: action.user, errors: []};
     case SESSION_ACTIONS.RECEIVE_ERRORS:
       return {currentUser: null, errors: action.errors};
-    case SESSION_ACTIONS.LOGOUT:
+    case SESSION_ACTIONS.REMOVE_CURRENT_USER:
       return {currentUser: null, errors: []};
     default:
       return oldstate;
