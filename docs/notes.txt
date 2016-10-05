@@ -101,9 +101,7 @@ Redux cycle
 
 Some next steps
   header only visible on home route
-  guest login
 
 For later
   Fix confirm password
   style error messages on forms
-  Add links to bottom of landing page
