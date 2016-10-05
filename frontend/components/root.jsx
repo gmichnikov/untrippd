@@ -5,6 +5,8 @@ import App from './app.jsx';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import LandingPageContainer from './session/landing_page_container';
+import HomeContainer from './home/home_container';
+import PlacesContainer from './places/places_container';
 
 const Root = ({ store }) => {
 
@@ -21,7 +23,10 @@ const Root = ({ store }) => {
       <Router history={hashHistory}>
         <Route path="/signup" component={SignupFormContainer} onEnter={redirectIfLoggedIn} />
         <Route path="/login" component={LoginFormContainer} onEnter={redirectIfLoggedIn} />
-        <Route path="/home" component={App} />
+        <Route path="/home" component={App}>
+          <IndexRoute component={HomeContainer} />
+          <Route path="/places" component={PlacesContainer} />
+        </Route>
         <Route path="/" component={LandingPageContainer} onEnter={redirectIfLoggedIn} />
       </Router>
     </Provider>

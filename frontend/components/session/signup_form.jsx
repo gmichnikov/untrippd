@@ -106,7 +106,7 @@ class SignupForm extends React.Component {
             onChange={this.update('lastName')}
           />
         <button>Create Account</button>
-          <p>Already have an account? <a href="/#/login">Log in!</a></p>
+          <p>Already have an account? <Link to="/#/login">Log in!</Link></p>
         </form>
       </section>
     );
