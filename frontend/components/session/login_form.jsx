@@ -53,7 +53,7 @@ class LoginForm extends React.Component {
 
     let linkToOtherPage = <Link to="/login">Log In</Link>;
 
-    let errorList = this.props.errors.map( (error, i) => {
+    let errorList = this.props.loginErrors.map( (error, i) => {
       return <li key={i}>{error}</li>;
     });
 

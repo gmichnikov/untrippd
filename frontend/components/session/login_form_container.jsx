@@ -5,7 +5,8 @@ import * as ACTIONS from '../../actions/session_actions.js';
 const mapStateToProps = state => {
   return {
     loggedIn: state.session.currentUser !== null,
-    errors: state.session.errors
+    signupErrors: state.session.signupErrors,
+    loginErrors: state.session.loginErrors,
   };
 };
 

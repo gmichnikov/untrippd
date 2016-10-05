@@ -3,7 +3,8 @@ export const LOGIN = 'LOGIN';
 export const LOGOUT = 'LOGOUT';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const REMOVE_CURRENT_USER = 'REMOVE_CURRENT_USER';
-export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+export const RECEIVE_SIGNUP_ERRORS = 'RECEIVE_SIGNUP_ERRORS';
+export const RECEIVE_LOGIN_ERRORS = 'RECEIVE_LOGIN_ERRORS';
 
 export const signup = (user) => {
   return {
@@ -32,10 +33,17 @@ export const receiveCurrentUser = (currentUser) => {
   };
 };
 
-export const receiveErrors = (errors) => {
+export const receiveSignupErrors = (signupErrors) => {
   return {
-    type: RECEIVE_ERRORS,
-    errors: errors,
+    type: RECEIVE_SIGNUP_ERRORS,
+    signupErrors: signupErrors,
+  };
+};
+
+export const receiveLoginErrors = (loginErrors) => {
+  return {
+    type: RECEIVE_LOGIN_ERRORS,
+    loginErrors: loginErrors,
   };
 };
 
