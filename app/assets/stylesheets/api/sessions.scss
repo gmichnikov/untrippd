@@ -1,3 +1,92 @@
 // Place all the styles related to the api/sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.signup-form {
+  background-color: white;
+  width: 534px;
+  height: 322px;
+  margin: 50px auto;
+  padding: 20px 33px;
+}
+
+.signup-image {
+    position:fixed;
+    padding:0;
+    margin:0;
+
+    top:0;
+    left:0;
+
+    width: 100%;
+    height: 100%;
+    background-image: image-url('signup-splash2.jpg');
+    opacity: 0.8;
+    z-index: -1;
+}
+
+.signup-form h1 {
+  text-transform: uppercase;
+  text-align: center;
+  color: rgb(255, 205, 0);
+  font-size: 54px;
+  font-weight: 500;
+  margin: -10px 0;
+}
+
+.signup-form h3 {
+  text-transform: uppercase;
+  text-align: center;
+  color: rgb(255, 205, 0);
+  letter-spacing: 5px;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+.signup-form p {
+  text-align: center;
+  color: #666;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.signup-form input {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 218px;
+  height: 33px;
+  padding-left: 30px;
+  margin-bottom: 10px;
+}
+
+// can these be combined?
+::-webkit-input-placeholder {
+   font-size: 14px;
+   color: #ccc;
+}
+
+::-moz-placeholder {
+  font-size: 14px;
+  color: #ccc;
+}
+
+:-ms-input-placeholder {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.signup-form .left {
+  margin-right: 33px;
+}
+
+.signup-form button {
+  display: block;
+  margin: 20px auto;
+  background-color: rgb(255, 205, 0);
+  color: white;
+  padding: 10px 80px;
+  border-radius: 5px;
+  font-weight: bold;
+
+}

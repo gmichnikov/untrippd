@@ -41,6 +41,8 @@ class SignupForm extends React.Component {
       return e => this.setState({username: e.target.value});
     } else if (property === 'password') {
       return e => this.setState({password: e.target.value});
+    } else if (property === 'confirmPassword') {
+      return e => this.setState({confirm_password: e.target.value});
     } else if (property === 'firstName') {
       return e => this.setState({first_name: e.target.value});
     } else if (property === 'lastName') {
@@ -53,7 +55,6 @@ class SignupForm extends React.Component {
 
   render () {
 
-    let header = "Sign Up!";
     let linkToOtherPage = <Link to="/login">Log In</Link>;
 
     let errorList = this.props.errors.map( (error, i) => {
@@ -63,48 +64,48 @@ class SignupForm extends React.Component {
     return (
       <section className="section-for-signup-form">
         <div className="signup-image"></div>
-        <ul>{errorList}</ul>
         <form className="signup-form" onSubmit={this.handleSubmit}>
-          Username:<br/>
-          <input
+          <h1>Untrippd</h1>
+          <h3>Travel Socially</h3>
+          <p>All fields below are required unless specified.</p>
+          <ul className="signup-errors">{errorList}</ul>
+          <input className="left"
             type="text"
             value={this.state.username}
             placeholder="Username"
             onChange={this.update('username')}
           />
-          <br/>
-          <br/>Password:<br/>
-          <input
-            type="password"
-            value={this.state.password}
-            placeholder="Password"
-            onChange={this.update('password')}
-          />
-          First Name:<br/>
-          <input
-            type="text"
-            value={this.state.first_name}
-            placeholder="First Name"
-            onChange={this.update('firstName')}
-          />
-          <br/>
-          Last Name:<br/>
-          <input
-            type="text"
-            value={this.state.last_name}
-            placeholder="Last Name"
-            onChange={this.update('lastName')}
-          />
-          <br/>
-          Email:<br/>
           <input
             type="text"
             value={this.state.email}
             placeholder="Email"
             onChange={this.update('email')}
           />
-          <br/>
-        <button>{header}</button>
+          <input className="left"
+            type="password"
+            value={this.state.password}
+            placeholder="Password"
+            onChange={this.update('password')}
+          />
+          <input
+            type="password"
+            value={this.state.confirm_password}
+            placeholder="Confirm Password"
+            onChange={this.update('confirmPassword')}
+          />
+          <input className="left"
+            type="text"
+            value={this.state.first_name}
+            placeholder="First Name"
+            onChange={this.update('firstName')}
+          />
+          <input
+            type="text"
+            value={this.state.last_name}
+            placeholder="Last Name"
+            onChange={this.update('lastName')}
+          />
+        <button>Create Account</button>
         </form>
       </section>
     );
