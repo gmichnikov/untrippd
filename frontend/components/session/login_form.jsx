@@ -66,7 +66,7 @@ class LoginForm extends React.Component {
             placeholder="Password"
             onChange={this.update('password')}
           />
-        <button>Sign In</button>
+        <button>Log In</button>
         <p>New around here? <a href="/#/signup">Sign up!</a></p>
         </form>
       </section>
