@@ -9,7 +9,7 @@
 
 .signup-form {
   width: 534px;
-  height: 422px;
+  // height: 422px;
   padding: 20px 33px;
 }
 
@@ -85,7 +85,7 @@
   margin-right: 33px;
 }
 
-.signup-form button, .login-form button {
+.signup-form button, .login-form button, .guest-login {
   display: block;
   margin: 20px auto;
   background-color: rgb(255, 205, 0);
@@ -93,19 +93,19 @@
   padding: 10px 80px;
   border-radius: 5px;
   font-weight: bold;
-
+  cursor: pointer;
+  text-align: center;
 }
 
 .login-form button {
   width: 140px;
-  text-align: center;
 }
 
 //  ************* LOGIN
 
 .login-form {
   width: 300px;
-  height: 288px;
+  // height: 288px;
   padding: 20px 50px;
 }
 
@@ -181,7 +181,3 @@
   width: 140px;
   text-align: center;
 }
-
-// .landing-buttons {
-//   margin: 0 auto;
-// }

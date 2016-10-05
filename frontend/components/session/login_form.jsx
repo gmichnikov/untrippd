@@ -10,6 +10,7 @@ class LoginForm extends React.Component {
       password: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.guestLogin = this.guestLogin.bind(this);
   }
 
   handleSubmit(e) {
@@ -23,9 +24,18 @@ class LoginForm extends React.Component {
     };
   }
 
+  guestLogin(e) {
+    console.log("guest login attempt");
+    this.props.processLoginForm({user: {username: "guest", password: "guestpassword"}});
+    this.state = {
+      username: "",
+      password: "",
+    };
+  }
+
   componentWillReceiveProps (nextProps) {
     if(nextProps.loggedIn) {
-      nextProps.router.push("/");
+      nextProps.router.push("/home");
     }
   }
 
@@ -67,6 +77,7 @@ class LoginForm extends React.Component {
             onChange={this.update('password')}
           />
         <button>Log In</button>
+        <div className="guest-login" onClick={this.guestLogin}>Demo Log In</div>
         <p>New around here? <a href="/#/signup">Sign up!</a></p>
         </form>
       </section>
