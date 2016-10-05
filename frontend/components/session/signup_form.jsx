@@ -31,7 +31,7 @@ class SignupForm extends React.Component {
 
   componentWillReceiveProps (nextProps) {
     if(nextProps.loggedIn) {
-      nextProps.router.push("/");
+      nextProps.router.push("/home");
     }
   }
 

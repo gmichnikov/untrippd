@@ -8,13 +8,21 @@ import LandingPageContainer from './session/landing_page_container';
 
 const Root = ({ store }) => {
 
+  const redirectIfLoggedIn = (nextState, replace) => {
+    if(store.getState().session.currentUser !== null) {
+      replace({
+        pathname: '/home'
+      });
+    }
+  };
+
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
-        <Route path="/signup" component={SignupFormContainer} />
-        <Route path="/login" component={LoginFormContainer} />
+        <Route path="/signup" component={SignupFormContainer} onEnter={redirectIfLoggedIn} />
+        <Route path="/login" component={LoginFormContainer} onEnter={redirectIfLoggedIn} />
         <Route path="/home" component={App} />
-        <Route path="/" component={LandingPageContainer} />
+        <Route path="/" component={LandingPageContainer} onEnter={redirectIfLoggedIn} />
       </Router>
     </Provider>
   );
