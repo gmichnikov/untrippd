@@ -34,7 +34,7 @@
   color: rgb(255, 205, 0);
   font-size: 54px;
   font-weight: 500;
-  margin: -10px 0;
+  margin: -9px 0;
 }
 
 .signup-form h3, .login-form h3 {
@@ -44,6 +44,8 @@
   letter-spacing: 5px;
   margin-bottom: 15px;
   font-size: 15px;
+  font-family: 'Graduate';
+  letter-spacing: 6px;
 }
 
 .signup-form h5 {
@@ -99,7 +101,7 @@
   text-align: center;
 }
 
-//  *************
+//  ************* LOGIN
 
 .login-form {
   width: 300px;
@@ -129,3 +131,57 @@
   margin: 10px auto;
   display: block;
 }
+
+
+//  ************* LANDING PAGE
+
+
+.landing-main {
+  color: white;
+  margin: 90px 0 0 20px;
+  width: 560px;
+}
+
+
+
+.landing-main h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 72px;
+  font-weight: 500;
+  margin-bottom: -10px;
+}
+
+.landing-main h3 {
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 5px;
+  font-size: 18px;
+  font-family: 'Graduate', cursive;
+  margin-bottom: 50px;
+  letter-spacing: 7px;
+}
+
+.landing-main h2 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.landing-button {
+  display: inline-block;
+  margin: 20px 12px 0 12px;
+  background-color: rgb(255, 205, 0);
+  color: rgb(52, 51, 95);
+  padding: 10px 10px;
+  border-radius: 5px;
+  font-size: 22px;
+  width: 140px;
+  text-align: center;
+}
+
+// .landing-buttons {
+//   margin: 0 auto;
+// }
