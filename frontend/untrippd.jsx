@@ -22,7 +22,7 @@ import * as SESSION_ACTIONS from './actions/session_actions';
 window.signup = SESSION_ACTIONS.signup;
 window.login = SESSION_ACTIONS.login;
 window.logout = SESSION_ACTIONS.logout;
-
+window.localStorage.setItem("welcomeNote", "false");
 
 document.addEventListener('DOMContentLoaded', () => {
 

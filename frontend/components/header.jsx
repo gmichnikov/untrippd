@@ -25,7 +25,7 @@ const Header = ({currentUser, logout}) => {
     sessionLinks();
 
   return (
-    <header>
+    <header className="header-main">
       <nav className="header-nav">
         <ul className="group">
           <li id="logo"><Link to="/">Untrippd</Link></li>

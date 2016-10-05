@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$primary-color: rgb(255, 204, 0);
+
 .signup-form, .login-form {
   background-color: white;
   margin: 50px auto;
@@ -31,7 +33,7 @@
 .signup-form h1, .login-form h1 {
   text-transform: uppercase;
   text-align: center;
-  color: rgb(255, 205, 0);
+  color: $primary-color;
   font-size: 54px;
   font-weight: 500;
   margin: -9px 0;
@@ -40,7 +42,7 @@
 .signup-form h3, .login-form h3 {
   text-transform: uppercase;
   text-align: center;
-  color: rgb(255, 205, 0);
+  color: $primary-color;
   letter-spacing: 5px;
   margin-bottom: 15px;
   font-size: 15px;
@@ -88,7 +90,7 @@
 .signup-form button, .login-form button, .guest-login {
   display: block;
   margin: 20px auto;
-  background-color: rgb(255, 205, 0);
+  background-color: $primary-color;
   color: white;
   padding: 10px 80px;
   border-radius: 5px;
@@ -119,7 +121,7 @@
 }
 
 .login-form a, .signup-form a {
-  color: rgb(255, 205, 0);
+  color: $primary-color;
 }
 
 .login-form input {
@@ -173,7 +175,7 @@
 .landing-button {
   display: inline-block;
   margin: 20px 12px 0 12px;
-  background-color: rgb(255, 205, 0);
+  background-color: $primary-color;
   color: rgb(52, 51, 95);
   padding: 10px 10px;
   border-radius: 5px;

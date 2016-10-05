@@ -28,12 +28,7 @@ html, body, header, nav, h1, a, ul, li, strong, main, section, img, div, h2, h3,
   vertical-align: inherit;
   color: inherit;
   background: transparent;
-}
-
-body {
   font-family: "ProximaNova", Helvetica Neue, Helvetica;
-  // font-family: proxima-nova, sans-serif;
-
 }
 
 ul {
@@ -45,6 +40,8 @@ img {
   width: 100%;
   height: auto;
 }
+
+
 /* --- CLEARFIX --- */
 
 .group:after {
@@ -52,43 +49,3 @@ img {
   clear: both;
   display: block;
 }
-
-header {
-  background-color: rgb(255, 204, 0);
-  color: #fff;
-  font-size: 20px;
-}
-
-.header-nav {
-  width: 900px;
-  margin: 0 auto;
-}
-
-header li {
-  float: left;
-  padding: 20px;
-}
-
-.session-links a {
-  padding: 20px;
-  color: blue;
-}
-
-#header-search-bar {
-  display: block;
-  background-color: white;
-  width: 100px;
-  height: 30px;
-  margin-top: 20px;
-  padding: 0;
-}
-
-#header-search-bar:after {
-  content: "search";
-  color: black;
-}
-
-
-// .section-for-signup-form {
-//   position: relative;
-// }

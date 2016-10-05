@@ -35,6 +35,7 @@ class LoginForm extends React.Component {
 
   componentWillReceiveProps (nextProps) {
     if(nextProps.loggedIn) {
+      window.localStorage.setItem("welcomeNote", "true");
       nextProps.router.push("/home");
     }
   }

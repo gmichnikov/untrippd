@@ -1,0 +1,36 @@
+$primary-color: rgb(255, 204, 0);
+
+.header-main {
+  background-color: $primary-color;
+  color: #fff;
+  font-size: 20px;
+}
+
+.header-nav {
+  width: 900px;
+  margin: 0 auto;
+}
+
+.header-main li {
+  float: left;
+  padding: 20px;
+}
+
+.session-links a {
+  padding: 20px;
+  color: blue;
+}
+
+#header-search-bar {
+  display: block;
+  background-color: white;
+  width: 100px;
+  height: 30px;
+  margin-top: 20px;
+  padding: 0;
+}
+
+#header-search-bar:after {
+  content: "search";
+  color: black;
+}
