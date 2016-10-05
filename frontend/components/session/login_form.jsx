@@ -35,7 +35,8 @@ class LoginForm extends React.Component {
 
   componentWillReceiveProps (nextProps) {
     if(nextProps.loggedIn) {
-      window.localStorage.setItem("welcomeNote", "true");
+      // window.localStorage.setItem("welcomeNote", "true");
+      this.props.changeWelcomeNotification("Welcome back!");
       nextProps.router.push("/home");
     }
   }
@@ -79,7 +80,7 @@ class LoginForm extends React.Component {
           />
         <button>Log In</button>
         <div className="guest-login" onClick={this.guestLogin}>Demo Log In</div>
-        <p>New around here? <Link to="/#/signup">Sign up!</Link></p>
+        <p>New around here? <Link to="/signup">Sign up!</Link></p>
         </form>
       </section>
     );

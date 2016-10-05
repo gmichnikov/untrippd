@@ -13,6 +13,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
       processSignupForm: (user) => dispatch(ACTIONS.signup(user)),
+      changeWelcomeNotification: (status) => dispatch(ACTIONS.changeWelcomeNotification(status)),
     };
 };
 

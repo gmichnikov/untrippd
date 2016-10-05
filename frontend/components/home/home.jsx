@@ -8,14 +8,14 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      notificationActive: window.localStorage.welcomeNote === "true",
+      notificationActive: this.props.welcomeNotificationStatus !== null,
     }
   }
 
   componentDidMount() {
     this.welcomeTimeout = setTimeout(() => {
       this.setState({notificationActive: false});
-      window.localStorage.setItem("welcomeNote", "false");
+      this.props.changeWelcomeNotification(null);
     }, 1000);
   }
 
@@ -25,9 +25,12 @@ class Home extends React.Component {
 
 
   render() {
+
+    let messageText = this.props.welcomeNotificationStatus ? this.props.welcomeNotificationStatus : "";
+
     return (
       <div>
-        <Notification isActive={this.state.notificationActive} message={"Home Page Notification!"} />
+        <Notification isActive={this.state.notificationActive} message={messageText} />
         <h1>Home Page</h1>
         <Link to="/places">Places</Link>
       </div>

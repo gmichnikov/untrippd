@@ -32,8 +32,8 @@ class LandingPage extends React.Component {
           <h2>TRAVEL RECOMMENDATIONS</h2>
 
           <div className="landing-buttons">
-            <Link className="landing-button" to="/#/signup">Sign Up</Link>
-            <Link className="landing-button" to="/#/login">Log In</Link>
+            <Link className="landing-button" to="/signup">Sign Up</Link>
+            <Link className="landing-button" to="/login">Log In</Link>
             <div className="landing-button" onClick={this.guestLogin}>Demo Log In</div>
           </div>
         </div>

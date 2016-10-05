@@ -5,6 +5,8 @@ export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const REMOVE_CURRENT_USER = 'REMOVE_CURRENT_USER';
 export const RECEIVE_SIGNUP_ERRORS = 'RECEIVE_SIGNUP_ERRORS';
 export const RECEIVE_LOGIN_ERRORS = 'RECEIVE_LOGIN_ERRORS';
+export const CHANGE_WELCOME_NOTIFICATION = 'CHANGE_WELCOME_NOTIFICATION';
+
 
 export const signup = (user) => {
   return {
@@ -50,5 +52,12 @@ export const receiveLoginErrors = (loginErrors) => {
 export const removeCurrentUser = () => {
   return {
     type: REMOVE_CURRENT_USER,
+  };
+};
+
+export const changeWelcomeNotification = (status) => {
+  return {
+    type: CHANGE_WELCOME_NOTIFICATION,
+    status
   };
 };

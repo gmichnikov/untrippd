@@ -31,6 +31,8 @@ class SignupForm extends React.Component {
 
   componentWillReceiveProps (nextProps) {
     if(nextProps.loggedIn) {
+      debugger
+      this.props.changeWelcomeNotification("Welcome to Untrippd! Thanks for signing up.");
       nextProps.router.push("/home");
     }
   }
@@ -106,7 +108,7 @@ class SignupForm extends React.Component {
             onChange={this.update('lastName')}
           />
         <button>Create Account</button>
-          <p>Already have an account? <Link to="/#/login">Log in!</Link></p>
+          <p>Already have an account? <Link to="/login">Log in!</Link></p>
         </form>
       </section>
     );
