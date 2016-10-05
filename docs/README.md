@@ -1,8 +1,8 @@
 # Untrippd
 
-[Untrippd on Heroku][heroku]
+[Live Website!][liveLink]
 
-[heroku]: http://www.untrippd.com
+[liveLink]: http://www.untrippd.com
 
 ## Minimum Viable Product
 

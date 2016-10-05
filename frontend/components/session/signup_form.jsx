@@ -67,7 +67,7 @@ class SignupForm extends React.Component {
         <form className="signup-form" onSubmit={this.handleSubmit}>
           <h1>Untrippd</h1>
           <h3>Travel Socially</h3>
-          <p>All fields below are required unless specified.</p>
+          <h5>All fields below are required unless specified.</h5>
           <ul className="signup-errors">{errorList}</ul>
           <input className="left"
             type="text"
@@ -106,6 +106,7 @@ class SignupForm extends React.Component {
             onChange={this.update('lastName')}
           />
         <button>Create Account</button>
+          <p>Already have an account? <a href="/#/login">Log in!</a></p>
         </form>
       </section>
     );

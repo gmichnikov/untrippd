@@ -103,4 +103,7 @@ Some next steps
   Setup login form
   style both forms properly
   header only visible on home route
-  sign up for domain
+
+For later
+  Fix confirm password
+  style errors on forms

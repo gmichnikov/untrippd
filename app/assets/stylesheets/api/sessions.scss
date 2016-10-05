@@ -2,11 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.signup-form {
+.signup-form, .login-form {
   background-color: white;
-  width: 534px;
-  height: 322px;
   margin: 50px auto;
+}
+
+.signup-form {
+  width: 534px;
+  height: 422px;
   padding: 20px 33px;
 }
 
@@ -25,7 +28,7 @@
     z-index: -1;
 }
 
-.signup-form h1 {
+.signup-form h1, .login-form h1 {
   text-transform: uppercase;
   text-align: center;
   color: rgb(255, 205, 0);
@@ -34,7 +37,7 @@
   margin: -10px 0;
 }
 
-.signup-form h3 {
+.signup-form h3, .login-form h3 {
   text-transform: uppercase;
   text-align: center;
   color: rgb(255, 205, 0);
@@ -43,7 +46,7 @@
   font-size: 15px;
 }
 
-.signup-form p {
+.signup-form h5 {
   text-align: center;
   color: #666;
   font-weight: bold;
@@ -80,7 +83,7 @@
   margin-right: 33px;
 }
 
-.signup-form button {
+.signup-form button, .login-form button {
   display: block;
   margin: 20px auto;
   background-color: rgb(255, 205, 0);
@@ -89,4 +92,40 @@
   border-radius: 5px;
   font-weight: bold;
 
+}
+
+.login-form button {
+  width: 140px;
+  text-align: center;
+}
+
+//  *************
+
+.login-form {
+  width: 300px;
+  height: 288px;
+  padding: 20px 50px;
+}
+
+.login-form p, .signup-form p {
+  text-align: center;
+  color: #666;
+  font-weight: bold;
+  font-size: 18px;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+
+.login-form a, .signup-form a {
+  color: rgb(255, 205, 0);
+}
+
+.login-form input {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 268px;
+  height: 33px;
+  padding-left: 30px;
+  margin: 10px auto;
+  display: block;
 }
