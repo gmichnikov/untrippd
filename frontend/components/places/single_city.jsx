@@ -1,5 +1,7 @@
 import React from 'react';
 import SuggestionCreateContainer from '../suggestions/suggestion_create_container';
+import PlaceMap from './place_map';
+import { Link } from 'react-router';
 
 class singleCity extends React.Component {
 
@@ -11,6 +13,10 @@ class singleCity extends React.Component {
 
   render () {
 		let city = this.props.city;
+		console.log("city", city);
+		let mapComponent = city.lat ? <PlaceMap city={city} lat={city.lat} lng={city.lng} /> : ""
+    let fullMapLink = `http://maps.google.com/?ie=UTF8&hq=&ll=${city.lat},${city.lng}&z=13`;
+
 
     return (
 			<section className="single-city">
@@ -20,6 +26,8 @@ class singleCity extends React.Component {
 					<li>country: {city.country_name}</li>
 				</ul>
 				<SuggestionCreateContainer placeType={city.place_type_name} placeId={city.id}/>
+				{mapComponent}
+				<a href={fullMapLink} target="_blank">Full Map</a>
 			</section>
     );
   }
