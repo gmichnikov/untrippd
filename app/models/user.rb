@@ -15,11 +15,16 @@
 
 class User < ActiveRecord::Base
 
+  attr_reader :password, :confirm_password
+
   validates :username, presence: true, uniqueness: true
   validates :password_digest, :session_token, :first_name, :last_name, :email, presence: true
   validates :password, length: {minimum: 6, allow_nil: true}
+  validate :passwords_must_match
 
-  attr_reader :password
+  def passwords_must_match
+    errors.add(:confirm_password, 'must match password') unless password == confirm_password
+  end
 
   after_initialize :ensure_session_token
 

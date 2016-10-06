@@ -21,19 +21,13 @@ class SignupForm extends React.Component {
     const user = this.state;
     console.log("submit attempt", user);
     this.props.processSignupForm({user: user});
-    this.state = {
-      username: "",
-      password: "",
-      confirm_password: "",
-      first_name: "",
-      last_name: "",
-      email: "",
-    };
+    this.setState(Object.assign(
+      {}, this.state, {password: "", confirm_password: ""}
+    ));
   }
 
   componentWillReceiveProps (nextProps) {
     if(nextProps.loggedIn) {
-      debugger
       this.props.changeWelcomeNotification("Welcome to Untrippd! Thanks for signing up.");
       nextProps.router.push("/home");
     }
