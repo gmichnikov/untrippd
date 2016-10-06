@@ -14,7 +14,7 @@ const SessionReducer = (oldState = default_session_state, action) => {
     case SESSION_ACTIONS.RECEIVE_LOGIN_ERRORS:
       return Object.assign({}, oldState, {currentUser: null, loginErrors: action.loginErrors});
     case SESSION_ACTIONS.RECEIVE_SIGNUP_ERRORS:
-      return Obejct.assign({}, oldState, {currentUser: null, signupErrors: action.signupErrors});
+      return Object.assign({}, oldState, {currentUser: null, signupErrors: action.signupErrors});
     case SESSION_ACTIONS.REMOVE_CURRENT_USER:
       return Object.assign({}, oldState, {currentUser: null, loginErrors: [], signupErrors: []});
     case SESSION_ACTIONS.CHANGE_WELCOME_NOTIFICATION:

@@ -100,14 +100,8 @@ Redux cycle
 
 
 Some next steps
-  header only visible on home route
 
 For later
   Fix confirm password
 
-Header has correct links and proper styling, incl. positioning at top of each page
-Header contains non-functioning place search bar at far right
-Header contains user profile menu on hover when logged in
-Header contains working button links to log in/sign up pages when not logged in
 Seed users
-Review phase 1

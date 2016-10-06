@@ -8,7 +8,7 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      notificationActive: this.props.welcomeNotificationStatus !== null,
+      notificationActive: this.props.welcomeNotificationStatus ? true : false,
     }
   }
 
@@ -16,7 +16,7 @@ class Home extends React.Component {
     this.welcomeTimeout = setTimeout(() => {
       this.setState({notificationActive: false});
       this.props.changeWelcomeNotification(null);
-    }, 1000);
+    }, 2000);
   }
 
   componentWillUnmount() {
@@ -27,6 +27,7 @@ class Home extends React.Component {
   render() {
 
     let messageText = this.props.welcomeNotificationStatus ? this.props.welcomeNotificationStatus : "";
+    console.log("active" , this.props.welcomeNotificationStatus, this.state.notificationActive);
 
     return (
       <div>

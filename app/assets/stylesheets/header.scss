@@ -3,26 +3,144 @@ $primary-color: rgb(255, 204, 0);
 .header-main {
   background-color: $primary-color;
   color: #fff;
-  font-size: 20px;
+  font-size: 19px;
+  height: 52px;
 }
 
 .header-nav {
-  width: 900px;
+  width: 1024px;
   margin: 0 auto;
 }
 
 .header-main li {
   float: left;
-  padding: 20px;
+  padding-left: 25px;
+  padding-top: 15px;
 }
 
-.session-links a {
-  padding: 20px;
-  color: blue;
+li.header-logo {
+  text-transform: uppercase;
+  font-size: 32px;
+  text-align: center;
+  padding: 0;
 }
+
+.header-logo a {
+  display: block;
+  font-weight: 500;
+  margin-bottom: -5px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.header-logo span {
+  display: block;
+  font-family: 'Graduate', cursive;
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+.session-links a, {
+  color: white;
+  background-color: #1e91ea;
+  padding: 7px 13px;;
+  border-radius: 5px;
+  font-size: 17px;
+}
+
+.welcome-and-logout {
+  display: inline-block;
+  float: right;
+  margin-top: 13px;
+  height: 50px;
+}
+
+.header-current-user {
+  color: white;
+  background-color: #1e91ea;
+  border-radius: 5px;
+  font-size: 17px;
+  position: relative;
+  padding: 5px;
+  // margin-right: 25px;
+  // margin-top: 15px;
+}
+
+////////////
+
+.user-dropdown {
+  display: none;
+  position: absolute;
+  background-color: rgb(44,44,44);
+  color: white;
+  right: 0px;
+  top: 42px;
+}
+
+.welcome-and-logout:hover .user-dropdown {
+   display: block;
+ }
+
+.user-dropdown:hover  {
+  display: block;
+}
+
+.user-dropdown li {
+  padding: 0;
+  margin: 0;
+  float: none;
+ }
+
+.user-dropdown li li {
+  float: none;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  width: 130px;
+  cursor: pointer;
+}
+
+.user-dropdown li li a {
+  display: block;
+}
+
+.user-dropdown li li:hover {
+  background-color: #444;
+}
+
+.user-dropdown li li:last-child {
+   padding: 10px;
+   border-bottom: 0;
+}
+
+
+.user-dropdown button {
+  cursor: pointer;
+}
+ // .hamburger-dropdown ul {
+ //   position: absolute;
+ //   top: 50px;
+ //   left: 0;
+ //   flex-direction: column;
+ //   cursor: pointer;
+ //   box-shadow: black 5px 5px 10px;
+ // }
+ //
+ // /* This is how we create pure css dropdown effects. No JS required. */
+ // .hamburger-dropdown:hover ul {
+ //   display: flex;
+ //   background: ghostwhite;
+ // }
+ //
+ // .hamburger-dropdown ul li:hover a {
+ //   text-decoration: underline;
+ // }
+
+/////
+
+
+
 
 #header-search-bar {
-  display: block;
+  display: none;
   background-color: white;
   width: 100px;
   height: 30px;

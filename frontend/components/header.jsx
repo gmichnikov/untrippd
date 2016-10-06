@@ -4,8 +4,8 @@ import { Router, Route, IndexRoute, hashHistory, Link } from 'react-router';
 const sessionLinks = () => {
   return (
     <div className="session-links">
-      <Link to="/signup">Sign Up</Link>
-      <Link to="/login">Log In</Link>
+      <li><Link to="/login">Sign In</Link></li>
+      <li><Link to="/signup">Join Now</Link></li>
     </div>
   )
 }
@@ -13,13 +13,27 @@ const sessionLinks = () => {
 const welcomeAndLogout = (currentUser, logout) => {
   return (
     <div className="welcome-and-logout">
-      Welcome {currentUser.username}!
-      <button onClick={logout}>Log out!</button>
+      <span className="header-current-user">{currentUser.username}
+        <ul className="user-dropdown">
+          <li>
+            <ul>
+              <li><a href="#">My Suggestions</a></li>
+              <li><a href="#">My Guidebooks</a></li>
+              <li><a href="#">My Follows</a></li>
+              <li><a href="#">My Followers</a></li>
+              <li><a href="#">My Places</a></li>
+              <li><button onClick={logout}>Log out!</button></li>
+
+            </ul>
+          </li>
+        </ul>
+      </span>
     </div>
   )
 }
 
 const Header = ({currentUser, logout}) => {
+
   const headerVaryingContent = currentUser ?
     welcomeAndLogout(currentUser, logout) :
     sessionLinks();
@@ -28,11 +42,11 @@ const Header = ({currentUser, logout}) => {
     <header className="header-main">
       <nav className="header-nav">
         <ul className="group">
-          <li id="logo"><Link to="/">Untrippd</Link></li>
+          <li className="header-logo"><Link to="/">Untrippd</Link><span>Travel Socially</span></li>
           <li>The Feed</li>
           <li>Top Places</li>
           <li>Write a Review</li>
-          <li>{headerVaryingContent}</li>
+          {headerVaryingContent}
           <li id="header-search-bar"></li>
         </ul>
       </nav>
