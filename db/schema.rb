@@ -11,10 +11,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161004142908) do
+ActiveRecord::Schema.define(version: 20161006153409) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cities", force: :cascade do |t|
+    t.string   "name",          null: false
+    t.float    "lat",           null: false
+    t.float    "lng",           null: false
+    t.integer  "place_type_id", null: false
+    t.integer  "region_id",     null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "cities", ["name"], name: "index_cities_on_name", using: :btree
+  add_index "cities", ["place_type_id"], name: "index_cities_on_place_type_id", using: :btree
+  add_index "cities", ["region_id"], name: "index_cities_on_region_id", using: :btree
+
+  create_table "countries", force: :cascade do |t|
+    t.string   "name",          null: false
+    t.float    "lat",           null: false
+    t.float    "lng",           null: false
+    t.integer  "place_type_id", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "countries", ["name"], name: "index_countries_on_name", using: :btree
+  add_index "countries", ["place_type_id"], name: "index_countries_on_place_type_id", using: :btree
+
+  create_table "place_types", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "regions", force: :cascade do |t|
+    t.string   "name",          null: false
+    t.float    "lat",           null: false
+    t.float    "lng",           null: false
+    t.integer  "place_type_id", null: false
+    t.integer  "country_id",    null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "regions", ["country_id"], name: "index_regions_on_country_id", using: :btree
+  add_index "regions", ["name"], name: "index_regions_on_name", using: :btree
+  add_index "regions", ["place_type_id"], name: "index_regions_on_place_type_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false

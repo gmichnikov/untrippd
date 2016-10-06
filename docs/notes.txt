@@ -102,5 +102,7 @@ Redux cycle
 Some next steps
 
 For later
-
-Seed users
+  add more styling to buttons
+  Seed users
+  click to see place on a map (wiki?)
+  definitely show map on show page
