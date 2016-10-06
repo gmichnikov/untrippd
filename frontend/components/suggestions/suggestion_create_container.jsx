@@ -12,7 +12,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-      processSuggestionForm: (suggestion) => dispatch(ACTIONS.CREATE_SUGGESTION(suggestion)),
+      processSuggestionForm: (suggestion) => dispatch(ACTIONS.createSuggestion(suggestion)),
     };
 };
 

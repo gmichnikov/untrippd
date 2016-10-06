@@ -1,9 +1,11 @@
 class Api::SuggestionsController < ApplicationController
 
   def create
-    @suggestion = Suggestion.create!(suggestion_params)
-    render :show
-    #add current user
+    @suggestion = Suggestion.new(suggestion_params)
+    @suggestion.author_id = current_user.id
+    @suggestion.save!
+    render 'show'
+    # redirect_to "#/#{@suggestion.suggestable_type.tableize}/#{@suggestion.suggestable_id}"
   end
 
   def suggestion_params

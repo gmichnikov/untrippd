@@ -24,8 +24,8 @@ class SuggestionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const suggestion = this.state; // add user id, place id
-    console.log("submit suggestion attempt", user);
+    const suggestion = Object.assign(this.state, {suggestable_type: this.props.placeType, suggestable_id: this.props.placeId});
+    console.log("submit suggestion attempt", suggestion);
     this.props.processSuggestionForm({suggestion: suggestion});
     this.setState(Object.assign(
       {}, this.state, {body: ""}

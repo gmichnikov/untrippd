@@ -1,9 +1,9 @@
-export const signup = (user, signupSuccess, signupError) => {
+export const createSuggestion = (suggestion, success, error) => {
 	$.ajax({
 		method: 'POST',
-		url: '/api/user',
-		data: user,
-    success: signupSuccess,
-    error: signupError
+		url: '/api/suggestions',
+		data: suggestion,
+    success: success,
+    error: error
 	});
 };
