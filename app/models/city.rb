@@ -17,8 +17,9 @@ class City < ActiveRecord::Base
   validates :name, :lat, :lng, :place_type_id, :region_id, presence: true
 
   belongs_to :region
-  has_one :country,
-    through: :region,
-    source: :country
+  has_one :country, through: :region, source: :country
+  has_many :suggestions, as: :suggestable
+
+  alias_attribute :state, :region
 
 end

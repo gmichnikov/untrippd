@@ -18,5 +18,10 @@ class Country < ActiveRecord::Base
 
   has_many :regions
   has_many :cities, through: :regions, source: :cities
+  has_many :suggestions, as: :suggestable
+
+  def is_US_or_UK?
+    name == "United States" || name == "United Kingdom"
+  end
 
 end

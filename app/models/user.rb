@@ -22,11 +22,26 @@ class User < ActiveRecord::Base
   validates :password, length: {minimum: 6, allow_nil: true}
   validate :passwords_must_match
 
+  has_many :suggestions,
+    foreign_key: :author_id
+
   def passwords_must_match
     errors.add(:confirm_password, 'must match password') unless password == confirm_password
   end
 
   after_initialize :ensure_session_token
+
+  def full_name
+    first_name[0].capitalize + first_name[1..-1] + " " + last_name[0].capitalize + last_name[1..-1]
+    # first_name.titleize + " " + last_name.titleize
+  end
+
+  def display_name
+    first_name[0].capitalize + first_name[1..-1] + " " + last_name[0].capitalize + "."
+    # first_name.titleize + " " + last_name.titleize
+  end
+
+  # Auth methods
 
   def self.generate_session_token
     SecureRandom::base64
