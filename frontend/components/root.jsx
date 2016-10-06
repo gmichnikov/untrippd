@@ -7,6 +7,8 @@ import SignupFormContainer from './session/signup_form_container';
 import LandingPageContainer from './session/landing_page_container';
 import HomeContainer from './home/home_container';
 import PlacesContainer from './places/places_container';
+import SingleCityContainer from './places/single_city_container';
+import * as PLACE_ACTIONS from '../actions/place_actions';
 
 const Root = ({ store }) => {
 
@@ -18,6 +20,10 @@ const Root = ({ store }) => {
     }
   };
 
+  const requestSingleCityOnEnter = (nextState) => {
+		store.dispatch(PLACE_ACTIONS.requestSingleCity(nextState.params.cityId));
+	};
+
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
@@ -26,6 +32,7 @@ const Root = ({ store }) => {
         <Route path="/home" component={App}>
           <IndexRoute component={HomeContainer} />
           <Route path="/places" component={PlacesContainer} />
+          <Route path="/cities/:cityId" component={SingleCityContainer} onEnter={requestSingleCityOnEnter} />
         </Route>
         <Route path="/" component={LandingPageContainer} onEnter={redirectIfLoggedIn} />
       </Router>
