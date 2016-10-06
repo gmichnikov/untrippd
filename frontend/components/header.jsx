@@ -19,9 +19,9 @@ const welcomeAndLogout = (currentUser, logout) => {
             <ul>
               <li><a href="#">My Suggestions</a></li>
               <li><a href="#">My Guidebooks</a></li>
-              <li><a href="#">My Follows</a></li>
+              <li><a href="http://www.cnn.com">My Follows</a></li>
               <li><a href="#">My Followers</a></li>
-              <li><a href="#">My Places</a></li>
+              <li><a href="http://www.cnn.com">My Places</a></li>
               <li><button onClick={logout}>Log out!</button></li>
 
             </ul>

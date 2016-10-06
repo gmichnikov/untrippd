@@ -8,6 +8,7 @@ class SignupForm extends React.Component {
     this.state = {
       username: "",
       password: "",
+      confirm_password: "",
       first_name: "",
       last_name: "",
       email: "",
@@ -23,6 +24,7 @@ class SignupForm extends React.Component {
     this.state = {
       username: "",
       password: "",
+      confirm_password: "",
       first_name: "",
       last_name: "",
       email: "",

@@ -92,13 +92,13 @@ li.header-logo {
 
 .user-dropdown li li {
   float: none;
-  padding: 10px;
   border-bottom: 1px solid #ccc;
-  width: 130px;
+  width: 145px;
   cursor: pointer;
 }
 
 .user-dropdown li li a {
+  padding: 10px;
   display: block;
 }
 
@@ -107,13 +107,14 @@ li.header-logo {
 }
 
 .user-dropdown li li:last-child {
-   padding: 10px;
    border-bottom: 0;
 }
 
 
 .user-dropdown button {
+  padding: 10px;
   cursor: pointer;
+  width: 125px;
 }
  // .hamburger-dropdown ul {
  //   position: absolute;
