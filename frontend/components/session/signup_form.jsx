@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, hashHistory, Link, withRouter } from 'react-router';
 
 class SignupForm extends React.Component {
@@ -24,6 +25,10 @@ class SignupForm extends React.Component {
     this.setState(Object.assign(
       {}, this.state, {password: "", confirm_password: ""}
     ));
+  }
+
+  componentDidMount() {
+    setTimeout(() => ReactDOM.findDOMNode(this.refs.username).focus(), 0);
   }
 
   componentWillReceiveProps (nextProps) {
@@ -71,6 +76,7 @@ class SignupForm extends React.Component {
             type="text"
             value={this.state.username}
             placeholder="Username"
+            ref="username"
             onChange={this.update('username')}
           />
           <input
