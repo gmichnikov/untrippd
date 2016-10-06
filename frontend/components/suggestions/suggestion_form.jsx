@@ -51,10 +51,29 @@ class SuggestionForm extends React.Component {
             placeholder="suggestion text ..."
             onChange={this.updateBody()}
           />
-          <input
+        <label>Food?</label>
+          <input className="suggestion-form-checkbox"
             type="checkbox"
             checked={this.state.food}
             onClick={this.updateCheckbox('food')}
+          />
+        <label>Attraction?</label>
+          <input className="suggestion-form-checkbox"
+            type="checkbox"
+            checked={this.state.attraction}
+            onClick={this.updateCheckbox('attraction')}
+          />
+        <label>Accomodation?</label>
+          <input className="suggestion-form-checkbox"
+            type="checkbox"
+            checked={this.state.accommodation}
+            onClick={this.updateCheckbox('accommodation')}
+          />
+        <label>Highlight?</label>
+          <input className="suggestion-form-checkbox"
+            type="checkbox"
+            checked={this.state.highlight}
+            onClick={this.updateCheckbox('highlight')}
           />
           <button>Create Suggestion</button>
         </form>

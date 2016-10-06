@@ -1,3 +1,34 @@
 // Place all the styles related to the api/suggestions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.suggestion-form-section {
+}
+
+
+.suggestion-form {
+  background-color: green;
+  width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.suggestion-body {
+  background-color: white;
+  display: block;
+  width: 100%;
+  height: 120px;
+  margin-bottom: 10px;
+}
+
+.suggestion-form button {
+  margin-top: 20px;
+  display: block;
+  background-color: purple;
+}
+
+.suggestion-form-checkbox {
+  margin-right: 15px;
+  margin-left: 5px;
+}
