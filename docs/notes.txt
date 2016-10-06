@@ -102,6 +102,5 @@ Redux cycle
 Some next steps
 
 For later
-  Fix confirm password
 
 Seed users

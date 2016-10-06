@@ -50,6 +50,10 @@ class User < ActiveRecord::Base
     self.password_digest = BCrypt::Password.create(pass)
   end
 
+  def confirm_password=(cp)
+    @confirm_password = cp
+  end
+
   def is_password?(pass)
     BCrypt::Password.new(self.password_digest).is_password?(pass)
   end
