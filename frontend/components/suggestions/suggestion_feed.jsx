@@ -1,5 +1,6 @@
 import React from 'react';
 import SuggestionFeedItem from './suggestion_feed_item';
+import Toggle from 'react-toggle'
 
 class SuggestionFeed extends React.Component {
 
@@ -58,31 +59,28 @@ class SuggestionFeed extends React.Component {
       return <SuggestionFeedItem key={suggestion.id} suggestion={suggestion} />
     })
 
+
     return (
 			<section className="single-city-suggestion-feed">
         <section className="suggestion-feed-filter-section">
           <form className="suggestion-feed-filter-form">
-          <label>onlyFood?</label>
-            <input className="suggestion-filter-checkbox"
-              type="checkbox"
+            <label>onlyFood?</label>
+            <Toggle
               checked={this.state.onlyFood}
               onClick={this.updateCheckbox('onlyFood')}
             />
           <label>onlyAttraction?</label>
-            <input className="suggestion-filter-checkbox"
-              type="checkbox"
+            <Toggle
               checked={this.state.onlyAttraction}
               onClick={this.updateCheckbox('onlyAttraction')}
             />
           <label>onlyAccommodation?</label>
-            <input className="suggestion-filter-checkbox"
-              type="checkbox"
+            <Toggle
               checked={this.state.onlyAccommodation}
               onClick={this.updateCheckbox('onlyAccommodation')}
             />
           <label>onlyHighlight?</label>
-            <input className="suggestion-filter-checkbox"
-              type="checkbox"
+            <Toggle
               checked={this.state.onlyHighlight}
               onClick={this.updateCheckbox('onlyHighlight')}
             />
