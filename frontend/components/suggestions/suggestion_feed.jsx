@@ -86,7 +86,7 @@ class SuggestionFeed extends React.Component {
             />
           </form>
         </section>
-				<ul>
+				<ul className="suggestion-feed">
           {feed}
 				</ul>
 			</section>

@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactEmoji from 'react-emoji';
 
 class SuggestionFeedItem extends React.Component {
 
@@ -12,7 +13,7 @@ class SuggestionFeedItem extends React.Component {
     let s = this.props.suggestion;
 
     return (
-      <li>{s.author_display_name} made a suggestion about {s.place_name}: {s.body}</li>
+      <li>{s.author_display_name} made a suggestion about {s.place_name}: {ReactEmoji.emojify(s.body)}</li>
     );
   }
 }
