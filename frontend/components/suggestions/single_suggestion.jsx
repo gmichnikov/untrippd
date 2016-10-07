@@ -10,7 +10,6 @@ class SingleSuggestion extends React.Component {
 
   render () {
 		let suggestion = this.props.suggestion || {};
-    console.log("suggestion", suggestion);
 
     return (
 			<section className="single-suggestion">

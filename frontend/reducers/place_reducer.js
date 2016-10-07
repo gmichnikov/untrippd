@@ -2,11 +2,11 @@ import * as ACTIONS from '../actions/place_actions.js';
 
 const defaultPlacesState = {
   singleCity: {},
-  cities: [],
-  singleRegion: {},
-  regions: [],
-  singleCountry: {},
-  countries: [],
+  // cities: [],
+  // singleRegion: {},
+  // regions: [],
+  // singleCountry: {},
+  // countries: [],
 };
 
 const PlaceReducer = (oldState = defaultPlacesState, action) => {

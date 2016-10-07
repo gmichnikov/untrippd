@@ -4,7 +4,7 @@ import PlaceMap from './place_map';
 import { Link } from 'react-router';
 import SuggestionFeed from '../suggestions/suggestion_feed';
 
-class singleCity extends React.Component {
+class SingleCity extends React.Component {
 
   constructor(props) {
     super(props);
@@ -12,9 +12,18 @@ class singleCity extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.props.requestSingleCity(this.props.params.cityId);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.params.cityId !== this.props.params.cityId) {
+      this.props.requestSingleCity(nextProps.params.cityId);
+    }
+  }
+
   render () {
 		let city = this.props.city;
-		console.log("city", city);
 		let mapComponent = city.id ? <PlaceMap lat={city.lat} lng={city.lng} /> : null
     let fullMapLink = `http://maps.google.com/?ie=UTF8&hq=&ll=${city.lat},${city.lng}&z=13`;
 
@@ -25,7 +34,6 @@ class singleCity extends React.Component {
 					<li>city: {city.name}</li>
 					<li>region: {city.region_name}</li>
 					<li>country: {city.country_name}</li>
-					<li>lat: {city.lat}</li>
 				</ul>
 				<SuggestionCreateContainer placeType={city.place_type_name} placeId={city.id}/>
         <SuggestionFeed placeName={city.name} suggestions={city.suggestions} />
@@ -36,4 +44,4 @@ class singleCity extends React.Component {
   }
 }
 
-export default singleCity;
+export default SingleCity;

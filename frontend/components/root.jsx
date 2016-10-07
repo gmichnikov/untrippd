@@ -23,7 +23,7 @@ const Root = ({ store }) => {
   };
 
   const requestSingleCityOnEnter = (nextState) => {
-		store.dispatch(PLACE_ACTIONS.requestSingleCity(nextState.params.cityId));
+		// store.dispatch(PLACE_ACTIONS.requestSingleCity(nextState.params.cityId));
 	};
 
   const requestSingleSuggestionOnEnter = (nextState) => {

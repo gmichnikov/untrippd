@@ -7,7 +7,7 @@ import PlaceReducer from './place_reducer';
 const RootReducer = combineReducers ({
   session: SessionReducer,
   suggestion: SuggestionReducer,
-  places: PlaceReducer,
+  place: PlaceReducer,
 });
 
 export default RootReducer;
