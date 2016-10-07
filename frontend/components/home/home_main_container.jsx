@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Home from './home';
+import HomeMain from './home_main';
 import * as SESSION_ACTIONS from '../../actions/session_actions.js';
 import * as SUGGESTION_ACTIONS from '../../actions/suggestion_actions.js';
 
@@ -21,4 +21,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Home);
+)(HomeMain);

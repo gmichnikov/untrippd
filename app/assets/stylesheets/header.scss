@@ -5,6 +5,9 @@ $primary-color: rgb(255, 204, 0);
   color: #fff;
   font-size: 19px;
   height: 52px;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
 }
 
 .header-nav {

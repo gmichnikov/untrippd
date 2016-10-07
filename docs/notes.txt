@@ -99,13 +99,6 @@ Redux cycle
   Since guidebooks index is always going to be a specific user's guidebooks, I am not sure if it would make sense to include a user_id in the API url?
 
 
-Some next steps
-
-For later
-  add more styling to login buttons
-  Seed users
-  click to see place on a map (wiki?)
-  create a place controller action/route for adding places, for my account (although that would make it hard to keep dev/prod aligned)
 
 State
 Maximum set of suggestions
@@ -120,8 +113,15 @@ Filters
 Food Att Acc High My Places My Friends, My Places
 
 
-Style suggestion components
-Seed suggestions
-Update/delete suggestions
-suggestions by country and region
-controller/view for region
+Some next steps
+  Style suggestion components
+  Seed suggestions
+  Update/delete suggestions
+  suggestions by country and region
+  controller/view for region
+
+For later
+  add more styling to login buttons
+  Seed users
+  click to see place on a map (wiki?)
+  create a place controller action/route for adding places, for my account (although that would make it hard to keep dev/prod aligned)

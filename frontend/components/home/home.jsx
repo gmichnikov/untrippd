@@ -1,43 +1,26 @@
 import React from 'react';
 import { Router, Route, IndexRoute, hashHistory, Link } from 'react-router';
-import HeaderContainer from '../header_container';
-import { Notification } from 'react-notification';
-import SuggestionFeed from '../suggestions/suggestion_feed';
+import HomeMainContainer from './home_main_container';
 
 class Home extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      notificationActive: this.props.welcomeNotificationStatus ? true : false,
     }
   }
 
   componentDidMount() {
-    this.welcomeTimeout = setTimeout(() => {
-      this.setState({notificationActive: false});
-      this.props.changeWelcomeNotification(null);
-    }, 2000);
-
-    this.props.requestAllSuggestions();
   }
 
   componentWillUnmount() {
-    clearTimeout(this.welcomeTimeout);
   }
 
 
   render() {
 
-    let messageText = this.props.welcomeNotificationStatus ? this.props.welcomeNotificationStatus : "";
-
     return (
-      <div>
-        <Notification isActive={this.state.notificationActive} message={messageText} />
-        <h1>Home Page</h1>
-        <Link to="/places">Places</Link>
-        <SuggestionFeed suggestions={this.props.suggestions} />
-      </div>
+      <HomeMainContainer />
     )
   }
 
