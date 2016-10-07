@@ -108,3 +108,6 @@ For later
   click to see place on a map (wiki?)
   definitely show map on show page
   create a place controller action/route for adding places, for my account (although that would make it hard to keep dev/prod aligned)
+
+Question
+do you need to do the && hack for when something isnt loaded, or the empty object hack?

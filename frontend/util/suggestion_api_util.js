@@ -7,3 +7,12 @@ export const createSuggestion = (suggestion, success, error) => {
     error: error
 	});
 };
+
+export const fetchSingleSuggestion = (id, success, error) => {
+	$.ajax({
+		method: 'GET',
+  	url: `/api/suggestions/${id}`,
+    success: success,
+    error: error,
+	});
+};

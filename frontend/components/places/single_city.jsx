@@ -2,6 +2,7 @@ import React from 'react';
 import SuggestionCreateContainer from '../suggestions/suggestion_create_container';
 import PlaceMap from './place_map';
 import { Link } from 'react-router';
+import SuggestionFeed from '../suggestions/suggestion_feed';
 
 class singleCity extends React.Component {
 
@@ -26,6 +27,7 @@ class singleCity extends React.Component {
 					<li>country: {city.country_name}</li>
 				</ul>
 				<SuggestionCreateContainer placeType={city.place_type_name} placeId={city.id}/>
+        <SuggestionFeed placeName={city.name} suggestions={city.suggestions} />
 				{mapComponent}
 				<a href={fullMapLink} target="_blank">Full Map</a>
 			</section>

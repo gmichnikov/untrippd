@@ -8,6 +8,11 @@ class Api::SuggestionsController < ApplicationController
     # redirect_to "#/#{@suggestion.suggestable_type.tableize}/#{@suggestion.suggestable_id}"
   end
 
+  def show
+    @suggestion = Suggestion.find(params[:id])
+    render :show
+  end
+
   def suggestion_params
     params.require(:suggestion).permit(:body, :food, :attraction, :accommodation, :highlight, :suggestable_id, :suggestable_type)
   end

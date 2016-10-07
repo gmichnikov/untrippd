@@ -8,7 +8,9 @@ import LandingPageContainer from './session/landing_page_container';
 import HomeContainer from './home/home_container';
 import PlacesContainer from './places/places_container';
 import SingleCityContainer from './places/single_city_container';
+import SingleSuggestionContainer from './suggestions/single_suggestion_container';
 import * as PLACE_ACTIONS from '../actions/place_actions';
+import * as SUGGESTION_ACTIONS from '../actions/suggestion_actions';
 
 const Root = ({ store }) => {
 
@@ -24,6 +26,11 @@ const Root = ({ store }) => {
 		store.dispatch(PLACE_ACTIONS.requestSingleCity(nextState.params.cityId));
 	};
 
+  const requestSingleSuggestionOnEnter = (nextState) => {
+		store.dispatch(SUGGESTION_ACTIONS.requestSingleSuggestion(nextState.params.suggestionId));
+	};
+
+
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
@@ -33,6 +40,7 @@ const Root = ({ store }) => {
           <IndexRoute component={HomeContainer} />
           <Route path="/places" component={PlacesContainer} />
           <Route path="/cities/:cityId" component={SingleCityContainer} onEnter={requestSingleCityOnEnter} />
+          <Route path="/suggestions/:suggestionId" component={SingleSuggestionContainer} onEnter={requestSingleSuggestionOnEnter} />
         </Route>
         <Route path="/" component={LandingPageContainer} onEnter={redirectIfLoggedIn} />
       </Router>

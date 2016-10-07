@@ -7,7 +7,6 @@ const defaultPlacesState = {
   regions: [],
   singleCountry: {},
   countries: [],
-  placeSuggestions: []
 };
 
 const PlaceReducer = (oldState = defaultPlacesState, action) => {
