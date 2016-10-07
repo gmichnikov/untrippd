@@ -32,7 +32,7 @@ class HomeMain extends React.Component {
     let messageText = this.props.welcomeNotificationStatus ? this.props.welcomeNotificationStatus : "";
 
     return (
-      <div>
+      <div className="home-main">
         <Notification isActive={this.state.notificationActive} message={messageText} />
         <SuggestionFeed suggestions={this.props.suggestions} />
       </div>

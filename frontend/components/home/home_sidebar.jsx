@@ -1,9 +1,7 @@
 import React from 'react';
 import { Router, Route, IndexRoute, hashHistory, Link } from 'react-router';
-import HomeMainContainer from './home_main_container';
-import HomeSidebarContainer from './home_sidebar_container';
 
-class Home extends React.Component {
+class HomeSidebar extends React.Component {
 
   constructor(props) {
     super(props);
@@ -21,13 +19,11 @@ class Home extends React.Component {
   render() {
 
     return (
-      <div className="home group" >
-        <HomeMainContainer />
-        <HomeSidebarContainer />
+      <div className="home-sidebar">
       </div>
     )
   }
 
 };
 
-export default Home;
+export default HomeSidebar;

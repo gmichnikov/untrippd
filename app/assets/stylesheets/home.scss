@@ -1,0 +1,22 @@
+.home {
+  width: 1024px;
+  margin: 28px auto;
+  padding: 0 12px;
+}
+
+.home-main {
+  // 700px total
+  float: left;
+  background-color: white;
+  width: 652px;
+  padding: 24px;
+  margin-right: 23px;
+}
+
+.home-sidebar {
+  // 300px
+  float: right;
+  background-color: white;
+  width: 300px;
+  height: 600px;
+}
