@@ -13,6 +13,10 @@ class SuggestionFeed extends React.Component {
 
     console.log("sugg", this.props.suggestions);
 
+    // if (!this.props.suggestions) {
+    //   return null;
+    // }
+
     return (
 			<section className="single-city-suggestion-feed">
 				<ul>

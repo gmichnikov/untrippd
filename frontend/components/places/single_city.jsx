@@ -15,7 +15,7 @@ class singleCity extends React.Component {
   render () {
 		let city = this.props.city;
 		console.log("city", city);
-		let mapComponent = city.lat ? <PlaceMap city={city} lat={city.lat} lng={city.lng} /> : ""
+		let mapComponent = city.id ? <PlaceMap lat={city.lat} lng={city.lng} /> : null
     let fullMapLink = `http://maps.google.com/?ie=UTF8&hq=&ll=${city.lat},${city.lng}&z=13`;
 
 
@@ -25,6 +25,7 @@ class singleCity extends React.Component {
 					<li>city: {city.name}</li>
 					<li>region: {city.region_name}</li>
 					<li>country: {city.country_name}</li>
+					<li>lat: {city.lat}</li>
 				</ul>
 				<SuggestionCreateContainer placeType={city.place_type_name} placeId={city.id}/>
         <SuggestionFeed placeName={city.name} suggestions={city.suggestions} />

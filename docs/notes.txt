@@ -111,3 +111,20 @@ For later
 
 Question
 do you need to do the && hack for when something isnt loaded, or the empty object hack?
+
+
+State
+Maximum set of suggestions
+  Home - All
+  Single Place - Just that place
+  User Page - Just that user
+  Guidebook - Just in that guidebook
+
+  Single Suggestion - Not the feed
+
+Filters
+Food Att Acc High My Places My Friends, My Places
+
+
+
+Filters to work with that
