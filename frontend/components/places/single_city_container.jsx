@@ -6,6 +6,7 @@ import * as ACTIONS from '../../actions/place_actions.js';
 const mapStateToProps = state => {
   return {
     city: state.place.singleCity,
+    suggestions: state.suggestion.manySuggestions,
   }
 };
 

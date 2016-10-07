@@ -12,7 +12,7 @@ const defaultPlacesState = {
 const PlaceReducer = (oldState = defaultPlacesState, action) => {
   switch (action.type) {
     case ACTIONS.RECEIVE_SINGLE_CITY:
-      return Object.assign({}, oldState, { singleCity: action.city });
+      return Object.assign({}, oldState, { singleCity: action.city_info });
     default:
       return oldState;
   }

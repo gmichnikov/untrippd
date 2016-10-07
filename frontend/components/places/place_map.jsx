@@ -12,7 +12,7 @@ class PlaceMap extends React.Component {
     const mapDOMNode = this.refs.map;
 
     const mapOptions = {
-      center: {lat: this.props.lat, lng: this.props.lng},
+      center: {lat: this.props.lat || 0, lng: this.props.lng || 0},
       zoom: 11
     };
 

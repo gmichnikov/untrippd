@@ -10,7 +10,6 @@ class SuggestionFeedItem extends React.Component {
 
   render () {
     let s = this.props.suggestion;
-    console.log("feed item");
 
     return (
       <li>{s.author_display_name} made a suggestion about {this.props.placeName}: {s.body}</li>

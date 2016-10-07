@@ -24,9 +24,12 @@ class SingleCity extends React.Component {
 
   render () {
 		let city = this.props.city;
-		let mapComponent = city.id ? <PlaceMap lat={city.lat} lng={city.lng} /> : null
-    let fullMapLink = `http://maps.google.com/?ie=UTF8&hq=&ll=${city.lat},${city.lng}&z=13`;
+		let citySuggestions = this.props.suggestions;
 
+    if (!city) return <div></div>;
+
+		let mapComponent = <PlaceMap lat={city.lat} lng={city.lng} />;
+    let fullMapLink = `http://maps.google.com/?ie=UTF8&hq=&ll=${city.lat},${city.lng}&z=13`;
 
     return (
 			<section className="single-city">
@@ -36,7 +39,7 @@ class SingleCity extends React.Component {
 					<li>country: {city.country_name}</li>
 				</ul>
 				<SuggestionCreateContainer placeType={city.place_type_name} placeId={city.id}/>
-        <SuggestionFeed placeName={city.name} suggestions={city.suggestions} />
+        <SuggestionFeed placeName={city.name} suggestions={citySuggestions} />
 				{mapComponent}
 				<a href={fullMapLink} target="_blank">Full Map</a>
 			</section>

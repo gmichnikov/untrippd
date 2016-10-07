@@ -3,7 +3,8 @@ export const REQUEST_SINGLE_CITY = 'REQUEST_SINGLE_CITY';
 
 export const receiveSingleCity = city => ({
 	type: RECEIVE_SINGLE_CITY,
-	city
+	city_info: city.city_info,
+	suggestions: city.suggestions,
 });
 
 export const requestSingleCity = id => ({

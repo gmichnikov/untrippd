@@ -63,7 +63,7 @@ class SuggestionForm extends React.Component {
             checked={this.state.attraction}
             onClick={this.updateCheckbox('attraction')}
           />
-        <label>Accomodation?</label>
+        <label>Accommodation?</label>
           <input className="suggestion-form-checkbox"
             type="checkbox"
             checked={this.state.accommodation}

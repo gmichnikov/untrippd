@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+
 import App from './app.jsx';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
@@ -9,6 +10,7 @@ import HomeContainer from './home/home_container';
 import PlacesContainer from './places/places_container';
 import SingleCityContainer from './places/single_city_container';
 import SingleSuggestionContainer from './suggestions/single_suggestion_container';
+
 import * as PLACE_ACTIONS from '../actions/place_actions';
 import * as SUGGESTION_ACTIONS from '../actions/suggestion_actions';
 
