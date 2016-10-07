@@ -38,3 +38,12 @@
   display: inline;
   width: 20px;
 }
+
+.suggestion-feed li a {
+  color: blue;
+  cursor: pointer;
+}
+
+.suggestion-feed li a:hover {
+  text-decoration: underline;
+}

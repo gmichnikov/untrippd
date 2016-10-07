@@ -29,4 +29,9 @@ class Suggestion < ActiveRecord::Base
     suggestable.name
   end
 
+  def place_link
+    "/#{suggestable_type.tableize}/#{suggestable_id}"
+  end
+
+
 end
