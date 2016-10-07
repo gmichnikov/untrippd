@@ -64,25 +64,27 @@ class SuggestionFeed extends React.Component {
 			<section className="single-city-suggestion-feed">
         <section className="suggestion-feed-filter-section">
           <form className="suggestion-feed-filter-form">
-            <label>onlyFood?</label>
+            <p>Only show suggestions marked as highlights</p>
+              <Toggle
+                checked={this.state.onlyHighlight}
+                onClick={this.updateCheckbox('onlyHighlight')}
+              />
+            <br />
+            <p>Only show suggestions about ... </p>
+            <label>Food</label>
             <Toggle
               checked={this.state.onlyFood}
               onClick={this.updateCheckbox('onlyFood')}
             />
-          <label>onlyAttraction?</label>
+            <label>Attractions</label>
             <Toggle
               checked={this.state.onlyAttraction}
               onClick={this.updateCheckbox('onlyAttraction')}
             />
-          <label>onlyAccommodation?</label>
+            <label>Accommodations</label>
             <Toggle
               checked={this.state.onlyAccommodation}
               onClick={this.updateCheckbox('onlyAccommodation')}
-            />
-          <label>onlyHighlight?</label>
-            <Toggle
-              checked={this.state.onlyHighlight}
-              onClick={this.updateCheckbox('onlyHighlight')}
             />
           </form>
         </section>

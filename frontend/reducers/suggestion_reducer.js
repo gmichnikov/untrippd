@@ -10,7 +10,7 @@ const default_suggestion_state = {
 const SuggestionReducer = (oldState = default_suggestion_state, action) => {
   switch (action.type) {
     case ACTIONS.RECEIVE_NEW_SUGGESTION:
-      return Object.assign({}, oldState, { singleSuggestion: action.suggestion, suggestionErrors: [] });
+      return Object.assign({}, oldState, { manySuggestions: [action.suggestion, ...oldState.manySuggestions] });
     case ACTIONS.RECEIVE_SUGGESTION_ERRORS:
       return Object.assign({}, oldState, { singleSuggestion: null, suggestionErrors: action.suggestionErrors});
     case ACTIONS.RECEIVE_SINGLE_SUGGESTION:

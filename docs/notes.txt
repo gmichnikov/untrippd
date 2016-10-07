@@ -114,7 +114,6 @@ Food Att Acc High My Places My Friends, My Places
 
 
 Some next steps
-  Style suggestion components
   Seed suggestions
   Update/delete suggestions
   suggestions by country and region

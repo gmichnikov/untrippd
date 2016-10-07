@@ -33,6 +33,7 @@ class HomeMain extends React.Component {
 
     return (
       <div className="home-main">
+        <h2>Recent Activity</h2>
         <Notification isActive={this.state.notificationActive} message={messageText} />
         <SuggestionFeed suggestions={this.props.suggestions} />
       </div>

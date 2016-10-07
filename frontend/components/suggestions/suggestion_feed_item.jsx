@@ -14,7 +14,23 @@ class SuggestionFeedItem extends React.Component {
     let s = this.props.suggestion;
 
     return (
-      <li>{s.author_display_name} made a suggestion about <Link to={s.place_link}>{s.place_name}</Link>: {ReactEmoji.emojify(s.body)}</li>
+      <li className="suggestion-feed-item group">
+        <div className="feed-user-profile-photo"><Link to=""><img></img></Link></div>
+        <div className="feed-middle">
+          <div className="feed-item-title">
+            <Link to={s.place_link}>{s.author_display_name}</Link>
+            {" made a suggestion about "}
+            <Link to={s.place_link}>{s.place_name}</Link>
+          </div>
+          <div className="feed-item-body">
+            {ReactEmoji.emojify(s.body)}
+          </div>
+          <div className="feed-item-details">
+            5 minutes ago<Link to="">View Suggestion Details</Link>
+          </div>
+        </div>
+        <div className="feed-place-photo"><Link to=""><img></img></Link></div>
+      </li>
     );
   }
 }

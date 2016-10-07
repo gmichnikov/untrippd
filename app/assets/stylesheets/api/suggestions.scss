@@ -39,11 +39,77 @@
   width: 20px;
 }
 
-.suggestion-feed li a {
-  color: blue;
-  cursor: pointer;
-}
-
 .suggestion-feed li a:hover {
   text-decoration: underline;
+}
+
+.suggestion-feed-filter-form {
+  line-height: 1.5;
+  font-size: 14px;
+  border-top: 1px solid #000;
+  margin-top: 5px;
+  padding-top: 5px;
+}
+
+.suggestion-feed-filter-form label {
+  margin-left: 19px;
+}
+
+.suggestion-feed-item {
+  border-top: 1px solid #ccc;
+  margin-top: 10px;
+  padding: 20px 0;
+}
+
+.feed-user-profile-photo {
+  float: left;
+  width: 52px;
+  height: 52px;
+  background-color: red;
+  margin-right: 12px;
+}
+
+.feed-user-profile-photo a, .feed-user-profile-photo img, .feed-place-photo a, .feed-place-photo img {
+  margin: 0;
+  padding: 0;
+}
+
+.feed-middle {
+  float: left;
+  width: 526px;
+}
+
+.feed-middle a {
+  color: #cc6600;
+}
+
+.feed-place-photo {
+  float: left;
+  width: 42px;
+  height: 42px;
+  background-color: green;
+  margin-left: 20px;
+}
+
+.feed-item-title {
+  font-size: 18px;
+}
+
+.feed-item-body {
+  font-size: 18px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 10px 5px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.feed-item-details {
+  font-size: 12px;
+  color: #999;
+}
+
+.feed-item-details a {
+  display: inline-block;
+  margin-left: 10px;
 }

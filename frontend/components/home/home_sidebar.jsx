@@ -20,6 +20,7 @@ class HomeSidebar extends React.Component {
 
     return (
       <div className="home-sidebar">
+        I will be the sidebar!
       </div>
     )
   }
