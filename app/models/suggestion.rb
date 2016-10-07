@@ -25,4 +25,8 @@ class Suggestion < ActiveRecord::Base
 
   belongs_to :suggestable, polymorphic: true
 
+  def place_name
+    suggestable.name
+  end
+
 end

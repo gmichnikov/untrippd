@@ -2,6 +2,7 @@ import React from 'react';
 import { Router, Route, IndexRoute, hashHistory, Link } from 'react-router';
 import HeaderContainer from '../header_container';
 import { Notification } from 'react-notification';
+import SuggestionFeed from '../suggestions/suggestion_feed';
 
 class Home extends React.Component {
 
@@ -17,6 +18,8 @@ class Home extends React.Component {
       this.setState({notificationActive: false});
       this.props.changeWelcomeNotification(null);
     }, 2000);
+
+    this.props.requestAllSuggestions();
   }
 
   componentWillUnmount() {
@@ -27,13 +30,13 @@ class Home extends React.Component {
   render() {
 
     let messageText = this.props.welcomeNotificationStatus ? this.props.welcomeNotificationStatus : "";
-    console.log("active" , this.props.welcomeNotificationStatus, this.state.notificationActive);
 
     return (
       <div>
         <Notification isActive={this.state.notificationActive} message={messageText} />
         <h1>Home Page</h1>
         <Link to="/places">Places</Link>
+        <SuggestionFeed suggestions={this.props.suggestions} />
       </div>
     )
   }

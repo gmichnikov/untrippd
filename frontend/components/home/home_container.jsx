@@ -1,17 +1,20 @@
 import { connect } from 'react-redux';
 import Home from './home';
-import * as ACTIONS from '../../actions/session_actions.js';
+import * as SESSION_ACTIONS from '../../actions/session_actions.js';
+import * as SUGGESTION_ACTIONS from '../../actions/suggestion_actions.js';
 
 const mapStateToProps = state => {
   return {
     currentUser: state.session.currentUser,
     welcomeNotificationStatus: state.session.welcomeNotificationStatus,
+    suggestions: state.suggestion.manySuggestions,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    changeWelcomeNotification: (status) => dispatch(ACTIONS.changeWelcomeNotification(status)),
+    changeWelcomeNotification: (status) => dispatch(SESSION_ACTIONS.changeWelcomeNotification(status)),
+    requestAllSuggestions: () => dispatch(SUGGESTION_ACTIONS.requestAllSuggestions())
   };
 };
 

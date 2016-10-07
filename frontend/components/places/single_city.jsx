@@ -39,7 +39,7 @@ class SingleCity extends React.Component {
 					<li>country: {city.country_name}</li>
 				</ul>
 				<SuggestionCreateContainer placeType={city.place_type_name} placeId={city.id}/>
-        <SuggestionFeed placeName={city.name} suggestions={citySuggestions} />
+        <SuggestionFeed suggestions={citySuggestions} />
 				{mapComponent}
 				<a href={fullMapLink} target="_blank">Full Map</a>
 			</section>

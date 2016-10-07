@@ -16,3 +16,12 @@ export const fetchSingleSuggestion = (id, success, error) => {
     error: error,
 	});
 };
+
+export const fetchAllSuggestions = (success, error) => {
+	$.ajax({
+		method: 'GET',
+  	url: `/api/suggestions`,
+    success: success,
+    error: error,
+	});
+};

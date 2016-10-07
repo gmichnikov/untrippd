@@ -12,7 +12,7 @@ class SuggestionFeedItem extends React.Component {
     let s = this.props.suggestion;
 
     return (
-      <li>{s.author_display_name} made a suggestion about {this.props.placeName}: {s.body}</li>
+      <li>{s.author_display_name} made a suggestion about {s.place_name}: {s.body}</li>
     );
   }
 }

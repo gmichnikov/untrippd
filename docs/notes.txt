@@ -100,13 +100,11 @@ Redux cycle
 
 
 Some next steps
-  ask how to make sure the map reloads each time
 
 For later
   add more styling to login buttons
   Seed users
   click to see place on a map (wiki?)
-  definitely show map on show page
   create a place controller action/route for adding places, for my account (although that would make it hard to keep dev/prod aligned)
 
 State
@@ -116,13 +114,14 @@ Maximum set of suggestions
   User Page - Just that user
   Guidebook - Just in that guidebook
 
-  Grab all of the suggestions, the write actions to move them to the suggestions reducer
-
   Single Suggestion - Not the feed
 
 Filters
 Food Att Acc High My Places My Friends, My Places
 
 
-
-Filters to work with that
+Style suggestion components
+Seed suggestions
+Update/delete suggestions
+suggestions by country and region
+controller/view for region

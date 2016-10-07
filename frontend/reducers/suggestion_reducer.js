@@ -17,6 +17,8 @@ const SuggestionReducer = (oldState = default_suggestion_state, action) => {
       return Object.assign({}, oldState, { singleSuggestion: action.suggestion });
     case PLACE_ACTIONS.RECEIVE_SINGLE_CITY:
       return Object.assign({}, oldState, { manySuggestions: action.suggestions });
+    case ACTIONS.RECEIVE_ALL_SUGGESTIONS:
+      return Object.assign({}, { manySuggestions: action.suggestions });
     default:
       return oldState;
   }

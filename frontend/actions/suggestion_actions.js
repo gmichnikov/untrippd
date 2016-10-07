@@ -3,6 +3,9 @@ export const REQUEST_SINGLE_SUGGESTION = 'REQUEST_SINGLE_SUGGESTION';
 export const RECEIVE_SINGLE_SUGGESTION = 'RECEIVE_SINGLE_SUGGESTION';
 export const RECEIVE_NEW_SUGGESTION = 'RECEIVE_NEW_SUGGESTION';
 export const RECEIVE_SUGGESTION_ERRORS = 'RECEIVE_SUGGESTION_ERRORS';
+export const REQUEST_ALL_SUGGESTIONS = 'REQUEST_ALL_SUGGESTIONS';
+export const RECEIVE_ALL_SUGGESTIONS = 'RECEIVE_ALL_SUGGESTIONS';
+
 
 export const createSuggestion = (suggestion) => {
   return {
@@ -25,12 +28,21 @@ export const receiveSuggestionErrors = (suggestionErrors) => {
   };
 };
 
-export const receiveSingleSuggestion = suggestion => ({
+export const receiveSingleSuggestion = (suggestion) => ({
 	type: RECEIVE_SINGLE_SUGGESTION,
 	suggestion
 });
 
-export const requestSingleSuggestion = id => ({
+export const requestSingleSuggestion = (id) => ({
 	type: REQUEST_SINGLE_SUGGESTION,
 	id
+});
+
+export const requestAllSuggestions = () => ({
+  type: REQUEST_ALL_SUGGESTIONS,
+});
+
+export const receiveAllSuggestions = (suggestions) => ({
+	type: RECEIVE_ALL_SUGGESTIONS,
+  suggestions
 });

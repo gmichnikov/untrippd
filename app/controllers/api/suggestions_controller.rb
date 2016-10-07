@@ -13,6 +13,11 @@ class Api::SuggestionsController < ApplicationController
     render :show
   end
 
+  def index
+    @suggestions = Suggestion.all
+    render :index
+  end
+
   def suggestion_params
     params.require(:suggestion).permit(:body, :food, :attraction, :accommodation, :highlight, :suggestable_id, :suggestable_type)
   end
