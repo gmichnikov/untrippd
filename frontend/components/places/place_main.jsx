@@ -39,15 +39,10 @@ class PlaceMain extends React.Component {
 
     if (!city) return <div></div>;
 
-		let mapComponent = <PlaceMap lat={city.lat} lng={city.lng} />;
-    let fullMapLink = `http://maps.google.com/?ie=UTF8&hq=&ll=${city.lat},${city.lng}&z=13`;
-
     return (
 			<section className="place-main">
         <PlaceMainTop city={city} />
         <SuggestionFeed suggestions={citySuggestions} />
-				{mapComponent}
-				<a href={fullMapLink} target="_blank">Full Map</a>
         <SuggestionCreateContainer placeType={city.place_type_name} placeId={city.id}/>
 			</section>
     );

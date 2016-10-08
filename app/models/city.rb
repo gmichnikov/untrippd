@@ -22,4 +22,23 @@ class City < ActiveRecord::Base
 
   alias_attribute :state, :region
 
+  def secondary_place
+    if country.name == "United States"
+      "#{region.name}, USA"
+    elsif country.name == "United Kingdom"
+      "#{region.name}, UK"
+    else
+      country.name
+    end
+  end
+
+  def secondary_link
+    if country.name == "United States" || country.name == "United Kingdom"
+      "/regions/#{region_id}"
+    else
+      "/countries/#{country.id}"
+    end
+  end
+
+
 end

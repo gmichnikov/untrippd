@@ -1,0 +1,78 @@
+.place-main-top {
+  background-color: white;
+  width: 652px;
+  padding: 16px 24px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.place-main-top-left {
+  float: left;
+}
+
+.place-main-top-map {
+  float: right;
+}
+
+.place-main-top-image-and-info {
+
+}
+
+.place-main-top-image {
+  width: 96px;
+  height: 96px;
+  background-image: image-url("usa-96.png");
+  background-size: 96px 96px;
+  float: left;
+  margin-right: 12px;
+}
+
+.place-main-top-info {
+  float: left;
+  width: 344px;
+}
+
+.place-main-top-info h1 {
+  font-size: 31px;
+  margin-bottom: 3px;
+}
+
+.place-main-top-info a {
+  font-size: 19px;
+  color: #cc6600;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.place-main-top-info p {
+  font-size: 15px;
+  color: #888;
+}
+
+.place-main-top-buttons {
+  position: absolute;
+  bottom: 16px;
+}
+
+.place-main-top-write, .place-main-top-book {
+  width: 52px;
+  height: 52px;
+  background-size: 52px 52px;
+  float: left;
+  margin-right: 24px;
+}
+
+.place-main-top-write {
+  background-image: image-url("pencil-64.png");
+}
+
+.place-main-top-book {
+  background-image: image-url("book-plus-32.png");
+}
+
+
+
+#place-map-container {
+  width: 200px;
+  height: 200px;
+}
