@@ -26,54 +26,89 @@ ActiveRecord::Base.transaction do
   #   u.save
   # end
 
+
+  10.times do
+    f = Faker::Name.first_name
+    l = Faker::Name.last_name
+    u = f.downcase + "." + l.downcase
+    User.create(username: u, password: f + "password", confirm_password: f + "password", email: "#{u}@example.org", first_name: f, last_name: l )
+  end
+
+
 #
-#   PlaceType.create!(name: 'country')
-#   PlaceType.create!(name: 'region')
-#   PlaceType.create!(name: 'city')
+  PlaceType.create!(name: 'country')
+  PlaceType.create!(name: 'region')
+  PlaceType.create!(name: 'city')
 #
 
 
 # Country Import
-  # csv_text = File.read(Rails.root.join('lib', 'seeds', 'country_seeds.csv'))
-  # csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
-  #
-  # csv.each do |row|
-  #   c = Country.new
-  #   c.name = row['name']
-  #   c.lat = row['lat']
-  #   c.lng = row['lng']
-  #   c.place_type_id = row['place_type_id']
-  #   c.save
-  # end
+  csv_text = File.read(Rails.root.join('lib', 'seeds', 'country_seeds.csv'))
+  csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+
+  csv.each do |row|
+    c = Country.new
+    c.name = row['name']
+    c.lat = row['lat']
+    c.lng = row['lng']
+    c.place_type_id = row['place_type_id']
+    c.save
+  end
 
 
   # Region Import
-  # csv_text = File.read(Rails.root.join('lib', 'seeds', 'region_seeds.csv'))
-  # csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
-  #
-  # csv.each do |row|
-  #   r = Region.new
-  #   r.name = row['name']
-  #   r.lat = row['lat']
-  #   r.lng = row['lng']
-  #   r.country_id = row['country_id']
-  #   r.place_type_id = row['place_type_id']
-  #   r.save
-  # end
+  csv_text = File.read(Rails.root.join('lib', 'seeds', 'region_seeds.csv'))
+  csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+
+  csv.each do |row|
+    r = Region.new
+    r.name = row['name']
+    r.lat = row['lat']
+    r.lng = row['lng']
+    r.country_id = row['country_id']
+    r.place_type_id = row['place_type_id']
+    r.save
+  end
 
   # City Import
-  # csv_text = File.read(Rails.root.join('lib', 'seeds', 'city_seeds.csv'))
-  # csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
-  #
-  # csv.each do |row|
-  #   c = City.new
-  #   c.name = row['name']
-  #   c.lat = row['lat']
-  #   c.lng = row['lng']
-  #   c.region_id = row['region_id']
-  #   c.place_type_id = row['place_type_id']
-  #   c.save
-  # end
+  csv_text = File.read(Rails.root.join('lib', 'seeds', 'city_seeds.csv'))
+  csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+
+  csv.each do |row|
+    c = City.new
+    c.name = row['name']
+    c.lat = row['lat']
+    c.lng = row['lng']
+    c.region_id = row['region_id']
+    c.place_type_id = row['place_type_id']
+    c.save
+  end
+
+
+  #  author_id        :integer          not null
+  #  body             :text             not null
+  #  food             :boolean          default(FALSE)
+  #  attraction       :boolean          default(FALSE)
+  #  accommodation    :boolean          default(FALSE)
+  #  highlight        :boolean          default(FALSE)
+  #  suggestable_id   :integer
+  #  suggestable_type :string
+
+  usa = Country.find(220)
+  mass = Region.find(1305)
+  oregon = Region.find(1567)
+  eugene = City.find(711)
+  hood_river = City.find(927)
+  portland = City.find(1829)
+  belmont = City.find(264)
+  boston = City.find(343)
+  brookline = City.find(371)
+
+  40.times do
+    Suggestion.create(author_id: rand(3..10), body: Faker::Hipster.paragraph(2), food: [false, true].sample, attraction: [false, true].sample, accommodation: [false, true].sample, highlight: [false, true].sample, suggestable: [usa, mass, oregon, eugene, hood_river, portland, belmont, boston, brookline].sample)
+  end
+
+
 
 
 end

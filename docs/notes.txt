@@ -116,11 +116,8 @@ Food Att Acc High My Places My Friends, My Places
 Some next steps
   Seed suggestions
   Update/delete suggestions
-  suggestions by country and region
-  controller/view for region
+  adjust zoom on map depending on place_type
 
 For later
   add more styling to login buttons
-  Seed users
-  click to see place on a map (wiki?)
   create a place controller action/route for adding places, for my account (although that would make it hard to keep dev/prod aligned)
