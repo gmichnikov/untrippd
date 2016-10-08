@@ -19,10 +19,10 @@ import * as SESSION_ACTIONS from './actions/session_actions';
 // window.receiveErrors = SESSION_ACTIONS.receiveErrors;
 
 // testing session middleware
-window.signup = SESSION_ACTIONS.signup;
-window.login = SESSION_ACTIONS.login;
-window.logout = SESSION_ACTIONS.logout;
-window.localStorage.setItem("welcomeNote", "false");
+// window.signup = SESSION_ACTIONS.signup;
+// window.login = SESSION_ACTIONS.login;
+// window.logout = SESSION_ACTIONS.logout;
+// window.localStorage.setItem("welcomeNote", "false");
 
 document.addEventListener('DOMContentLoaded', () => {
 

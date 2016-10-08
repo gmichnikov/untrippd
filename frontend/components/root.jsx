@@ -8,7 +8,7 @@ import SignupFormContainer from './session/signup_form_container';
 import LandingPageContainer from './session/landing_page_container';
 import Home from './home/home';
 import Place from './places/place';
-import SearchContainer from './search_container';
+import SearchContainer from './search/search_container';
 import SingleSuggestionContainer from './suggestions/single_suggestion_container';
 
 import * as PLACE_ACTIONS from '../actions/place_actions';

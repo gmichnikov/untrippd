@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :regions, only: [:show]
     resources :cities, only: [:show]
     resources :suggestions, only: [:create, :show, :index]
+    resources :search, only: [:index]
     resource :user, only: [:create, :show]
     resource :session, only: [:create, :destroy]
   end

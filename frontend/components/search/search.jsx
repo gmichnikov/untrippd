@@ -2,31 +2,31 @@ import React from 'react';
 import Autosuggest from 'react-autosuggest';
 
 // Imagine you have a list of languages that you'd like to autosuggest.
-const languages = [
-  {
-    name: 'C',
-    year: 1972
-  },
-  {
-    name: 'Clojure',
-    year: 1972
-  },
-  {
-    name: 'C#',
-    year: 1972
-  },
-  {
-    name: 'Elm',
-    year: 2012
-  }
-];
+// const languages = [
+//   {
+//     name: 'C',
+//     year: 1972
+//   },
+//   {
+//     name: 'Clojure',
+//     year: 1972
+//   },
+//   {
+//     name: 'C#',
+//     year: 1972
+//   },
+//   {
+//     name: 'Elm',
+//     year: 2012
+//   }
+// ];
 
 // Teach Autosuggest how to calculate suggestions for any given input value.
-const getSuggestions = value => {
+const getSuggestions = (value, searchPlaces) => {
   const inputValue = value.trim().toLowerCase();
   const inputLength = inputValue.length;
 
-  return inputLength === 0 ? [] : languages.filter(lang =>
+  return inputLength === 0 ? [] : searchPlaces.filter(lang =>
     lang.name.toLowerCase().slice(0, inputLength) === inputValue
   );
 };
@@ -59,7 +59,16 @@ class Search extends React.Component {
     };
   }
 
+  componentDidMount() {
+    console.log("mounted");
+    this.props.requestAllSearchPlaces();
+  }
+
   render() {
+
+    let searchPlaces = this.props.searchPlaces;
+    if (!searchPlaces) return null;
+
 
     let onChange = (event, { newValue }) => {
       this.setState({
@@ -71,7 +80,7 @@ class Search extends React.Component {
     // You already implemented this logic above, so just use it.
     let onSuggestionsFetchRequested = ({ value }) => {
       this.setState({
-        suggestions: getSuggestions(value)
+        suggestions: getSuggestions(value, searchPlaces)
       });
     };
 
