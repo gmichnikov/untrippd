@@ -1,6 +1,8 @@
 import React from 'react';
 import PlaceMap from './place_map';
 import { Link } from 'react-router';
+import ReactTooltip from 'react-tooltip'
+
 
 class PlaceMainTop extends React.Component {
 
@@ -28,8 +30,9 @@ class PlaceMainTop extends React.Component {
             </div>
           </div>
           <div className="place-main-top-buttons group">
-            <div className="place-main-top-write"></div>
-            <div className="place-main-top-book"></div>
+            <div className="place-main-top-write" data-tip="Write a Suggestion"></div>
+            <div className="place-main-top-book" data-tip="Add to Guidebook"></div>
+            <ReactTooltip />
           </div>
         </section>
         <section className="place-main-top-map">
