@@ -23,8 +23,6 @@ class SuggestionFeed extends React.Component {
 
 
   render () {
-    console.log("rendering feed", this.state.onlyFood);
-
     if (!this.props.suggestions) {
       return null;
     }
@@ -61,7 +59,8 @@ class SuggestionFeed extends React.Component {
 
 
     return (
-			<section className="single-city-suggestion-feed">
+			<section className="suggestion-feed">
+        <h2>Recent Activity</h2>
         <section className="suggestion-feed-filter-section">
           <form className="suggestion-feed-filter-form">
             <p>Only show suggestions marked as highlights</p>
@@ -88,7 +87,7 @@ class SuggestionFeed extends React.Component {
             />
           </form>
         </section>
-				<ul className="suggestion-feed">
+				<ul className="suggestion-feed-items">
           {feed}
 				</ul>
 			</section>

@@ -114,12 +114,10 @@ Food Att Acc High My Places My Friends, My Places
 
 
 Some next steps
-  Seed suggestions
   Update/delete suggestions
   adjust zoom on map depending on place_type
 
 For later
   add more styling to login buttons
-  create a place controller action/route for adding places, for my account (although that would make it hard to keep dev/prod aligned)
 
 Figure out a photo strategy, for checkins, users, places

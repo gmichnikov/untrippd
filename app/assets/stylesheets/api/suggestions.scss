@@ -3,6 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.suggestion-feed {
+  background-color: white;
+  width: 652px;
+  padding: 24px;
+}
+
 .suggestion-form-section {
 }
 
@@ -40,7 +46,7 @@
   margin-bottom: -2px;
 }
 
-.suggestion-feed li a:hover {
+.suggestion-feed-items li a:hover {
   text-decoration: underline;
 }
 

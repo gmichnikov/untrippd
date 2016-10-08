@@ -7,8 +7,7 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import LandingPageContainer from './session/landing_page_container';
 import Home from './home/home';
-import PlacesContainer from './places/places_container';
-import SingleCityContainer from './places/single_city_container';
+import Place from './places/place';
 import SingleSuggestionContainer from './suggestions/single_suggestion_container';
 
 import * as PLACE_ACTIONS from '../actions/place_actions';
@@ -40,10 +39,9 @@ const Root = ({ store }) => {
         <Route path="/login" component={LoginFormContainer} onEnter={redirectIfLoggedIn} />
         <Route path="/home" component={App}>
           <IndexRoute component={Home} />
-          <Route path="/places" component={PlacesContainer} />
-          <Route path="/cities/:cityId" component={SingleCityContainer} onEnter={requestSingleCityOnEnter} />
-          <Route path="/countries/:cityId" component={SingleCityContainer} />
-          <Route path="/regions/:cityId" component={SingleCityContainer} />
+          <Route path="/cities/:cityId" component={Place} onEnter={requestSingleCityOnEnter} />
+          <Route path="/countries/:cityId" component={Place} />
+          <Route path="/regions/:cityId" component={Place} />
           <Route path="/suggestions/:suggestionId" component={SingleSuggestionContainer} onEnter={requestSingleSuggestionOnEnter} />
         </Route>
         <Route path="/" component={LandingPageContainer} onEnter={redirectIfLoggedIn} />

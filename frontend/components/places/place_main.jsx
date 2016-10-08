@@ -4,7 +4,7 @@ import PlaceMap from './place_map';
 import { Link } from 'react-router';
 import SuggestionFeed from '../suggestions/suggestion_feed';
 
-class SingleCity extends React.Component {
+class PlaceMain extends React.Component {
 
   constructor(props) {
     super(props);
@@ -19,15 +19,16 @@ class SingleCity extends React.Component {
   }
 
   componentDidMount() {
-    let place_type = this.getPlaceType(this.props.location.pathname);
-    this.props.requestSingleCity(place_type, this.props.params.cityId);
+    let place_type = this.getPlaceType(this.props.pathname);
+    this.props.requestSingleCity(place_type, this.props.cityId);
   }
 
   componentWillReceiveProps(nextProps) {
-    let place_type = this.getPlaceType(nextProps.location.pathname);
+    console.log("place main props", nextProps);
+    let place_type = this.getPlaceType(nextProps.pathname);
 
-    if (nextProps.location.pathname !== this.props.location.pathname) {
-      this.props.requestSingleCity(place_type, nextProps.params.cityId);
+    if (nextProps.pathname !== this.props.pathname) {
+      this.props.requestSingleCity(place_type, nextProps.cityId);
     }
   }
 
@@ -41,18 +42,18 @@ class SingleCity extends React.Component {
     let fullMapLink = `http://maps.google.com/?ie=UTF8&hq=&ll=${city.lat},${city.lng}&z=13`;
 
     return (
-			<section className="single-city">
+			<section className="place-main">
 				<ul>
 					<li>place type: {city.place_type_name}</li>
 					<li>name: {city.name}</li>
 				</ul>
-				<SuggestionCreateContainer placeType={city.place_type_name} placeId={city.id}/>
         <SuggestionFeed suggestions={citySuggestions} />
 				{mapComponent}
 				<a href={fullMapLink} target="_blank">Full Map</a>
+        <SuggestionCreateContainer placeType={city.place_type_name} placeId={city.id}/>
 			</section>
     );
   }
 }
 
-export default SingleCity;
+export default PlaceMain;

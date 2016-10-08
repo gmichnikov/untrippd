@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import SingleCity from './single_city';
+import PlaceMain from './place_main';
 import * as ACTIONS from '../../actions/place_actions.js';
 
 const mapStateToProps = state => {
@@ -18,4 +18,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SingleCity);
+)(PlaceMain);
