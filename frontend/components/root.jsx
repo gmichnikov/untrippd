@@ -42,6 +42,8 @@ const Root = ({ store }) => {
           <IndexRoute component={Home} />
           <Route path="/places" component={PlacesContainer} />
           <Route path="/cities/:cityId" component={SingleCityContainer} onEnter={requestSingleCityOnEnter} />
+          <Route path="/countries/:cityId" component={SingleCityContainer} />
+          <Route path="/regions/:cityId" component={SingleCityContainer} />
           <Route path="/suggestions/:suggestionId" component={SingleSuggestionContainer} onEnter={requestSingleSuggestionOnEnter} />
         </Route>
         <Route path="/" component={LandingPageContainer} onEnter={redirectIfLoggedIn} />

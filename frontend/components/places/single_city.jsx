@@ -12,14 +12,22 @@ class SingleCity extends React.Component {
     };
   }
 
+  getPlaceType(pathname) {
+    let re = /\/(.*)\//;
+    let matchesArr = re.exec(pathname);
+    return matchesArr[1];
+  }
+
   componentDidMount() {
-    this.props.requestSingleCity(this.props.params.cityId);
+    let place_type = this.getPlaceType(this.props.location.pathname);
+    this.props.requestSingleCity(place_type, this.props.params.cityId);
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log("params", this.props);
-    if (nextProps.params.cityId !== this.props.params.cityId) {
-      this.props.requestSingleCity(nextProps.params.cityId);
+    let place_type = this.getPlaceType(nextProps.location.pathname);
+
+    if (nextProps.location.pathname !== this.props.location.pathname) {
+      this.props.requestSingleCity(place_type, nextProps.params.cityId);
     }
   }
 

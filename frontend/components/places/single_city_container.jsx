@@ -1,4 +1,3 @@
-
 import { connect } from 'react-redux';
 import SingleCity from './single_city';
 import * as ACTIONS from '../../actions/place_actions.js';
@@ -12,7 +11,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-      requestSingleCity: (id) => dispatch(ACTIONS.requestSingleCity(id)),
+      requestSingleCity: (place_type, id) => dispatch(ACTIONS.requestSingleCity(place_type, id)),
     };
 };
 

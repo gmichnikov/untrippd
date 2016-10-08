@@ -1,4 +1,4 @@
-json.region_info do
+json.city_info do
   json.extract!(region, :id, :name, :lat, :lng, :place_type_id, :country_id)
   json.place_type_name "Region"
   json.country_name region.country.name

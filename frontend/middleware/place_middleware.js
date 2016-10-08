@@ -8,7 +8,7 @@ export default ({ getState, dispatch }) => next => action => {
 
   switch(action.type) {
     case ACTIONS.REQUEST_SINGLE_CITY:
-      API.fetchSingleCity(action.id, receiveSingleCitySuccess);
+      API.fetchSingleCity(action.place_type, action.id, receiveSingleCitySuccess);
       return next(action);
     default:
       return next(action);

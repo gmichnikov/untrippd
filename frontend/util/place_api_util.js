@@ -1,7 +1,7 @@
-export const fetchSingleCity = (id, success, error) => {
+export const fetchSingleCity = (place_type, id, success, error) => {
 	$.ajax({
 		method: 'GET',
-  	url: `/api/cities/${id}`,
+  	url: `/api/${place_type}/${id}`,
     success: success,
     error: error,
 	});
