@@ -8,6 +8,7 @@ import SignupFormContainer from './session/signup_form_container';
 import LandingPageContainer from './session/landing_page_container';
 import Home from './home/home';
 import Place from './places/place';
+import SearchContainer from './search_container';
 import SingleSuggestionContainer from './suggestions/single_suggestion_container';
 
 import * as PLACE_ACTIONS from '../actions/place_actions';
@@ -39,6 +40,7 @@ const Root = ({ store }) => {
         <Route path="/login" component={LoginFormContainer} onEnter={redirectIfLoggedIn} />
         <Route path="/home" component={App}>
           <IndexRoute component={Home} />
+          <Route path="/search" component={SearchContainer} />
           <Route path="/cities/:cityId" component={Place} onEnter={requestSingleCityOnEnter} />
           <Route path="/countries/:cityId" component={Place} />
           <Route path="/regions/:cityId" component={Place} />
