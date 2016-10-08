@@ -20,4 +20,16 @@ class Region < ActiveRecord::Base
   has_many :cities
   has_many :suggestions, as: :suggestable
 
+  def cities_suggestions
+    all = []
+    cities.each do |city|
+      all += city.suggestions
+    end
+    all
+  end
+
+  def all_suggestions
+    cities_suggestions + suggestions
+  end
+
 end

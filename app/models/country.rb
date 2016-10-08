@@ -24,4 +24,16 @@ class Country < ActiveRecord::Base
     name == "United States" || name == "United Kingdom"
   end
 
+  def regions_suggestions
+    all = []
+    regions.each do |region|
+      all += region.all_suggestions
+    end
+    all
+  end
+
+  def all_suggestions
+    regions_suggestions + suggestions
+  end
+
 end

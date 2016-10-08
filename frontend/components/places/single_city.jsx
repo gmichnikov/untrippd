@@ -17,6 +17,7 @@ class SingleCity extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    console.log("params", this.props);
     if (nextProps.params.cityId !== this.props.params.cityId) {
       this.props.requestSingleCity(nextProps.params.cityId);
     }
