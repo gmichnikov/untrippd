@@ -3,6 +3,6 @@ json.city_info do
   json.place_type_name "Region"
   json.country_name region.country.name
 end
-json.suggestions region.all_suggestions do |suggestion|
+json.suggestions region.all_suggestions.sort_by(&:created_at).reverse do |suggestion|
   json.partial!('api/suggestions/suggestion', suggestion: suggestion)
 end

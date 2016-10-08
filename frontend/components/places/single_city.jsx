@@ -43,9 +43,8 @@ class SingleCity extends React.Component {
     return (
 			<section className="single-city">
 				<ul>
-					<li>city: {city.name}</li>
-					<li>region: {city.region_name}</li>
-					<li>country: {city.country_name}</li>
+					<li>place type: {city.place_type_name}</li>
+					<li>name: {city.name}</li>
 				</ul>
 				<SuggestionCreateContainer placeType={city.place_type_name} placeId={city.id}/>
         <SuggestionFeed suggestions={citySuggestions} />
