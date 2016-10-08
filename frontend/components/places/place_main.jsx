@@ -1,6 +1,7 @@
 import React from 'react';
 import SuggestionCreateContainer from '../suggestions/suggestion_create_container';
 import PlaceMap from './place_map';
+import PlaceMainTop from './place_main_top';
 import { Link } from 'react-router';
 import SuggestionFeed from '../suggestions/suggestion_feed';
 
@@ -43,10 +44,7 @@ class PlaceMain extends React.Component {
 
     return (
 			<section className="place-main">
-				<ul>
-					<li>place type: {city.place_type_name}</li>
-					<li>name: {city.name}</li>
-				</ul>
+        <PlaceMainTop city={city} />
         <SuggestionFeed suggestions={citySuggestions} />
 				{mapComponent}
 				<a href={fullMapLink} target="_blank">Full Map</a>

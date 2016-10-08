@@ -116,6 +116,7 @@ Food Att Acc High My Places My Friends, My Places
 Some next steps
   Update/delete suggestions
   adjust zoom on map depending on place_type
+  add star to highlight post, add images that represent food/accom/attr/highlight
 
 For later
   add more styling to login buttons
