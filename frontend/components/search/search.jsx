@@ -24,11 +24,19 @@ import Autosuggest from 'react-autosuggest';
 // Teach Autosuggest how to calculate suggestions for any given input value.
 const getSuggestions = (value, searchPlaces) => {
   const inputValue = value.trim().toLowerCase();
+  console.log("value1", inputValue.length);
   const inputLength = inputValue.length;
 
-  return inputLength === 0 ? [] : searchPlaces.filter(lang =>
-    lang.name.toLowerCase().slice(0, inputLength) === inputValue
-  );
+  return searchPlaces.map((section) => {
+    return {
+      title: section.title,
+      places: section.places.filter(place =>
+        place.name.toLowerCase().slice(0, inputLength) === inputValue
+      ),
+    }
+  });
+
+
 };
 
 // When suggestion is clicked, Autosuggest needs to populate the input field
@@ -68,6 +76,7 @@ class Search extends React.Component {
 
     let searchPlaces = this.props.searchPlaces;
     if (!searchPlaces) return null;
+    console.log("sp", searchPlaces);
 
 
     let onChange = (event, { newValue }) => {
@@ -86,6 +95,7 @@ class Search extends React.Component {
 
     // determines when to start showing results
     let shouldRenderSuggestions = function(value) {
+      console.log("value2", value.trim().length);
       return value.trim().length > 1;
     }
 
@@ -95,6 +105,19 @@ class Search extends React.Component {
         suggestions: []
       });
     };
+
+    let renderSectionTitle = function(section) {
+      console.log("render section title", section);
+      if (section.places.length === 0) return null;
+      return (
+        <strong>{section.title}</strong>
+      );
+    }
+
+    let getSectionSuggestions = function(section) {
+      console.log("get section suggestions", section);
+      return section.places;
+    }
 
     const { value, suggestions } = this.state;
 
@@ -108,12 +131,15 @@ class Search extends React.Component {
     // Finally, render it!
     return (
       <Autosuggest
+        multiSection={true}
         suggestions={suggestions}
         onSuggestionsFetchRequested={onSuggestionsFetchRequested}
         onSuggestionsClearRequested={onSuggestionsClearRequested}
         getSuggestionValue={getSuggestionValue}
         shouldRenderSuggestions={shouldRenderSuggestions}
         renderSuggestion={renderSuggestion}
+        renderSectionTitle={renderSectionTitle}
+        getSectionSuggestions={getSectionSuggestions}
         inputProps={inputProps}
       />
     );
