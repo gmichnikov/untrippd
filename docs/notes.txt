@@ -134,6 +134,8 @@ Some next steps
     hotel -accom
     local dining
 
+User data list for profile top/side
+  reviews, places reviewed, followed users, followers, guidebooks, followed places
 
 
 For later

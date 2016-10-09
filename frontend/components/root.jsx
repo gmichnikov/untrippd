@@ -53,3 +53,6 @@ const Root = ({ store }) => {
 };
 
 export default Root;
+
+// <Route path="/users/:userId" component={User} />
+// <Route path="/users/:userId/followed-users" component={FollowedUsers} />
