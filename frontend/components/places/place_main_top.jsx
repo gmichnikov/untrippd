@@ -17,6 +17,8 @@ class PlaceMainTop extends React.Component {
 
     let mapComponent = <PlaceMap lat={city.lat} lng={city.lng} />;
     let fullMapLink = `http://maps.google.com/?ie=UTF8&hq=&ll=${city.lat},${city.lng}&z=13`;
+    let writeText = `Add a suggestion about ${city.name}`;
+    let followText = `Add ${city.name} to My Places`;
 
     return (
 			<section className="place-main-top group">
@@ -30,8 +32,8 @@ class PlaceMainTop extends React.Component {
             </div>
           </div>
           <div className="place-main-top-buttons group">
-            <div className="place-main-top-write" data-tip="Write a Suggestion"></div>
-            <div className="place-main-top-book" data-tip="Add to Guidebook"></div>
+            <div className="place-main-top-write" data-tip={writeText}></div>
+            <div className="place-main-top-book" data-tip={followText}></div>
             <ReactTooltip />
           </div>
         </section>

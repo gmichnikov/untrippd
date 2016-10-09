@@ -117,12 +117,31 @@ Some next steps
   Update/delete suggestions
   adjust zoom on map depending on place_type
   add star to highlight post, add images that represent food/accom/attr/highlight
-  in search, add region/country names to cities
-  add states to search, add correct links to search
-  change search to respond to any part of word
   change search to return places by num reviews
+  Need to have an option to remove belmont from my places
+  icons
+    media
+    wallpaper
+    border color
+    mode edit
+    photo library
+    person Add
+    star - highlight
+    visibility - attraction
+    favorite for liking
+    highlight off
+    highlight
+    hotel -accom
+    local dining
+
+
 
 For later
+  same search component in header and search, styled differently?
   add more styling to login buttons
+  save all visible reviews to a guidebook
 
 Figure out a photo strategy, for checkins, users, places
+
+user place history, like beer History
+try username routes
