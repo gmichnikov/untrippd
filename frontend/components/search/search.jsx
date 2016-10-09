@@ -1,5 +1,6 @@
 import React from 'react';
 import Autosuggest from 'react-autosuggest';
+import { Link } from 'react-router';
 
 // Imagine you have a list of languages that you'd like to autosuggest.
 // const languages = [
@@ -24,14 +25,14 @@ import Autosuggest from 'react-autosuggest';
 // Teach Autosuggest how to calculate suggestions for any given input value.
 const getSuggestions = (value, searchPlaces) => {
   const inputValue = value.trim().toLowerCase();
-  console.log("value1", inputValue.length);
   const inputLength = inputValue.length;
 
   return searchPlaces.map((section) => {
     return {
       title: section.title,
       places: section.places.filter(place =>
-        place.name.toLowerCase().slice(0, inputLength) === inputValue
+        // place.name.toLowerCase().slice(0, inputLength) === inputValue
+        new RegExp(inputValue, 'i').test(place.name)
       ),
     }
   });
@@ -46,11 +47,12 @@ const getSuggestions = (value, searchPlaces) => {
 const getSuggestionValue = suggestion => suggestion.name;
 
 // Use your imagination to render suggestions. (how they show up in the search list)
-const renderSuggestion = suggestion => (
-  <a href="http://www.cnn.com">
-    {suggestion.name}
-  </a>
-);
+const renderSuggestion = (suggestion) => {
+  let linkAddress = `/${suggestion.place_type}/${suggestion.id}`;
+  return (
+    <Link to={linkAddress}>{suggestion.name}</Link>
+  )
+};
 
 class Search extends React.Component {
   constructor() {
@@ -68,16 +70,17 @@ class Search extends React.Component {
   }
 
   componentDidMount() {
-    console.log("mounted");
-    this.props.requestAllSearchPlaces();
+    console.log("mounted", this.props.searchPlaces);
+    if (!this.props.searchPlaces) {
+      this.props.requestAllSearchPlaces();
+    }
   }
 
   render() {
 
     let searchPlaces = this.props.searchPlaces;
-    if (!searchPlaces) return null;
     console.log("sp", searchPlaces);
-
+    if (!searchPlaces) searchPlaces = [];
 
     let onChange = (event, { newValue }) => {
       this.setState({
@@ -95,8 +98,7 @@ class Search extends React.Component {
 
     // determines when to start showing results
     let shouldRenderSuggestions = function(value) {
-      console.log("value2", value.trim().length);
-      return value.trim().length > 1;
+      return value.trim().length > 2;
     }
 
     // Autosuggest will call this function every time you need to clear suggestions.
@@ -107,7 +109,6 @@ class Search extends React.Component {
     };
 
     let renderSectionTitle = function(section) {
-      console.log("render section title", section);
       if (section.places.length === 0) return null;
       return (
         <strong>{section.title}</strong>
@@ -115,7 +116,6 @@ class Search extends React.Component {
     }
 
     let getSectionSuggestions = function(section) {
-      console.log("get section suggestions", section);
       return section.places;
     }
 

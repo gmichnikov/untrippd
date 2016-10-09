@@ -118,6 +118,9 @@ Some next steps
   adjust zoom on map depending on place_type
   add star to highlight post, add images that represent food/accom/attr/highlight
   in search, add region/country names to cities
+  add states to search, add correct links to search
+  change search to respond to any part of word
+  change search to return places by num reviews
 
 For later
   add more styling to login buttons
