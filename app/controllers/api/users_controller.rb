@@ -13,6 +13,7 @@ class Api::UsersController < ApplicationController
   def show
     @user = User.find_by(username: params[:id])
     raise ActiveRecord::RecordNotFound if @user.nil?
+    @suggestions = @user.suggestions.order(created_at: :desc).includes(:author, :suggestable)
     render :show
   end
 

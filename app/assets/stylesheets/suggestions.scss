@@ -122,9 +122,17 @@
 .feed-item-details {
   font-size: 12px;
   color: #999;
+  display: flex;
+  align-items: center;
 }
 
 .feed-item-details a {
   display: inline-block;
   margin-left: 10px;
+}
+
+.material-icons.icon-dining {
+  color: maroon;
+  font-size: 24px;
+  margin-left: 20px;
 }

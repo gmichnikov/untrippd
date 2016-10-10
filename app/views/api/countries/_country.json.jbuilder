@@ -5,6 +5,6 @@ json.city_info do
   json.secondary_link ""
   json.num_suggestions pluralize(country.all_suggestions.length, "suggestion")
 end
-json.suggestions country.all_suggestions.sort_by(&:created_at).reverse do |suggestion|
+json.suggestions suggestions do |suggestion|
   json.partial!('api/suggestions/suggestion', suggestion: suggestion)
 end

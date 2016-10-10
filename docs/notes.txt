@@ -120,6 +120,7 @@ Some next steps
   check which pages i should not get into if logged out
   usernames shoudl be lowercase, so they aer actually unique
   google analytics
+  fix suggestion detail view
 
   Update/delete suggestions
   adjust zoom on map depending on place_type

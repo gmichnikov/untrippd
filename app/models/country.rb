@@ -24,16 +24,12 @@ class Country < ActiveRecord::Base
     name == "United States" || name == "United Kingdom"
   end
 
-  def regions_suggestions
-    all = []
-    regions.each do |region|
-      all += region.all_suggestions
-    end
-    all
-  end
-
   def all_suggestions
-    regions_suggestions + suggestions
-  end
+    city_ids = City.joins(:region).where("regions.country_id = ?", self.id).pluck(:id)
 
+    Suggestion.
+      joins("INNER JOIN cities ON suggestions.suggestable_id = cities.id").
+      joins("INNER JOIN regions ON suggestions.suggestable_id = regions.id").
+      where("regions.country_id = ? OR (suggestions.suggestable_id = ? AND suggestions.suggestable_type = 'Country') OR cities.id IN (?)", self.id, self.id, city_ids)
+  end
 end

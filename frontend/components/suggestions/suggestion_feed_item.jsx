@@ -14,6 +14,9 @@ class SuggestionFeedItem extends React.Component {
   render () {
     let s = this.props.suggestion;
 
+    let foodIcon = s.food ? <i className="material-icons icon-dining">local_dining</i> : null;
+
+
     return (
       <li className="suggestion-feed-item group">
         <div className="feed-user-profile-photo"><Link to=""><img></img></Link></div>
@@ -27,7 +30,10 @@ class SuggestionFeedItem extends React.Component {
             {ReactEmoji.emojify(s.body)}
           </div>
           <div className="feed-item-details">
-            <TimeAgo date={s.created_at} live={false}/><Link to="">View Suggestion Details</Link>
+            <TimeAgo date={s.created_at} live={false}/>
+            <Link to="">View Suggestion Details</Link>
+            {foodIcon}
+            {foodIcon}
           </div>
         </div>
         <div className="feed-place-photo"><Link to=""><img></img></Link></div>

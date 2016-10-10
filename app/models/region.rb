@@ -20,16 +20,12 @@ class Region < ActiveRecord::Base
   has_many :cities
   has_many :suggestions, as: :suggestable
 
-  def cities_suggestions
-    all = []
-    cities.each do |city|
-      all += city.suggestions
-    end
-    all
-  end
 
   def all_suggestions
-    cities_suggestions + suggestions
+    Suggestion.
+      joins("INNER JOIN cities ON suggestions.suggestable_id = cities.id").
+      joins("INNER JOIN regions ON suggestions.suggestable_id = regions.id").
+      where("cities.region_id = ? OR (suggestions.suggestable_id = ? AND suggestions.suggestable_type = 'Region')", self.id, self.id)
   end
 
 end

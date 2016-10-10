@@ -14,7 +14,7 @@ class Api::SuggestionsController < ApplicationController
   end
 
   def index
-    @suggestions = Suggestion.all
+    @suggestions = Suggestion.all.includes(:author, :suggestable)
     render :index
   end
 

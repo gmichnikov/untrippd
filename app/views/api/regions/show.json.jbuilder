@@ -1,1 +1,1 @@
-json.partial!('api/regions/region', region: @region)
+json.partial!('api/regions/region', region: @region, suggestions: @suggestions)
