@@ -21,4 +21,26 @@ class Api::UsersController < ApplicationController
     params.require(:user).permit(:username, :password, :confirm_password, :first_name, :last_name, :email)
   end
 
+  def follow
+    @user = User.find(params[:id])
+    @user.followers << current_user
+    render json: @user.id
+  end
+
+  def unfollow
+    @uf = UserFollow.where(followed_id: params[:id], follower_id: current_user.id).first
+    @uf.destroy
+    render json: params[:id]
+  end
+
 end
+
+
+# $.ajax({
+#   method: "POST",
+#   url: "some.php",
+#   data: { name: "John", location: "Boston" }
+# })
+#   .done(function( msg ) {
+#     alert( "Data Saved: " + msg );
+#   });

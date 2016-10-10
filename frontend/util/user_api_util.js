@@ -6,3 +6,19 @@ export const fetchSingleUser = (username, success, error) => {
     error: error,
 	});
 };
+
+export const followUser = (id, success) => {
+	$.ajax({
+		method: 'POST',
+  	url: `/api/users/${id}/follow`,
+    success: success,
+	});
+};
+
+export const unfollowUser = (id, success) => {
+	$.ajax({
+		method: 'POST',
+  	url: `/api/users/${id}/unfollow`,
+    success: success,
+	});
+};

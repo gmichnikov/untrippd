@@ -7,15 +7,16 @@ Rails.application.routes.draw do
     resources :cities, only: [:show]
     resources :suggestions, only: [:create, :show, :index]
     resources :search, only: [:index]
-    resources :users, constraints: { id: /[_\-\.A-Za-z0-9]+/ }, only: [:create, :show] 
+    resources :users, constraints: { id: /[_\-\.A-Za-z0-9]+/ }, only: [:create, :show]
     resource :session, only: [:create, :destroy]
+    post 'users/:id/follow' => 'users#follow', as: :user_follow
+    post 'users/:id/unfollow' => 'users#unfollow', as: :user_unfollow
   end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
