@@ -4,14 +4,14 @@
   padding: 0 12px;
 }
 
-.home-main, .place-main {
+.home-main, .place-main, .user-feed-main {
   // 700px total
   float: left;
   margin-right: 23px;
   margin-bottom: 50px;
 }
 
-.home-sidebar, .place-sidebar {
+.home-sidebar, .place-sidebar, .user-feed-sidebar {
   // 300px
   float: right;
   background-color: white;
@@ -19,11 +19,11 @@
   height: 600px;
 }
 
-.home-main h2, .place-main h2 {
+.home-main h2, .place-main h2, .user-feed-main h2 {
   font-size: 21px;
   font-weight: 500;
 }
 
-.home-main p, .place-main p {
+.home-main p, .place-main p, .user-feed-main p {
   display: inline;
 }

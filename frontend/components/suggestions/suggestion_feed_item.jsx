@@ -19,7 +19,7 @@ class SuggestionFeedItem extends React.Component {
         <div className="feed-user-profile-photo"><Link to=""><img></img></Link></div>
         <div className="feed-middle">
           <div className="feed-item-title">
-            <Link to={s.place_link}>{s.author_display_name}</Link>
+            <Link to={s.user_link}>{s.author_display_name}</Link>
             {" made a suggestion about "}
             <Link to={s.place_link}>{s.place_name}</Link>
           </div>

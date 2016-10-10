@@ -109,6 +109,7 @@ Maximum set of suggestions
 
   Single Suggestion - Not the feed
 
+
 Filters
 Food Att Acc High My Places My Friends, My Places
 
@@ -116,6 +117,9 @@ Food Att Acc High My Places My Friends, My Places
 Some next steps
   create parent components for every page separately
   make the api request in componentDidMount for the main User page
+  check which pages i should not get into if logged out
+  usernames shoudl be lowercase, so they aer actually unique
+  google analytics
 
   Update/delete suggestions
   adjust zoom on map depending on place_type

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Router, Route, IndexRoute, hashHistory, Link } from 'react-router';
+import SuggestionFeed from '../../suggestions/suggestion_feed';
 
 class UserFeedMain extends React.Component {
 
@@ -18,9 +19,11 @@ class UserFeedMain extends React.Component {
 
   render() {
 
+    let userSuggestions = this.props.suggestions;
+
     return (
       <div className="user-feed-main">
-        I will be the main section!
+        <SuggestionFeed suggestions={userSuggestions} />
       </div>
     )
   }
