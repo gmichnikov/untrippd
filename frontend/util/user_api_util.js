@@ -1,7 +1,7 @@
-export const fetchSingleUser = (id, success, error) => {
+export const fetchSingleUser = (username, success, error) => {
 	$.ajax({
 		method: 'GET',
-  	url: `/api/users/${id}`,
+  	url: `/api/users/${username}`,
     success: success,
     error: error,
 	});

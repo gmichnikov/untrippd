@@ -7,7 +7,7 @@ export const receiveSingleUser = (user) => ({
 	suggestions: user.suggestions,
 });
 
-export const requestSingleUser = (id) => ({
+export const requestSingleUser = (username) => ({
 	type: REQUEST_SINGLE_USER,
-	id
+	username
 });

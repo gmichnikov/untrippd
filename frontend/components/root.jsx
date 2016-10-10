@@ -34,6 +34,10 @@ const Root = ({ store }) => {
 		store.dispatch(SUGGESTION_ACTIONS.requestSingleSuggestion(nextState.params.suggestionId));
 	};
 
+  const requestSingleUserOnEnter = (nextState) => {
+		store.dispatch(USER_ACTIONS.requestSingleUser(nextState.params.username));
+	};
+
 
   return (
     <Provider store={store}>
@@ -47,7 +51,7 @@ const Root = ({ store }) => {
           <Route path="/countries/:cityId" component={Place} />
           <Route path="/regions/:cityId" component={Place} />
           <Route path="/suggestions/:suggestionId" component={SingleSuggestionContainer} onEnter={requestSingleSuggestionOnEnter} />
-          <Route path="/users/:userId" component={UserFeed} />
+          <Route path="/users/:username" component={UserFeed} onEnter={requestSingleUserOnEnter} />
         </Route>
         <Route path="/" component={LandingPageContainer} onEnter={redirectIfLoggedIn} />
       </Router>

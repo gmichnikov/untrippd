@@ -11,7 +11,8 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by(username: params[:id])
+    raise ActiveRecord::RecordNotFound if @user.nil?
     render :show
   end
 

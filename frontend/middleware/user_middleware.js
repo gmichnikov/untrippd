@@ -8,7 +8,7 @@ export default ({ getState, dispatch }) => next => action => {
 
   switch(action.type) {
     case ACTIONS.REQUEST_SINGLE_USER:
-      API.fetchSingleUser(action.id, receiveSingleUserSuccess);
+      API.fetchSingleUser(action.username, receiveSingleUserSuccess);
       return next(action);
     default:
       return next(action);
