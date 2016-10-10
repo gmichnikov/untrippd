@@ -10,9 +10,11 @@ import Home from './home/home';
 import Place from './places/place';
 import SearchContainer from './search/search_container';
 import SingleSuggestionContainer from './suggestions/single_suggestion_container';
+import UserFeed from './users/user_feed/user_feed';
 
 import * as PLACE_ACTIONS from '../actions/place_actions';
 import * as SUGGESTION_ACTIONS from '../actions/suggestion_actions';
+import * as USER_ACTIONS from '../actions/user_actions';
 
 const Root = ({ store }) => {
 
@@ -45,6 +47,7 @@ const Root = ({ store }) => {
           <Route path="/countries/:cityId" component={Place} />
           <Route path="/regions/:cityId" component={Place} />
           <Route path="/suggestions/:suggestionId" component={SingleSuggestionContainer} onEnter={requestSingleSuggestionOnEnter} />
+          <Route path="/users/:userId" component={UserFeed} />
         </Route>
         <Route path="/" component={LandingPageContainer} onEnter={redirectIfLoggedIn} />
       </Router>
@@ -54,5 +57,4 @@ const Root = ({ store }) => {
 
 export default Root;
 
-// <Route path="/users/:userId" component={User} />
 // <Route path="/users/:userId/followed-users" component={FollowedUsers} />

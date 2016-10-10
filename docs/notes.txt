@@ -114,6 +114,9 @@ Food Att Acc High My Places My Friends, My Places
 
 
 Some next steps
+  create parent components for every page separately
+  make the api request in componentDidMount for the main User page
+
   Update/delete suggestions
   adjust zoom on map depending on place_type
   add star to highlight post, add images that represent food/accom/attr/highlight
@@ -142,6 +145,7 @@ For later
   same search component in header and search, styled differently?
   add more styling to login buttons
   save all visible reviews to a guidebook
+  nest guidebooks index under user, but guidebooks on its own?
 
 Figure out a photo strategy, for checkins, users, places
 

@@ -1,2 +1,6 @@
-json.extract!(user, :username, :id)
-#not in use currently
+json.user_info do
+  json.extract!(user, :id, :username, :first_name, :last_name)
+end
+json.suggestions user.suggestions.sort_by(&:created_at).reverse do |suggestion|
+  json.partial!('api/suggestions/suggestion', suggestion: suggestion)
+end
