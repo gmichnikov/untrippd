@@ -11,6 +11,7 @@ import Place from './places/place';
 import SearchContainer from './search/search_container';
 import SingleSuggestionContainer from './suggestions/single_suggestion_container';
 import UserFeed from './users/user_feed/user_feed';
+import Followers from './users/followers/followers';
 
 import * as PLACE_ACTIONS from '../actions/place_actions';
 import * as SUGGESTION_ACTIONS from '../actions/suggestion_actions';
@@ -51,6 +52,7 @@ const Root = ({ store }) => {
           <Route path="/countries/:cityId" component={Place} />
           <Route path="/regions/:cityId" component={Place} />
           <Route path="/suggestions/:suggestionId" component={SingleSuggestionContainer} onEnter={requestSingleSuggestionOnEnter} />
+          <Route path="/users/:username/followers" component={Followers} onEnter={requestSingleUserOnEnter} />
           <Route path="/users/:username" component={UserFeed} onEnter={requestSingleUserOnEnter} />
         </Route>
         <Route path="/" component={LandingPageContainer} onEnter={redirectIfLoggedIn} />
