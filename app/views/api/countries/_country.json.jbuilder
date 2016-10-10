@@ -3,7 +3,7 @@ json.city_info do
   json.place_type_name "Country"
   json.secondary_place ""
   json.secondary_link ""
-  json.num_suggestions pluralize(country.all_suggestions.length, "suggestion")
+  json.num_suggestions pluralize(suggestions.length, "suggestion")
 end
 json.suggestions suggestions do |suggestion|
   json.partial!('api/suggestions/suggestion', suggestion: suggestion)

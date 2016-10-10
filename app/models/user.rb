@@ -27,6 +27,23 @@ class User < ActiveRecord::Base
   has_many :suggestions,
     foreign_key: :author_id
 
+  has_many :user_followers,
+    foreign_key: :followed_id,
+    class_name: "UserFollow"
+
+  has_many :user_followeds,
+    foreign_key: :follower_id,
+    class_name: "UserFollow"
+
+  has_many :followers,
+    through: :user_followers,
+    source: :follower
+
+  has_many :followeds,
+    through: :user_followeds,
+    source: :followed
+
+
   def passwords_must_match
     errors.add(:confirm_password, 'must match password') unless password == confirm_password
   end
