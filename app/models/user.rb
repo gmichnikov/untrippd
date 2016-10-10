@@ -17,7 +17,9 @@ class User < ActiveRecord::Base
 
   attr_reader :password, :confirm_password
 
-  validates :username, presence: true, uniqueness: { case_sensitive: false }
+  VALID_USERNAME_REGEX = /\A[a-zA-Z0-9\.\-_]+\z/
+
+  validates :username, presence: true, uniqueness: { case_sensitive: false }, format: { with: VALID_USERNAME_REGEX }
   validates :password_digest, :session_token, :first_name, :last_name, :email, presence: true
   validates :password, length: {minimum: 6, allow_nil: true}
   validate :passwords_must_match
