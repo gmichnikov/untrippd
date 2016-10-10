@@ -11,6 +11,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
+      followUser: (id) => dispatch(ACTIONS.followUser(id)),
+      unfollowUser: (id) => dispatch(ACTIONS.unfollowUser(id)),
     };
 };
 
