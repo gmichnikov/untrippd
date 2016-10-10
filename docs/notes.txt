@@ -121,6 +121,10 @@ Some next steps
   usernames shoudl be lowercase, so they aer actually unique
   google analytics
   fix suggestion detail view
+  ** User follower/following pages show proper list of users
+  User can follow place from single place view, accessible via click on place in feed
+
+
 
   Update/delete suggestions
   adjust zoom on map depending on place_type

@@ -68,10 +68,6 @@ class UserFeedTop extends React.Component {
               <span className="user-feed-top-stats-num">#</span>
               <span className="user-feed-top-stats-label">guidebooks</span>
             </Link>
-            <Link to="">
-              <span className="user-feed-top-stats-num">#</span>
-              <span className="user-feed-top-stats-label">places</span>
-            </Link>
           </div>
         </div>
         {correctButton}
