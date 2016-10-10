@@ -27,7 +27,7 @@ class SuggestionFeedItem extends React.Component {
             {ReactEmoji.emojify(s.body)}
           </div>
           <div className="feed-item-details">
-            <TimeAgo date={s.created_at} /><Link to="">View Suggestion Details</Link>
+            <TimeAgo date={s.created_at} live={false}/><Link to="">View Suggestion Details</Link>
           </div>
         </div>
         <div className="feed-place-photo"><Link to=""><img></img></Link></div>

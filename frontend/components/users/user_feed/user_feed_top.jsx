@@ -33,7 +33,7 @@ class UserFeedTop extends React.Component {
               <span className="user-feed-top-stats-label">suggestions</span>
             </Link>
             <Link to="">
-              <span className="user-feed-top-stats-num">#</span>
+              <span className="user-feed-top-stats-num">{user.num_unique_suggestions}</span>
               <span className="user-feed-top-stats-label">unique</span>
             </Link>
             <Link to="">
