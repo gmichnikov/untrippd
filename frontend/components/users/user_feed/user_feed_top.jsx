@@ -30,7 +30,14 @@ class UserFeedTop extends React.Component {
       <span>Unfollow</span>
     </div>
 
-    let correctButton = user.followed_by_current_user ? unfollowButton : followButton
+    let correctButton;
+    if (this.props.currentUser === null || this.props.currentUser.id === user.id) {
+      correctButton = null;
+    } else if (user.followed_by_current_user) {
+      correctButton =  unfollowButton;
+    } else {
+      correctButton = followButton;
+    }
 
     return (
       <div className="user-feed-top">
@@ -50,11 +57,11 @@ class UserFeedTop extends React.Component {
               <span className="user-feed-top-stats-label">unique</span>
             </Link>
             <Link to="">
-              <span className="user-feed-top-stats-num">#</span>
+              <span className="user-feed-top-stats-num">{user.num_followeds}</span>
               <span className="user-feed-top-stats-label">follows</span>
             </Link>
             <Link to="">
-              <span className="user-feed-top-stats-num">#</span>
+              <span className="user-feed-top-stats-num">{user.num_followers}</span>
               <span className="user-feed-top-stats-label">followers</span>
             </Link>
             <Link to="">
@@ -64,10 +71,6 @@ class UserFeedTop extends React.Component {
             <Link to="">
               <span className="user-feed-top-stats-num">#</span>
               <span className="user-feed-top-stats-label">places</span>
-            </Link>
-            <Link to="">
-              <span className="user-feed-top-stats-num">{followText}</span>
-              <span className="user-feed-top-stats-label">follow?</span>
             </Link>
           </div>
         </div>

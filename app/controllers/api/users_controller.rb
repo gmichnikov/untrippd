@@ -11,8 +11,10 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by(username: params[:id])
+    @user = User.find_by(username: params[:id])#.includes(:followers, :followeds)
     raise ActiveRecord::RecordNotFound if @user.nil?
+    @followers = @user.followers
+    @followeds = @user.followeds
     @suggestions = @user.suggestions.order(created_at: :desc).includes(:author, :suggestable)
     render :show
   end

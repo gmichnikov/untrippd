@@ -106,7 +106,6 @@
 }
 
 .follow-button, .unfollow-button {
-  background-color: rgb(255, 204, 0);
   color: white;
   padding: 5px 12px 5px 5px;
   position: absolute;
@@ -117,7 +116,17 @@
   align-items: center;
   font-size: 17px;
   font-weight: bold;
+  cursor: pointer;
 }
+
+.follow-button {
+  background-color: rgb(255, 204, 0);
+}
+
+.unfollow-button {
+  background-color: #a7a7a7;
+}
+
 
 .material-icons.icon-add-circle, .material-icons.icon-remove-circle {
   font-size: 16px;
