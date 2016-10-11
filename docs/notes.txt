@@ -64,21 +64,10 @@ API Endpoints Questions
 Routes Questions
 
   What about routes that don't match? 404 with search bar?
-  Do routes all have #
-  Should I mirror the routes + names?
-    They call splash landing page /
-    They call signup /create
-    They call login /login
-    They call logged in landing page /home
 
-    Sign Up (redirects to home if logged in)
-    login (redirects to home if logged in)
-    / (redirects to home if logged in)
-    /Home
     /Places   either houses most popular, or redirects there?
       id
       most-popular
-    /search (or /places/search?)
     /users/user_id
       suggestions
       guidebooks
@@ -88,49 +77,24 @@ Routes Questions
       my_places
 
 
-Components
-  Same container for follows/followed
-  Do I need an App Container if nothing is shared by all pages?
-  Is Header just a component that is included on many pages?
-  How to handle the generic feed container that appears in multiple places? (passing in filters)
-
-Redux cycle
-  "popular places" vs "places that match the search request"
   Since guidebooks index is always going to be a specific user's guidebooks, I am not sure if it would make sense to include a user_id in the API url?
 
 
-
-State
-Maximum set of suggestions
-  Home - All
-  Single Place - Just that place
-  User Page - Just that user
-  Guidebook - Just in that guidebook
-
-  Single Suggestion - Not the feed
-
-
 Filters
-Food Att Acc High My Places My Friends, My Places
+Food Att Acc High My Places My Friends
 
 
 Some next steps
-  create parent components for every page separately
-  make the api request in componentDidMount for the main User page
   check which pages i should not get into if logged out
-  usernames shoudl be lowercase, so they aer actually unique
   google analytics
   fix suggestion detail view
-  ** User follower/following pages show proper list of users
-  User can follow place from single place view, accessible via click on place in feed
-
 
 
   Update/delete suggestions
   adjust zoom on map depending on place_type
+
   add star to highlight post, add images that represent food/accom/attr/highlight
-  change search to return places by num reviews
-  Need to have an option to remove belmont from my places
+
   icons
     media
     wallpaper
@@ -146,20 +110,13 @@ Some next steps
     hotel -accom
     local dining
 
-User data list for profile top/side
-  reviews, places reviewed, followed users, followers, guidebooks, followed places
-
 
 For later
-  same search component in header and search, styled differently?
   add more styling to login buttons
   save all visible reviews to a guidebook
   nest guidebooks index under user, but guidebooks on its own?
 
 Figure out a photo strategy, for checkins, users, places
-
-user place history, like beer History
-try username routes
 
 challenges
 follows for random users, not user profile

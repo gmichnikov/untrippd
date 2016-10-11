@@ -48,7 +48,6 @@ const Root = ({ store }) => {
         <Route path="/login" component={LoginFormContainer} onEnter={redirectIfLoggedIn} />
         <Route path="/home" component={App}>
           <IndexRoute component={Home} />
-          <Route path="/search" component={SearchContainer} />
           <Route path="/cities/:cityId" component={Place} onEnter={requestSingleCityOnEnter} />
           <Route path="/countries/:cityId" component={Place} />
           <Route path="/regions/:cityId" component={Place} />
