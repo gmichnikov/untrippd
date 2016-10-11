@@ -42,6 +42,7 @@ class UserFeedTop extends React.Component {
 
     let linkUserFeed = `/users/${user.username}`;
     let linkFollowersList = `/users/${user.username}/followers`;
+    let linkFollowedsList = `/users/${user.username}/follows`;
 
     return (
       <div className="user-feed-top">
@@ -60,7 +61,7 @@ class UserFeedTop extends React.Component {
               <span className="user-feed-top-stats-num">{user.num_unique_suggestions}</span>
               <span className="user-feed-top-stats-label">unique</span>
             </Link>
-            <Link to="">
+            <Link to={linkFollowedsList}>
               <span className="user-feed-top-stats-num">{user.num_followeds}</span>
               <span className="user-feed-top-stats-label">follows</span>
             </Link>

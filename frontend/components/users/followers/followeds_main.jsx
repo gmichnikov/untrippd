@@ -22,6 +22,7 @@ class FollowedsMain extends React.Component {
 
     let followeds = this.props.user.followeds;
     let first_name = this.props.user.first_name;
+    let username = this.props.user.username;
     let currentUser = this.props.currentUser;
     if (!followeds) { return null; }
 
@@ -29,7 +30,8 @@ class FollowedsMain extends React.Component {
       return <FollowersListItem key={followed.id} follower={followed} currentUser={currentUser || null} followUser={this.props.followUser} unfollowUser={this.props.unfollowUser} currentUserFollowsUser={followed.current_user_follows_user}/>
     })
 
-    let linkFollowers = `/users/${currentUser.username}/followers`;
+    let linkFollowers = `/users/${username}/followers`;
+    let linkFeed = `/users/${username}`;
 
     return (
       <div className="followers-main">
@@ -38,7 +40,7 @@ class FollowedsMain extends React.Component {
           <li className="follow-tabs-active"><Link to="">Follows</Link></li>
         </ul>
         <div className="followers-list">
-          <h4>{first_name}{"'s Follows"} ({followeds.length})</h4>
+          <h4><Link to={linkFeed}>{first_name}</Link>{"'s Follows"} ({followeds.length})</h4>
           <ul className="followers-list-items">
             {followedsList}
           </ul>

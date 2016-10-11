@@ -30,16 +30,18 @@ class FollowersListItem extends React.Component {
       correctButton = unfollowButton;
     }
 
+    let linkOtherUserFeed = `/users/${f.username}`;
+
     return (
       <li className="followers-list-item group">
-        <Link to="" className="followers-list-item-photo"></Link>
+        <Link to={linkOtherUserFeed} className="followers-list-item-photo"></Link>
         <div className="followers-list-item-names">
           <div className="follow-list-item-display-name">
-            {f.display_name}
+            <Link to={linkOtherUserFeed}>{f.display_name}</Link>
           </div>
           <div className="follow-list-item-username">
-            <i className="material-icons icon-person">person</i>
-            {f.username}
+            <Link to={linkOtherUserFeed}><i className="material-icons icon-person">person</i>
+            {f.username}</Link>
           </div>
         </div>
         <div className="followers-list-item-button">
