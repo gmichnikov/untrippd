@@ -14,6 +14,7 @@ const welcomeAndLogout = (currentUser, logout) => {
 
   let linkUserFeed = `/users/${currentUser.username}`;
   let linkFollowersList = `/users/${currentUser.username}/followers`;
+  let linkFollowsList = `/users/${currentUser.username}/follows`;
 
   return (
     <div className="welcome-and-logout">
@@ -23,11 +24,9 @@ const welcomeAndLogout = (currentUser, logout) => {
             <ul>
               <li><Link to={linkUserFeed}>My Suggestions</Link></li>
               <li><a href="#">My Guidebooks</a></li>
-              <li><a href="http://www.cnn.com">My Follows</a></li>
+              <li><Link to={linkFollowsList}>My Follows</Link></li>
               <li><Link to={linkFollowersList}>My Followers</Link></li>
-              <li><a href="http://www.cnn.com">My Places</a></li>
               <li><button onClick={logout}>Log out!</button></li>
-
             </ul>
           </li>
         </ul>
