@@ -6,6 +6,7 @@ const mapStateToProps = state => {
   return {
     user: state.user,
     suggestions: state.suggestion.manySuggestions,
+    currentUser: state.session.currentUser,
   }
 };
 

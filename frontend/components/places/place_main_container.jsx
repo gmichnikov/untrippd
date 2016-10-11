@@ -6,6 +6,7 @@ const mapStateToProps = state => {
   return {
     city: state.place.singleCity,
     suggestions: state.suggestion.manySuggestions,
+    currentUser: state.session.currentUser,
   }
 };
 

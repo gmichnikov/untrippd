@@ -26,8 +26,9 @@ class SuggestionFeed extends React.Component {
     if (!this.props.suggestions) {
       return null;
     }
-
+    console.log("currentUser", currentUser);
     let suggestionsToShow = this.props.suggestions;
+    let followedsIds = this.props.currentUser.followeds_ids;
 
     if (this.state.onlyFood) {
       suggestionsToShow = suggestionsToShow.filter((sugg) => {
@@ -53,8 +54,15 @@ class SuggestionFeed extends React.Component {
       });
     }
 
+    if (this.state.onlyFollowedUsers) {
+      suggestionsToShow = suggestionsToShow.filter((sugg) => {
+        return followedsIds.indexOf(sugg.author_id) !== -1;
+      });
+    }
+
     let feed = suggestionsToShow.map((suggestion, i) => {
-      return <SuggestionFeedItem key={suggestion.id} suggestion={suggestion} />
+      let byFollowedUser = (followedsIds.indexOf(suggestion.author_id) !== -1)
+      return <SuggestionFeedItem key={suggestion.id} suggestion={suggestion} byFollowedUser={byFollowedUser}/>
     })
 
 
@@ -63,10 +71,15 @@ class SuggestionFeed extends React.Component {
         <h2>Recent Activity</h2>
         <section className="suggestion-feed-filter-section">
           <form className="suggestion-feed-filter-form">
-            <p>Only show suggestions marked as highlights</p>
+            <p>Only show suggestions ...      <span>marked as highlights</span></p>
               <Toggle
                 checked={this.state.onlyHighlight}
                 onClick={this.updateCheckbox('onlyHighlight')}
+              />
+            <span>written by users I follow</span>
+              <Toggle
+                checked={this.state.onlyFollowedUsers}
+                onClick={this.updateCheckbox('onlyFollowedUsers')}
               />
             <br />
             <p>Only show suggestions about ... </p>
