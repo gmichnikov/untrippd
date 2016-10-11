@@ -35,7 +35,11 @@ const welcomeAndLogout = (currentUser, logout) => {
   )
 }
 
-const Header = ({currentUser, logout}) => {
+const Header = ({ currentUser, logout, searchPlaces, requestAllSearchPlaces }) => {
+
+  // if (!searchPlaces) {
+  //   requestAllSearchPlaces();
+  // }
 
   const headerVaryingContent = currentUser ?
     welcomeAndLogout(currentUser, logout) :
@@ -49,8 +53,8 @@ const Header = ({currentUser, logout}) => {
           <li>The Feed</li>
           <li>Top Places</li>
           <li>Write a Review</li>
-          {headerVaryingContent}
           <li id="header-search-bar"></li>
+          {headerVaryingContent}
         </ul>
       </nav>
     </header>

@@ -8,6 +8,12 @@ class LandingPage extends React.Component {
     this.guestLogin = this.guestLogin.bind(this);
   }
 
+  componentDidMount() {
+    // if (!this.props.searchPlaces) {
+    //   this.props.requestAllSearchPlaces();
+    // }
+  }
+
   componentWillReceiveProps (nextProps) {
     if(nextProps.loggedIn) {
       nextProps.router.push("/home");

@@ -120,37 +120,19 @@ li.header-logo {
   cursor: pointer;
   width: 125px;
 }
- // .hamburger-dropdown ul {
- //   position: absolute;
- //   top: 50px;
- //   left: 0;
- //   flex-direction: column;
- //   cursor: pointer;
- //   box-shadow: black 5px 5px 10px;
- // }
- //
- // /* This is how we create pure css dropdown effects. No JS required. */
- // .hamburger-dropdown:hover ul {
- //   display: flex;
- //   background: ghostwhite;
- // }
- //
- // .hamburger-dropdown ul li:hover a {
- //   text-decoration: underline;
- // }
 
-/////
 
 
 
 
 #header-search-bar {
-  display: none;
+  // display: none;
   background-color: white;
   width: 100px;
   height: 30px;
   margin-top: 20px;
   padding: 0;
+  float: right;
 }
 
 #header-search-bar:after {

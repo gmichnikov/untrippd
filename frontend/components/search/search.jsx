@@ -2,26 +2,6 @@ import React from 'react';
 import Autosuggest from 'react-autosuggest';
 import { Link } from 'react-router';
 
-// Imagine you have a list of languages that you'd like to autosuggest.
-// const languages = [
-//   {
-//     name: 'C',
-//     year: 1972
-//   },
-//   {
-//     name: 'Clojure',
-//     year: 1972
-//   },
-//   {
-//     name: 'C#',
-//     year: 1972
-//   },
-//   {
-//     name: 'Elm',
-//     year: 2012
-//   }
-// ];
-
 // Teach Autosuggest how to calculate suggestions for any given input value.
 const getSuggestions = (value, searchPlaces) => {
   const inputValue = value.trim().toLowerCase();
@@ -121,7 +101,7 @@ class Search extends React.Component {
 
     // Autosuggest will pass through all these props to the input field.
     const inputProps = {
-      placeholder: 'Type a programming language',
+      placeholder: 'Find a country, state, or city',
       value,
       onChange: onChange
     };
