@@ -15,7 +15,6 @@ class LandingPage extends React.Component {
   }
 
   guestLogin(e) {
-    console.log("guest login attempt");
     this.props.processLoginForm({user: {username: "guest", password: "guestpassword"}});
   }
 

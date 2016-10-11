@@ -13,8 +13,6 @@ class FollowersListItem extends React.Component {
     let f = this.props.follower;
     let currentUser = this.props.currentUser;
 
-    console.log(this.props.currentUserFollowsUser);
-
     let followButton = <div onClick={() => this.props.followUser(f.follower_id)}>
       <i className="material-icons followers-list-follow">add_circle</i>
     </div>
@@ -27,10 +25,8 @@ class FollowersListItem extends React.Component {
     if (currentUser === null || currentUser.id === f.follower_id) {
       correctButton = null;
     } else if (currentUser.followeds_ids.indexOf(f.follower_id) === -1) {
-      console.log("Not following");
       correctButton = followButton;
     } else {
-      console.log("Following");
       correctButton = unfollowButton;
     }
 

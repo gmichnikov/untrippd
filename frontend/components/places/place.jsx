@@ -19,7 +19,6 @@ class Place extends React.Component {
 
 
   render() {
-    console.log("place props", this.props);
     return (
       <div className="place group" >
         <PlaceMainContainer pathname={this.props.location.pathname} cityId={this.props.params.cityId}/>

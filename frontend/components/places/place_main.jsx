@@ -25,7 +25,6 @@ class PlaceMain extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log("place main props", nextProps);
     let place_type = this.getPlaceType(nextProps.pathname);
 
     if (nextProps.pathname !== this.props.pathname) {

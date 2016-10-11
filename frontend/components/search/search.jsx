@@ -70,7 +70,6 @@ class Search extends React.Component {
   }
 
   componentDidMount() {
-    console.log("mounted", this.props.searchPlaces);
     if (!this.props.searchPlaces) {
       this.props.requestAllSearchPlaces();
     }
@@ -79,7 +78,6 @@ class Search extends React.Component {
   render() {
 
     let searchPlaces = this.props.searchPlaces;
-    console.log("sp", searchPlaces);
     if (!searchPlaces) searchPlaces = [];
 
     let onChange = (event, { newValue }) => {
