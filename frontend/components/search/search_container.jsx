@@ -14,6 +14,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
       requestAllSearchPlaces: () => dispatch(ACTIONS.requestAllSearchPlaces()),
+      requestFilteredSearchPlaces: (query) => dispatch(ACTIONS.requestFilteredSearchPlaces(query)),
     };
 };
 

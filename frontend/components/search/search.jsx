@@ -2,29 +2,14 @@ import React from 'react';
 import Autosuggest from 'react-autosuggest';
 import { Link } from 'react-router';
 
-// Teach Autosuggest how to calculate suggestions for any given input value.
-const getSuggestions = (value, searchPlaces) => {
-  const inputValue = value.trim().toLowerCase();
-  const inputLength = inputValue.length;
-
-  return searchPlaces.map((section) => {
-    return {
-      title: section.title,
-      places: section.places.filter(place =>
-        // place.name.toLowerCase().slice(0, inputLength) === inputValue
-        new RegExp(inputValue, 'i').test(place.name)
-      ),
-    }
-  });
-
-
-};
 
 // When suggestion is clicked, Autosuggest needs to populate the input field
 // based on the clicked suggestion. Teach Autosuggest how to calculate the
 // input value for every given suggestion.
 // (how they show up when you click one)
-const getSuggestionValue = suggestion => suggestion.name;
+const getSuggestionValue = (suggestion) => {
+  return suggestion.name;
+}
 
 // Use your imagination to render suggestions. (how they show up in the search list)
 const renderSuggestion = (suggestion) => {
@@ -45,21 +30,15 @@ class Search extends React.Component {
     // and they are initially empty because the Autosuggest is closed.
     this.state = {
       value: '',
-      suggestions: []
     };
+
+    // this.lastRequestId = null;
   }
 
   componentDidMount() {
-    if (!this.props.searchPlaces) {
-      this.props.requestAllSearchPlaces();
-    }
   }
 
   render() {
-
-    let searchPlaces = this.props.searchPlaces;
-    if (!searchPlaces) searchPlaces = [];
-
     let onChange = (event, { newValue }) => {
       this.setState({
         value: newValue
@@ -69,9 +48,7 @@ class Search extends React.Component {
     // Autosuggest will call this function every time you need to update suggestions.
     // You already implemented this logic above, so just use it.
     let onSuggestionsFetchRequested = ({ value }) => {
-      this.setState({
-        suggestions: getSuggestions(value, searchPlaces)
-      });
+      this.props.requestFilteredSearchPlaces(value);
     };
 
     // determines when to start showing results
@@ -81,9 +58,6 @@ class Search extends React.Component {
 
     // Autosuggest will call this function every time you need to clear suggestions.
     let onSuggestionsClearRequested = () => {
-      this.setState({
-        suggestions: []
-      });
     };
 
     let renderSectionTitle = function(section) {
@@ -97,7 +71,9 @@ class Search extends React.Component {
       return section.places;
     }
 
-    const { value, suggestions } = this.state;
+    const value = this.state.value;
+    let suggestions = this.props.searchPlaces;
+
 
     // Autosuggest will pass through all these props to the input field.
     const inputProps = {
@@ -106,20 +82,21 @@ class Search extends React.Component {
       onChange: onChange
     };
 
-    // Finally, render it!
     return (
-      <Autosuggest
-        multiSection={true}
-        suggestions={suggestions}
-        onSuggestionsFetchRequested={onSuggestionsFetchRequested}
-        onSuggestionsClearRequested={onSuggestionsClearRequested}
-        getSuggestionValue={getSuggestionValue}
-        shouldRenderSuggestions={shouldRenderSuggestions}
-        renderSuggestion={renderSuggestion}
-        renderSectionTitle={renderSectionTitle}
-        getSectionSuggestions={getSectionSuggestions}
-        inputProps={inputProps}
-      />
+      <div>
+        <Autosuggest
+          multiSection={true}
+          suggestions={suggestions}
+          onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+          onSuggestionsClearRequested={onSuggestionsClearRequested}
+          getSuggestionValue={getSuggestionValue}
+          shouldRenderSuggestions={shouldRenderSuggestions}
+          renderSuggestion={renderSuggestion}
+          renderSectionTitle={renderSectionTitle}
+          getSectionSuggestions={getSectionSuggestions}
+          inputProps={inputProps}
+        />
+      </div>
     );
   }
 }

@@ -40,5 +40,18 @@ class City < ActiveRecord::Base
     end
   end
 
+  def display_name
+    usa = Country.find_by(name: "United States")
+    uk = Country.find_by(name: "United Kingdom")
+
+    if country == usa
+      after_comma = ", #{state.name}, USA"
+    elsif country == uk
+      after_comma = ", #{region.name}, UK"
+    else
+      after_comma = ", #{country.name}"
+    end
+    name + after_comma
+  end
 
 end

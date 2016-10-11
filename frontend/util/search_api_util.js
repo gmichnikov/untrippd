@@ -6,3 +6,12 @@ export const fetchAllSearchPlaces = (success, error) => {
     error: error,
 	});
 };
+
+export const fetchFilteredSearchPlaces = (query, success, error) => {
+	$.ajax({
+		method: 'GET',
+  	url: `/api/search/${query}`,
+    success: success,
+    error: error,
+	});
+};

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     post 'users/:id/follow' => 'users#follow', as: :user_follow
     post 'users/:id/unfollow' => 'users#unfollow', as: :user_unfollow
+    get 'search/:query' => 'search#filter', as: :search_filter
   end
 
   # Example of regular route:
