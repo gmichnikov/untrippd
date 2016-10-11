@@ -20,7 +20,7 @@ class HomeSidebar extends React.Component {
 
     return (
       <div className="home-sidebar">
-        I will be the sidebar!
+        <h3>Most suggested cities</h3>
       </div>
     )
   }

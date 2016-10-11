@@ -80,42 +80,37 @@ Routes Questions
   Since guidebooks index is always going to be a specific user's guidebooks, I am not sure if it would make sense to include a user_id in the API url?
 
 
-Filters
-Food Att Acc High My Places My Friends
-
-
 Some next steps
   check which pages i should not get into if logged out
   google analytics
   fix suggestion detail view
 
-
   Update/delete suggestions
   adjust zoom on map depending on place_type
 
-  add star to highlight post, add images that represent food/accom/attr/highlight
-
   icons
-    media
-    wallpaper
-    border color
-    mode edit
-    photo library
-    person Add
-    star - highlight
-    visibility - attraction
+    media - guidebook
+    wallpaper - guidebook
+    border color - pencil writing
+    mode edit - pencil also
+    photo library - photo lib
     favorite for liking
     highlight off
     highlight
-    hotel -accom
-    local dining
+
+  sidebars
+    most popular countries
+    most popular cities
+    top users who suggest a place
+    related places?
+    user profile -> links to most reviewd places, guidebooks, followers, follows
 
 
 For later
   add more styling to login buttons
   save all visible reviews to a guidebook
   nest guidebooks index under user, but guidebooks on its own?
-
+  get icons for major cities ...
 Figure out a photo strategy, for checkins, users, places
 
 challenges

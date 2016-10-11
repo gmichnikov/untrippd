@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: 'static_pages#root'
 
   namespace :api, defaults: {format: :json} do
+    get 'cities/popular' => 'cities#popular', as: :popular_cities
     resources :countries, only: [:show]
     resources :regions, only: [:show]
     resources :cities, only: [:show]

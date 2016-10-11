@@ -6,4 +6,9 @@ class Api::CitiesController < ApplicationController
     render :show
   end
 
+  def popular
+    @cities = City.most_suggested
+    render :popular
+  end
+
 end

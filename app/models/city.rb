@@ -22,6 +22,12 @@ class City < ActiveRecord::Base
 
   alias_attribute :state, :region
 
+  def self.most_suggested
+    @cities = City.find_by_sql("SELECT cities.id, cities.name, cities.region_id, count(cities.id) FROM suggestions INNER JOIN cities ON suggestions.suggestable_id = cities.id AND suggestions.suggestable_type = 'City' GROUP BY cities.id ORDER BY count(cities.id) DESC LIMIT 20")
+
+    @cities
+  end
+
   def secondary_place
     if country.name == "United States"
       "#{region.name}, USA"
