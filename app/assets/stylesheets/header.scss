@@ -18,7 +18,7 @@ $primary-color: rgb(255, 204, 0);
 
 .header-main li {
   float: left;
-  padding-left: 25px;
+  padding-left: 20px;
   padding-top: 15px;
 }
 
@@ -54,7 +54,7 @@ li.header-logo {
 .welcome-and-logout {
   display: inline-block;
   float: right;
-  margin-top: 13px;
+  margin-top: 15px;
   height: 50px;
 }
 
@@ -62,10 +62,10 @@ li.header-logo {
   color: white;
   background-color: #1e91ea;
   border-radius: 5px;
-  font-size: 17px;
+  font-size: 16px;
   position: relative;
-  padding: 5px;
-  // margin-right: 25px;
+  padding: 8px 7px 8px 7px;
+  margin-right: 10px;
   // margin-top: 15px;
 }
 
