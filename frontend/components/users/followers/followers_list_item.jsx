@@ -10,7 +10,6 @@ class FollowersListItem extends React.Component {
   }
 
   render () {
-    console.log("from list", this.props.follower);
     let f = this.props.follower;
     let currentUser = this.props.currentUser;
 

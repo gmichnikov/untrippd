@@ -20,7 +20,6 @@ class FollowersMain extends React.Component {
 
   render() {
 
-    console.log(this.props.user);
     let followers = this.props.user.followers;
     let first_name = this.props.user.first_name;
     let currentUser = this.props.currentUser;
@@ -30,9 +29,14 @@ class FollowersMain extends React.Component {
       return <FollowersListItem key={follower.id} follower={follower} currentUser={currentUser || null} followUser={this.props.followUser} unfollowUser={this.props.unfollowUser} currentUserFollowsUser={follower.current_user_follows_user}/>
     })
 
+    let linkFollows = `/users/${currentUser.username}/follows`;
+
     return (
       <div className="followers-main">
-        <h3>Followers</h3>
+        <ul className="follow-tabs group">
+          <li className="follow-tabs-active"><Link to="">Followers</Link></li>
+          <li><Link to={linkFollows}>Follows</Link></li>
+        </ul>
         <div className="followers-list">
           <h4>{first_name}{"'s Followers"} ({followers.length})</h4>
           <ul className="followers-list-items">

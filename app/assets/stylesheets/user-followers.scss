@@ -9,6 +9,34 @@ $borderColor: 1px solid #eee;
   font-weight: 500;
 }
 
+.follow-tabs {
+  width: 700px;
+  display: flex;
+}
+
+.follow-tabs li {
+  background-color: rgb(249, 249, 249);
+  font-size: 21px;
+  border: $borderColor;
+  width: 349px;
+}
+
+.follow-tabs li a {
+  padding: 21px 21px 21px 21px;
+  display: block;
+}
+
+
+li.follow-tabs-active {
+  background-color: white;
+}
+
+.follow-tabs li:last-child {
+  border-left: 0;
+  width: 349px;
+}
+
+
 .followers-list {
   background-color: white;
   padding: 22px;
