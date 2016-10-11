@@ -61,6 +61,7 @@ class User < ActiveRecord::Base
   end
 
   def current_user_follows_user(current_user)
+    return false unless current_user
     followers.pluck(:id).include?(current_user.id)
   end
 

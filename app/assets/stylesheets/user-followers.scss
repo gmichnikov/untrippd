@@ -1,0 +1,92 @@
+$borderColor: 1px solid #eee;
+
+.followers-main h3 {
+  background-color: rgb(249, 249, 249);
+  width: 656px;
+  font-size: 21px;
+  padding: 21px;
+  border: $borderColor;
+  font-weight: 500;
+}
+
+.followers-list {
+  background-color: white;
+  padding: 22px;
+  border-left: $borderColor;
+  border-right: $borderColor;
+}
+
+
+.followers-list h4 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.followers-list-item {
+  border-top: $borderColor;
+  padding: 10px;
+}
+
+.followers-list-item:last-child {
+  border-bottom: $borderColor;
+}
+
+
+.followers-list-item-photo {
+  float: left;
+  width: 44px;
+  height: 44px;
+  margin-right: 12px;
+  background-image: image-url("blank-profile-picture.png");
+  background-size: 44px 44px;
+  border-radius: 50%;
+}
+
+.followers-list-item-names {
+  float: left;
+  width: 201px;
+  border-right: $borderColor;
+}
+
+.followers-list-item-button {
+  float: right;
+}
+
+.follow-list-item-display-name {
+  font-size: 17px;
+  margin-bottom: 2px;
+}
+
+.follow-list-item-display-name:first-letter {
+  text-transform: capitalize;
+}
+
+.follow-list-item-username {
+  font-size: 12px;
+  color: #999;
+  display: flex;
+  align-items: center;
+}
+
+.follow-list-item-username .icon-person{
+  font-size: 14px;
+  color: #999;
+  margin-right: 3px;
+  margin-left: -2px;
+}
+
+
+
+
+.material-icons.followers-list-follow {
+  color: #a4d273;
+  font-size: 48px;
+  cursor: pointer;
+}
+
+.material-icons.followers-list-unfollow {
+  color: #ff9494;
+  font-size: 48px;
+  cursor: pointer;
+}

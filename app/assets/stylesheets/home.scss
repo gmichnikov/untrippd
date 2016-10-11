@@ -1,17 +1,17 @@
-.home, .place {
+.home, .place, .followers {
   width: 1024px;
   margin: 28px auto;
   padding: 0 12px;
 }
 
-.home-main, .place-main, .user-feed-main {
+.home-main, .place-main, .user-feed-main, .followers-main {
   // 700px total
   float: left;
   margin-right: 23px;
   margin-bottom: 50px;
 }
 
-.home-sidebar, .place-sidebar, .user-feed-sidebar {
+.home-sidebar, .place-sidebar, .user-feed-sidebar, .followers-sidebar {
   // 300px
   float: right;
   background-color: white;
