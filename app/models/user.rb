@@ -65,6 +65,10 @@ class User < ActiveRecord::Base
     followers.pluck(:id).include?(current_user.id)
   end
 
+  def followeds_ids
+    followeds.pluck(:id)
+  end
+
   # Auth methods
 
   def self.generate_session_token

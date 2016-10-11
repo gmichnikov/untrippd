@@ -160,3 +160,6 @@ Figure out a photo strategy, for checkins, users, places
 
 user place history, like beer History
 try username routes
+
+challenges
+follows for random users, not user profile

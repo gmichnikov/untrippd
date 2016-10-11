@@ -5,6 +5,7 @@ import SuggestionReducer from './suggestion_reducer';
 import PlaceReducer from './place_reducer';
 import SearchReducer from './search_reducer';
 import UserReducer from './user_reducer';
+import FollowReducer from './user_reducer';
 
 const RootReducer = combineReducers ({
   session: SessionReducer,
@@ -12,6 +13,7 @@ const RootReducer = combineReducers ({
   place: PlaceReducer,
   search: SearchReducer,
   user: UserReducer,
+  follow: FollowReducer,
 });
 
 export default RootReducer;

@@ -24,6 +24,7 @@ class FollowersMain extends React.Component {
     let first_name = this.props.user.first_name;
     let currentUser = this.props.currentUser;
     if (!followers) { return null; }
+    console.log("I am rerendering follow list", currentUser.followeds_ids);
 
     let followersList = followers.map((follower) => {
       return <FollowersListItem key={follower.follower_id} follower={follower} currentUser={currentUser || null} followUser={this.props.followUser} unfollowUser={this.props.unfollowUser} currentUserFollowsUser={follower.current_user_follows_user}/>

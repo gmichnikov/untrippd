@@ -18,7 +18,9 @@ class UserFeedTop extends React.Component {
 
   render() {
     let user = this.props.user;
-    let followText = user.followed_by_current_user ? "Yes" : "No"
+    let currentUser = this.props.currentUser;
+    console.log("I am re-rendering user feed top", currentUser.followeds_ids);
+    // let followText = user.followed_by_current_user ? "Yes" : "No"
 
     let followButton = <div className="follow-button" onClick={() => this.props.followUser(user.id)}>
       <i className="material-icons icon-add-circle">add_circle</i>
@@ -31,12 +33,14 @@ class UserFeedTop extends React.Component {
     </div>
 
     let correctButton;
-    if (this.props.currentUser === null || this.props.currentUser.id === user.id) {
+    if (this.props.currentUser === null || currentUser.id === user.id) {
       correctButton = null;
-    } else if (user.followed_by_current_user) {
-      correctButton =  unfollowButton;
-    } else {
+    } else if (currentUser.followeds_ids.indexOf(user.id) === -1) {
+      console.log("Not following");
       correctButton = followButton;
+    } else {
+      console.log("Following");
+      correctButton = unfollowButton;
     }
 
     return (

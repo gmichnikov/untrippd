@@ -26,10 +26,12 @@ class FollowersListItem extends React.Component {
     let correctButton;
     if (currentUser === null || currentUser.id === f.follower_id) {
       correctButton = null;
-    } else if (f.current_user_follows_user) {
-      correctButton =  unfollowButton;
-    } else {
+    } else if (currentUser.followeds_ids.indexOf(f.follower_id) === -1) {
+      console.log("Not following");
       correctButton = followButton;
+    } else {
+      console.log("Following");
+      correctButton = unfollowButton;
     }
 
     return (
