@@ -122,20 +122,48 @@ li.header-logo {
 }
 
 
-
-
-
-#header-search-bar {
+.header-search-form {
   // display: none;
   background-color: white;
-  width: 100px;
-  height: 30px;
-  margin-top: 20px;
-  padding: 0;
+  margin-top: 9px;
+  margin-right: 20px;
+  // padding: 0;
   float: right;
+  border-radius: 5px;
+  width: 240px;
+
 }
 
-#header-search-bar:after {
-  content: "search";
+
+.header-search-form .react-autosuggest__input {
+  height: 25px;
+  padding: 5px 10px;
+  width: 190px;
+  // font-family: Helvetica, sans-serif;
+  // font-weight: 300;
+  border: 0;
   color: black;
+}
+
+
+.header-search-form .react-autosuggest__container {
+}
+
+.react-autosuggest__container:after {
+  content: "🔍";
+  color: black;
+  margin-right: 5px;
+}
+
+.search-result {
+  color: #333;
+  display: block;
+  padding: 10px;
+  font-weight: 500;
+  font-size: 15px;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 230px;
+  overflow: hidden;
 }

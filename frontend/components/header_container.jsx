@@ -7,14 +7,12 @@ import * as SEARCH_ACTIONS from '../actions/search_actions.js';
 const mapStateToProps = state => {
   return {
     currentUser: state.session.currentUser,
-    searchPlaces: state.search,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     logout: () => dispatch(ACTIONS.logout()),
-    requestAllSearchPlaces: () => dispatch(SEARCH_ACTIONS.requestAllSearchPlaces()),
   };
 };
 

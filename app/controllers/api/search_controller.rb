@@ -43,7 +43,11 @@ class Api::SearchController < ApplicationController
 
     @countries = Country.where('name ~* ?', @query).pluck(:id, :name).map {|arr| arr.push("countries")}
 
-    @all_places = [{title: "Countries", places: @countries + @uk_countries}, {title: "States", places: @states}, {title: "Cities", places: @cities}]
+    num_cities = @cities.length
+    num_states = @states.length
+    num_countries = @countries.length + @uk_countries.length
+
+    @all_places = [{title: "Countries (#{num_countries})", places: @countries + @uk_countries}, {title: "States (#{num_states})", places: @states}, {title: "Cities (#{num_cities})", places: @cities}]
 
     render :index
   end

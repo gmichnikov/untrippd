@@ -15,7 +15,7 @@ const getSuggestionValue = (suggestion) => {
 const renderSuggestion = (suggestion) => {
   let linkAddress = `/${suggestion.place_type}/${suggestion.id}`;
   return (
-    <Link to={linkAddress}>{suggestion.name}</Link>
+    <Link className="search-result" to={linkAddress}>{suggestion.name}</Link>
   )
 };
 

@@ -6,8 +6,8 @@
   width: 240px;
   height: 30px;
   padding: 10px 20px;
-  font-family: Helvetica, sans-serif;
-  font-weight: 300;
+  font-family: "ProximaNova", Helvetica Neue, Helvetica;
+  font-weight: 400;
   font-size: 16px;
   border: 1px solid #aaa;
   border-radius: 4px;
@@ -29,16 +29,19 @@
 .react-autosuggest__container--open .react-autosuggest__suggestions-container {
   display: block;
   position: absolute;
-  top: 51px;
-  width: 280px;
-  border: 1px solid #aaa;
+  top: 28px;
+  width: 240px;
+  /*border: 1px solid #aaa;*/
+  border-top: 0;
   background-color: #fff;
-  font-family: Helvetica, sans-serif;
+  font-family: "ProximaNova", Helvetica Neue, Helvetica;
   font-weight: 300;
   font-size: 16px;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
   z-index: 2;
+  -webkit-box-shadow: 0 5px 8px 0px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 8px 0px rgba(0,0,0,0.3);
 }
 
 .react-autosuggest__suggestions-list {
@@ -47,22 +50,37 @@
   list-style-type: none;
 }
 
-.react-autosuggest__suggestion {
+li.react-autosuggest__suggestion {
   cursor: pointer;
-  /*padding: 10px 20px;*/
+  padding: 0px 0px;
+  width: 240px;
 }
 
 .react-autosuggest__suggestion--focused {
-  background-color: #ddd;
+  background-color: #f5f5f5;
 }
 
 .react-autosuggest__section-title {
-  padding: 10px 0 0 10px;
-  font-size: 12px;
-  color: #777;
-  border-top: 1px dashed #ccc;
+  padding: 3px 0 3px 5px;
+  font-size: 11px;
+  color: #666;
+  background-color: #eee;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  /*border-top: 1px dashed #ccc;*/
 }
 
 .react-autosuggest__section-container:first-child .react-autosuggest__section-title {
   border-top: 0;
 }
+
+
+ /*
+ class="react-autosuggest__suggestions-container"
+ react-autosuggest__section-container (3 of these)
+ react-autosuggest__section-title
+ class="react-autosuggest__suggestions-list"
+ class="react-autosuggest__suggestion"
+ a (mine) class="search-result"
+ */

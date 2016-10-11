@@ -1,5 +1,6 @@
 import React from 'react';
 import { Router, Route, IndexRoute, hashHistory, Link } from 'react-router';
+import SearchContainer from './search/search_container';
 
 const sessionLinks = () => {
   return (
@@ -53,7 +54,9 @@ const Header = ({ currentUser, logout, searchPlaces, requestAllSearchPlaces }) =
           <li>The Feed</li>
           <li>Top Places</li>
           <li>Write a Review</li>
-          <li id="header-search-bar"></li>
+          <form className="header-search-form">
+            <SearchContainer />
+          </form>
           {headerVaryingContent}
         </ul>
       </nav>
