@@ -11,16 +11,20 @@ const sessionLinks = () => {
 }
 
 const welcomeAndLogout = (currentUser, logout) => {
+
+  let linkUserFeed = `/users/${currentUser.username}`;
+  let linkFollowersList = `/users/${currentUser.username}/followers`;
+
   return (
     <div className="welcome-and-logout">
       <span className="header-current-user">{currentUser.username}
         <ul className="user-dropdown">
           <li>
             <ul>
-              <li><a href="#">My Suggestions</a></li>
+              <li><Link to={linkUserFeed}>My Suggestions</Link></li>
               <li><a href="#">My Guidebooks</a></li>
               <li><a href="http://www.cnn.com">My Follows</a></li>
-              <li><a href="#">My Followers</a></li>
+              <li><Link to={linkFollowersList}>My Followers</Link></li>
               <li><a href="http://www.cnn.com">My Places</a></li>
               <li><button onClick={logout}>Log out!</button></li>
 

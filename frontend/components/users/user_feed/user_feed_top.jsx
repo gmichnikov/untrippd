@@ -40,6 +40,9 @@ class UserFeedTop extends React.Component {
       correctButton = unfollowButton;
     }
 
+    let linkUserFeed = `/users/${user.username}`;
+    let linkFollowersList = `/users/${user.username}/followers`;
+
     return (
       <div className="user-feed-top">
         <div className="user-feed-top-names">
@@ -49,7 +52,7 @@ class UserFeedTop extends React.Component {
         </div>
         <div className="user-feed-top-stats-bar">
           <div className="user-feed-top-stats">
-            <Link to="#">
+            <Link to={linkUserFeed}>
               <span className="user-feed-top-stats-num">{user.num_suggestions}</span>
               <span className="user-feed-top-stats-label">suggestions</span>
             </Link>
@@ -61,7 +64,7 @@ class UserFeedTop extends React.Component {
               <span className="user-feed-top-stats-num">{user.num_followeds}</span>
               <span className="user-feed-top-stats-label">follows</span>
             </Link>
-            <Link to="">
+            <Link to={linkFollowersList}>
               <span className="user-feed-top-stats-num">{user.num_followers}</span>
               <span className="user-feed-top-stats-label">followers</span>
             </Link>

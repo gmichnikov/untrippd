@@ -3,7 +3,7 @@ import { Router, Route, IndexRoute, hashHistory, Link } from 'react-router';
 import FollowersListItem from './followers_list_item';
 
 
-class FollowersMain extends React.Component {
+class FollowedsMain extends React.Component {
 
   constructor(props) {
     super(props);
@@ -21,22 +21,22 @@ class FollowersMain extends React.Component {
   render() {
 
     console.log(this.props.user);
-    let followers = this.props.user.followers;
+    let followeds = this.props.user.followeds;
     let first_name = this.props.user.first_name;
     let currentUser = this.props.currentUser;
-    if (!followers) { return null; }
+    if (!followeds) { return null; }
 
-    let followersList = followers.map((follower) => {
-      return <FollowersListItem key={follower.id} follower={follower} currentUser={currentUser || null} followUser={this.props.followUser} unfollowUser={this.props.unfollowUser} currentUserFollowsUser={follower.current_user_follows_user}/>
+    let followedsList = followeds.map((followed) => {
+      return <FollowersListItem key={followed.id} follower={followed} currentUser={currentUser || null} followUser={this.props.followUser} unfollowUser={this.props.unfollowUser} currentUserFollowsUser={followed.current_user_follows_user}/>
     })
 
     return (
       <div className="followers-main">
-        <h3>Followers</h3>
+        <h3>Follows</h3>
         <div className="followers-list">
-          <h4>{first_name}{"'s Followers"} ({followers.length})</h4>
+          <h4>{first_name}{"'s Follows"} ({followeds.length})</h4>
           <ul className="followers-list-items">
-            {followersList}
+            {followedsList}
           </ul>
         </div>
       </div>
@@ -45,4 +45,4 @@ class FollowersMain extends React.Component {
 
 };
 
-export default FollowersMain;
+export default FollowedsMain;

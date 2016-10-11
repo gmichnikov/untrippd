@@ -10,21 +10,22 @@ class FollowersListItem extends React.Component {
   }
 
   render () {
+    console.log("from list", this.props.follower);
     let f = this.props.follower;
     let currentUser = this.props.currentUser;
 
-    let followButton = <div onClick={() => this.props.followUser(f.follower_id)}>
+    let followButton = <div onClick={() => this.props.followUser(f.id)}>
       <i className="material-icons followers-list-follow">add_circle</i>
     </div>
 
-    let unfollowButton = <div onClick={() => this.props.unfollowUser(f.follower_id)}>
+    let unfollowButton = <div onClick={() => this.props.unfollowUser(f.id)}>
       <i className="material-icons followers-list-unfollow">remove_circle</i>
     </div>
 
     let correctButton;
-    if (currentUser === null || currentUser.id === f.follower_id) {
+    if (currentUser === null || currentUser.id === f.id) {
       correctButton = null;
-    } else if (currentUser.followeds_ids.indexOf(f.follower_id) === -1) {
+    } else if (currentUser.followeds_ids.indexOf(f.id) === -1) {
       correctButton = followButton;
     } else {
       correctButton = unfollowButton;
@@ -35,11 +36,11 @@ class FollowersListItem extends React.Component {
         <Link to="" className="followers-list-item-photo"></Link>
         <div className="followers-list-item-names">
           <div className="follow-list-item-display-name">
-            {f.follower_display_name}
+            {f.display_name}
           </div>
           <div className="follow-list-item-username">
             <i className="material-icons icon-person">person</i>
-            {f.follower_username}
+            {f.username}
           </div>
         </div>
         <div className="followers-list-item-button">
