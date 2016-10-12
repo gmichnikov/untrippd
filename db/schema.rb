@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161010201629) do
+ActiveRecord::Schema.define(version: 20161012230641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,16 +63,20 @@ ActiveRecord::Schema.define(version: 20161010201629) do
   add_index "regions", ["place_type_id"], name: "index_regions_on_place_type_id", using: :btree
 
   create_table "suggestions", force: :cascade do |t|
-    t.integer  "author_id",                        null: false
-    t.text     "body",                             null: false
-    t.boolean  "food",             default: false
-    t.boolean  "attraction",       default: false
-    t.boolean  "accommodation",    default: false
-    t.boolean  "highlight",        default: false
+    t.integer  "author_id",                          null: false
+    t.text     "body",                               null: false
+    t.boolean  "food",               default: false
+    t.boolean  "attraction",         default: false
+    t.boolean  "accommodation",      default: false
+    t.boolean  "highlight",          default: false
     t.integer  "suggestable_id"
     t.string   "suggestable_type"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "suggestions", ["suggestable_type", "suggestable_id"], name: "index_suggestions_on_suggestable_type_and_suggestable_id", using: :btree

@@ -32,6 +32,7 @@ class SuggestionFeedItem extends React.Component {
       <li className="suggestion-feed-item group">
         <div className="feed-user-profile-photo"><Link to=""><img></img></Link></div>
         <div className="feed-middle">
+          <img src={s.image_url} />
           <div className="feed-item-title">
             <Link to={s.user_link}>{s.author_display_name}</Link>
             {" made a suggestion about "}
@@ -42,7 +43,7 @@ class SuggestionFeedItem extends React.Component {
           </div>
           <div className="feed-item-details">
             <TimeAgo date={s.created_at} live={false}/>
-            
+
             {highlightIcon}
             {followedIcon}
             {foodIcon}
