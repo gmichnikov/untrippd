@@ -41,7 +41,7 @@ class PlaceMain extends React.Component {
     return (
 			<section className="place-main">
         <PlaceMainTop city={city} />
-        <SuggestionFeed suggestions={citySuggestions} currentUser={currentUser} />
+        <SuggestionFeed suggestions={citySuggestions} currentUser={this.props.currentUser} />
         <SuggestionCreateContainer placeType={city.place_type_name} placeId={city.id}/>
 			</section>
     );
