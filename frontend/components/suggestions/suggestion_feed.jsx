@@ -26,9 +26,15 @@ class SuggestionFeed extends React.Component {
     if (!this.props.suggestions) {
       return null;
     }
-    console.log("currentUser", currentUser);
+    let currentUser = this.props.currentUser;
+
+    console.log("ThecurrentUser", currentUser);
     let suggestionsToShow = this.props.suggestions;
-    let followedsIds = this.props.currentUser.followeds_ids;
+
+    let followedsIds;
+    if (currentUser) {
+      followedsIds = this.props.currentUser.followeds_ids;
+    }
 
     if (this.state.onlyFood) {
       suggestionsToShow = suggestionsToShow.filter((sugg) => {
@@ -54,17 +60,38 @@ class SuggestionFeed extends React.Component {
       });
     }
 
-    if (this.state.onlyFollowedUsers) {
+    if (currentUser && this.state.onlyFollowedUsers) {
       suggestionsToShow = suggestionsToShow.filter((sugg) => {
         return followedsIds.indexOf(sugg.author_id) !== -1;
       });
     }
 
+    let byFollowedUser;
     let feed = suggestionsToShow.map((suggestion, i) => {
-      let byFollowedUser = (followedsIds.indexOf(suggestion.author_id) !== -1)
+      if (currentUser) {
+        byFollowedUser = (followedsIds.indexOf(suggestion.author_id) !== -1);
+      } else {
+        byFollowedUser = true;
+      }
       return <SuggestionFeedItem key={suggestion.id} suggestion={suggestion} byFollowedUser={byFollowedUser}/>
     })
 
+    let followToggle;
+    if (currentUser) {
+      console.log("Yes current user");
+      followToggle = (
+        <span>
+          <span>written by users I follow</span>
+          <Toggle
+            checked={this.state.onlyFollowedUsers}
+            onClick={this.updateCheckbox('onlyFollowedUsers')}
+          />
+        </span>
+      )
+    } else {
+      console.log("no current user");
+      followToggle = null;
+    }
 
     return (
 			<section className="suggestion-feed">
@@ -76,11 +103,7 @@ class SuggestionFeed extends React.Component {
                 checked={this.state.onlyHighlight}
                 onClick={this.updateCheckbox('onlyHighlight')}
               />
-            <span>written by users I follow</span>
-              <Toggle
-                checked={this.state.onlyFollowedUsers}
-                onClick={this.updateCheckbox('onlyFollowedUsers')}
-              />
+            {followToggle}
             <br />
             <p>Only show suggestions about ... </p>
             <label>Food</label>

@@ -5,6 +5,7 @@ import * as ACTIONS from '../../../actions/user_actions.js';
 const mapStateToProps = state => {
   return {
     user: state.user,
+    followeds: state.user.followeds,
     currentUser: state.session.currentUser
   }
 };

@@ -20,10 +20,18 @@ class FollowedsMain extends React.Component {
 
   render() {
 
-    let followeds = this.props.user.followeds;
+    let followeds = this.props.followeds;
+    let currentUser = this.props.currentUser;
+    let numFolloweds;
+    if (followeds) {
+      numFolloweds = this.props.followeds.length;
+    }
+    if (currentUser && this.props.user.id === currentUser.id) {
+      numFolloweds = currentUser.followeds_ids.length;
+    }
+    console.log(followeds, numFolloweds);
     let first_name = this.props.user.first_name;
     let username = this.props.user.username;
-    let currentUser = this.props.currentUser;
     if (!followeds) { return null; }
 
     let followedsList = followeds.map((followed) => {
@@ -40,7 +48,7 @@ class FollowedsMain extends React.Component {
           <li className="follow-tabs-active"><Link to="">Follows</Link></li>
         </ul>
         <div className="followers-list">
-          <h4><Link to={linkFeed}>{first_name}</Link>{"'s Follows"} ({followeds.length})</h4>
+          <h4><Link to={linkFeed}>{first_name}</Link>{"'s Follows"} ({numFolloweds})</h4>
           <ul className="followers-list-items">
             {followedsList}
           </ul>
