@@ -31,10 +31,12 @@ class HomeMain extends React.Component {
 
     let messageText = this.props.welcomeNotificationStatus ? this.props.welcomeNotificationStatus : "";
 
+    let feedTitle = "All Recent Activity";
+
     return (
       <div className="home-main">
         <Notification isActive={this.state.notificationActive} message={messageText} />
-        <SuggestionFeed suggestions={this.props.suggestions} currentUser={this.props.currentUser} deleteSingleSuggestion={this.props.deleteSingleSuggestion}/>
+        <SuggestionFeed suggestions={this.props.suggestions} currentUser={this.props.currentUser} deleteSingleSuggestion={this.props.deleteSingleSuggestion} feedTitle={feedTitle}/>
       </div>
     )
   }

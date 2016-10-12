@@ -118,3 +118,12 @@ Figure out a photo strategy, for checkins, users, places
 
 challenges
 follows for random users, not user profile
+
+things missing
+  update suggestions
+  guidebooks
+  aws
+  scroll
+  better sidebars (top users for a place)
+  most popular places page? (sidebar top suggesters)
+  user profile sidebar (just links to each part)

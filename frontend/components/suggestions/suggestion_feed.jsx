@@ -101,7 +101,7 @@ class SuggestionFeed extends React.Component {
 
     return (
 			<section className="suggestion-feed">
-        <h2>Recent Activity</h2>
+        <h2>{this.props.feedTitle}</h2>
         <section className="suggestion-feed-filter-section">
           <form className="suggestion-feed-filter-form">
             <p>Only show suggestions ...      <span>marked as highlights</span></p>

@@ -38,10 +38,12 @@ class PlaceMain extends React.Component {
 
     if (!city) return <div></div>;
 
+    const feedTitle = `Suggestions about ${city.name}`;
+
     return (
 			<section className="place-main">
         <PlaceMainTop city={city} />
-        <SuggestionFeed suggestions={citySuggestions} currentUser={this.props.currentUser} deleteSingleSuggestion={this.props.deleteSingleSuggestion} />
+        <SuggestionFeed suggestions={citySuggestions} currentUser={this.props.currentUser} deleteSingleSuggestion={this.props.deleteSingleSuggestion} feedTitle={feedTitle} />
 			</section>
     );
   }
