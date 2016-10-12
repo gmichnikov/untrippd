@@ -46,9 +46,9 @@ class SuggestionForm extends React.Component {
 
     return (
       <section className="suggestion-form-section">
-        <div className="suggestion-from-top-bar">
+        <div className="suggestion-form-top-bar">
           <h3>Make a Suggestion</h3>
-          <span><i className="material-icons icon-close">close</i></span>
+          <span onClick={this.props.closeModal}><i className="material-icons icon-close">close</i></span>
         </div>
         <form className="suggestion-form" onSubmit={this.handleSubmit}>
           <textarea className="suggestion-form-body"

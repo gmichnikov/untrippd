@@ -49,7 +49,7 @@
   margin-left: 5px;
 }
 
-.suggestion-from-top-bar {
+.suggestion-form-top-bar {
   background-color: #222;
   color: white;
   padding: 4px 2px 4px 10px;
@@ -62,8 +62,8 @@
   font-weight: 500;
 }
 
-.suggestion-from-top-bar span {
-  cursor: default;
+.suggestion-form-top-bar span {
+  cursor: pointer;
 }
 
 .material-icons.icon-close {
