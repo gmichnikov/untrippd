@@ -95,15 +95,14 @@ Some next steps
     mode edit - pencil also
     photo library - photo lib
     favorite for liking
-    highlight off
-    highlight
 
   sidebars
     most popular countries
     most popular cities
     top users who suggest a place
     related places?
-    user profile -> links to most reviewd places, guidebooks, followers, follows
+    user profile -> links to most reviewed places, guidebooks, followers, follows
+    other cities in the same country sorted by review
 
 
 For later

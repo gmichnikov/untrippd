@@ -3,12 +3,20 @@ import * as API from '../util/place_api_util';
 
 export default ({ getState, dispatch }) => next => action => {
 
-  const receiveSingleCitySuccess = city => dispatch(ACTIONS.receiveSingleCity(city));
+  const receiveSingleCitySuccess = (city) => dispatch(ACTIONS.receiveSingleCity(city));
+
+  const receivePopularCitiesSuccess = (cities) => {
+    console.log("cities", cities);
+    return dispatch(ACTIONS.receivePopularCities(cities));
+  }
   // const errorCallback = xhr => dispatch(ACTIONS.???(xhr.responseJSON));
 
   switch(action.type) {
     case ACTIONS.REQUEST_SINGLE_CITY:
       API.fetchSingleCity(action.place_type, action.id, receiveSingleCitySuccess);
+      return next(action);
+    case ACTIONS.REQUEST_POPULAR_CITIES:
+      API.fetchPopularCities(receivePopularCitiesSuccess);
       return next(action);
     default:
       return next(action);

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Router, Route, IndexRoute, hashHistory, Link } from 'react-router';
+import PopularCityItem from '../places/popular_city_item';
 
 class HomeSidebar extends React.Component {
 
@@ -10,17 +11,27 @@ class HomeSidebar extends React.Component {
   }
 
   componentDidMount() {
+    this.props.requestPopularCities();
   }
-
-  componentWillUnmount() {
-  }
-
 
   render() {
 
+    let popularCities = this.props.popularCities;
+    if (!popularCities) { return null };
+    console.log("popularCities", popularCities);
+
+    let citiesList = popularCities.map((city) => {
+      return <PopularCityItem key={city.id} city={city} />
+    })
+
     return (
       <div className="home-sidebar">
-        <h3>Most suggested cities</h3>
+        <div className="popular-cities-sidebar">
+          <h3>Most Popular Cities</h3>
+          <ul className="suggestion-feed-items">
+            {citiesList}
+          </ul>
+        </div>
       </div>
     )
   }

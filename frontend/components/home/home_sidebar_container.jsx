@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import HomeSidebar from './home_sidebar';
 // import * as SESSION_ACTIONS from '../../actions/session_actions.js';
-// import * as SUGGESTION_ACTIONS from '../../actions/suggestion_actions.js';
+import * as PLACE_ACTIONS from '../../actions/place_actions.js';
 
 const mapStateToProps = state => {
   return {
-    // currentUser: state.session.currentUser,
+    popularCities: state.place.popularCities,
     // suggestions: state.suggestion.manySuggestions,
   };
 };
@@ -13,7 +13,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     // changeWelcomeNotification: (status) => dispatch(SESSION_ACTIONS.changeWelcomeNotification(status)),
-    // requestAllSuggestions: () => dispatch(SUGGESTION_ACTIONS.requestAllSuggestions())
+    requestPopularCities: () => dispatch(PLACE_ACTIONS.requestPopularCities()),
   };
 };
 

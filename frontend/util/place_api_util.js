@@ -6,3 +6,12 @@ export const fetchSingleCity = (place_type, id, success, error) => {
     error: error,
 	});
 };
+
+export const fetchPopularCities = (success, error) => {
+	$.ajax({
+		method: 'GET',
+  	url: `/api/cities/popular`,
+    success: success,
+    error: error,
+	});
+};
