@@ -15,6 +15,13 @@ class SuggestionFeedItem extends React.Component {
   render () {
     let s = this.props.suggestion;
 
+    let deleteSuggestionButton = null;
+    if (this.props.ownSuggestion) {
+      deleteSuggestionButton = (
+        <div className="suggestion-delete-button" data-tip={"Delete this suggestion"} onClick={() => this.props.deleteSingleSuggestion(s.id)}></div>
+      )
+    }
+
     let foodIcon = s.food ? <i className="material-icons icon-dining">local_dining</i> : null;
     let attractionIcon = s.attraction ? <i className="material-icons icon-visibility">visibility</i> : null;
     let accommodationIcon = s.accommodation ? <i className="material-icons icon-hotel">hotel</i> : null;
@@ -41,10 +48,13 @@ class SuggestionFeedItem extends React.Component {
             {foodIcon}
             {attractionIcon}
             {accommodationIcon}
-            <ReactTooltip />
           </div>
         </div>
-        <div className="feed-place-photo"><Link to=""><img></img></Link></div>
+        <div className="feed-place-photo">
+          <Link to=""><img></img></Link>
+          {deleteSuggestionButton}
+        </div>
+        <ReactTooltip />
       </li>
     );
   }

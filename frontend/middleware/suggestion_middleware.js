@@ -7,6 +7,7 @@ export default ({ getState, dispatch }) => next => action => {
   const errorCallback = xhr => dispatch(ACTIONS.receiveSuggestionErrors(xhr.responseJSON));
   const receiveSingleSuggestionSuccess = suggestion => dispatch(ACTIONS.receiveSingleSuggestion(suggestion));
   const receiveAllSuggestionsSuccess = suggestions => dispatch(ACTIONS.receiveAllSuggestions(suggestions));
+  const deleteSingleSuggestionSuccess = suggestion => dispatch(ACTIONS.removeSingleSuggestion(suggestion));
 
   switch(action.type) {
     case ACTIONS.CREATE_SUGGESTION:
@@ -17,6 +18,9 @@ export default ({ getState, dispatch }) => next => action => {
       return next(action);
     case ACTIONS.REQUEST_ALL_SUGGESTIONS:
       API.fetchAllSuggestions(receiveAllSuggestionsSuccess, errorCallback);
+      return next(action);
+    case ACTIONS.DELETE_SINGLE_SUGGESTION:
+      API.destroySingleSuggestion(action.id, deleteSingleSuggestionSuccess);
       return next(action);
     default:
       return next(action);

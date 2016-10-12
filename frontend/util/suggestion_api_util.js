@@ -25,3 +25,12 @@ export const fetchAllSuggestions = (success, error) => {
     error: error,
 	});
 };
+
+export const destroySingleSuggestion = (id, success, error) => {
+	$.ajax({
+		method: 'DELETE',
+  	url: `/api/suggestions/${id}`,
+    success: success,
+    error: error,
+	});
+};

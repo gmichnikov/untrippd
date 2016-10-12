@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :countries, only: [:show]
     resources :regions, only: [:show]
     resources :cities, only: [:show]
-    resources :suggestions, only: [:create, :show, :index]
+    resources :suggestions, only: [:create, :show, :index, :destroy]
     resources :search, only: [:index]
     resources :users, constraints: { id: /[_\-\.A-Za-z0-9]+/ }, only: [:create, :show]
     resource :session, only: [:create, :destroy]

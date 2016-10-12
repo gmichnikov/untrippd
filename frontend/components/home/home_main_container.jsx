@@ -14,7 +14,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     changeWelcomeNotification: (status) => dispatch(SESSION_ACTIONS.changeWelcomeNotification(status)),
-    requestAllSuggestions: () => dispatch(SUGGESTION_ACTIONS.requestAllSuggestions())
+
+    requestAllSuggestions: () => dispatch(SUGGESTION_ACTIONS.requestAllSuggestions()),
+    deleteSingleSuggestion: (id) => dispatch(SUGGESTION_ACTIONS.deleteSingleSuggestion(id))
   };
 };
 

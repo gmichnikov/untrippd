@@ -18,6 +18,13 @@ class Api::SuggestionsController < ApplicationController
     render :index
   end
 
+  def destroy
+    @suggestion = Suggestion.find(params[:id])
+    @suggestion.destroy
+    render json: @suggestion
+  end
+
+
   def suggestion_params
     params.require(:suggestion).permit(:body, :food, :attraction, :accommodation, :highlight, :suggestable_id, :suggestable_type)
   end
