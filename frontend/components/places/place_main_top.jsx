@@ -3,16 +3,43 @@ import PlaceMap from './place_map';
 import { Link } from 'react-router';
 import ReactTooltip from 'react-tooltip'
 import SuggestionCreateContainer from '../suggestions/suggestion_create_container';
+import Modal from 'react-modal';
+
 
 class PlaceMainTop extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
+      modalIsOpen: false,
     };
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+
+  }
+
+  openModal() {
+    this.setState({modalIsOpen: true});
+  }
+
+  closeModal() {
+    this.setState({modalIsOpen: false});
   }
 
   render () {
+    const customStyles = {
+      content : {
+        top                   : '50%',
+        left                  : '50%',
+        right                 : 'auto',
+        bottom                : 'auto',
+        marginRight           : '-50%',
+        transform             : 'translate(-50%, -50%)',
+        padding               : '0px',
+        borderRadius          : '0px',
+      }
+    };
+
     let city = this.props.city;
 
     let mapComponent = <PlaceMap lat={city.lat} lng={city.lng} />;
@@ -32,7 +59,7 @@ class PlaceMainTop extends React.Component {
             </div>
           </div>
           <div className="place-main-top-buttons group">
-            <div className="place-main-top-write" data-tip={writeText}></div>
+            <div className="place-main-top-write" onClick={this.openModal} data-tip={writeText}></div>
             <div className="place-main-top-book" data-tip={followText}></div>
             <ReactTooltip />
           </div>
@@ -41,7 +68,15 @@ class PlaceMainTop extends React.Component {
           {mapComponent}
   				<a href={fullMapLink} target="_blank">Full Map</a>
         </section>
-        <SuggestionCreateContainer placeType={city.place_type_name} placeId={city.id}/>
+
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onRequestClose={this.closeModal}
+          style={customStyles}
+        >
+          <SuggestionCreateContainer placeType={city.place_type_name} placeId={city.id} closeModal={this.closeModal}/>
+        </Modal>
+
 			</section>
     );
   }

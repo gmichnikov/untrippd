@@ -19,11 +19,8 @@ class SuggestionForm extends React.Component {
       attraction: false,
       accommodation: false,
       highlight: false,
-      modalIsOpen: false,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
   }
 
   handleSubmit(e) {
@@ -34,6 +31,7 @@ class SuggestionForm extends React.Component {
     this.setState(Object.assign(
       {}, this.state, {body: ""}
     ));
+    this.props.closeModal();
   }
 
   updateBody() {
@@ -44,63 +42,45 @@ class SuggestionForm extends React.Component {
     return e => this.setState({[property]: e.target.checked});
   }
 
-  openModal() {
-    this.setState({modalIsOpen: true});
-  }
-
-  closeModal() {
-    this.setState({modalIsOpen: false});
-  }
-
-
   render () {
-
-    const customStyles = {
-      content : {
-        top                   : '50%',
-        left                  : '50%',
-        right                 : 'auto',
-        bottom                : 'auto',
-        marginRight           : '-50%',
-        transform             : 'translate(-50%, -50%)'
-      }
-    };
 
     return (
       <section className="suggestion-form-section">
-        <button onClick={this.openModal}>Open Modal</button>
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          onRequestClose={this.closeModal}
-          style={customStyles}
-        >
-        <button onClick={this.closeModal}>close</button>
-
+        <div className="suggestion-from-top-bar">
+          <h3>Make a Suggestion</h3>
+          <span><i className="material-icons icon-close">close</i></span>
+        </div>
         <form className="suggestion-form" onSubmit={this.handleSubmit}>
-          <textarea className="suggestion-body"
+          <textarea className="suggestion-form-body"
             value={this.state.body}
             placeholder="suggestion text ..."
             onChange={this.updateBody()}
           />
-        <label>Food?</label>
+          <div className="icon-photo-box">
+            <i className="material-icons icon-add-photo">add_a_photo</i>
+          </div>
+          <br/>
+          <span className="check-all-that-apply">Check all that apply: </span>
+          <label>Food?</label>
           <input className="suggestion-form-checkbox"
             type="checkbox"
             checked={this.state.food}
             onClick={this.updateCheckbox('food')}
           />
-        <label>Attraction?</label>
+          <label>Attraction?</label>
           <input className="suggestion-form-checkbox"
             type="checkbox"
             checked={this.state.attraction}
             onClick={this.updateCheckbox('attraction')}
           />
-        <label>Accommodation?</label>
+          <label>Accommodation?</label>
           <input className="suggestion-form-checkbox"
             type="checkbox"
             checked={this.state.accommodation}
             onClick={this.updateCheckbox('accommodation')}
           />
-        <label>Highlight?</label>
+          <br/>
+          <label>Was this a highlight of your trip?</label>
           <input className="suggestion-form-checkbox"
             type="checkbox"
             checked={this.state.highlight}
@@ -108,8 +88,6 @@ class SuggestionForm extends React.Component {
           />
           <button>Create Suggestion</button>
         </form>
-      </Modal>
-
       </section>
     );
   }
