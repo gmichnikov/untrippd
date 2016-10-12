@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import UserFeedMain from './user_feed_main';
 import * as ACTIONS from '../../../actions/user_actions.js';
+import * as SUGGESTION_ACTIONS from '../../../actions/suggestion_actions.js';
 
 const mapStateToProps = state => {
   return {
@@ -12,6 +13,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
+      deleteSingleSuggestion: (id) => dispatch(SUGGESTION_ACTIONS.deleteSingleSuggestion(id))
     };
 };
 
