@@ -1,24 +1,7 @@
 import React from 'react';
 import Autosuggest from 'react-autosuggest';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 
-
-// When suggestion is clicked, Autosuggest needs to populate the input field
-// based on the clicked suggestion. Teach Autosuggest how to calculate the
-// input value for every given suggestion.
-// (how they show up when you click one)
-const getSuggestionValue = (suggestion) => {
-  console.log("search suggestion", suggestion);
-  return suggestion.name;
-}
-
-// Use your imagination to render suggestions. (how they show up in the search list)
-const renderSuggestion = (suggestion) => {
-  let linkAddress = `/${suggestion.place_type}/${suggestion.id}`;
-  return (
-    <Link className="search-result" to={linkAddress}>{suggestion.name}</Link>
-  )
-};
 
 class Search extends React.Component {
   constructor() {
@@ -32,11 +15,41 @@ class Search extends React.Component {
     this.state = {
       value: '',
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.getSuggestionValue = this.getSuggestionValue.bind(this);
 
     // this.lastRequestId = null;
   }
 
   componentDidMount() {
+  }
+
+
+  // When suggestion is clicked, Autosuggest needs to populate the input field
+  // based on the clicked suggestion. Teach Autosuggest how to calculate the
+  // input value for every given suggestion.
+  // (how they show up when you click one)
+  getSuggestionValue(suggestion) {
+    console.log("search suggestion", suggestion);
+    this.suggestion = suggestion;
+    return suggestion.name;
+  }
+
+  // Use your imagination to render suggestions. (how they show up in the search list)
+  renderSuggestion(suggestion) {
+    let linkAddress = `/${suggestion.place_type}/${suggestion.id}`;
+    return (
+      <Link className="search-result" to={linkAddress}>{suggestion.name}</Link>
+    )
+  };
+
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const suggestion = this.suggestion;
+    if (!suggestion) return;
+    const linkAddress = `/${suggestion.place_type}/${suggestion.id}`;
+    this.props.router.push(linkAddress);
   }
 
   render() {
@@ -84,22 +97,24 @@ class Search extends React.Component {
     };
 
     return (
-      <div>
-        <Autosuggest
-          multiSection={true}
-          suggestions={suggestions}
-          onSuggestionsFetchRequested={onSuggestionsFetchRequested}
-          onSuggestionsClearRequested={onSuggestionsClearRequested}
-          getSuggestionValue={getSuggestionValue}
-          shouldRenderSuggestions={shouldRenderSuggestions}
-          renderSuggestion={renderSuggestion}
-          renderSectionTitle={renderSectionTitle}
-          getSectionSuggestions={getSectionSuggestions}
-          inputProps={inputProps}
-        />
+      <form className="header-search-form" onSubmit={this.handleSubmit}>
+        <div>
+          <Autosuggest
+            multiSection={true}
+            suggestions={suggestions}
+            onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+            onSuggestionsClearRequested={onSuggestionsClearRequested}
+            getSuggestionValue={this.getSuggestionValue}
+            shouldRenderSuggestions={shouldRenderSuggestions}
+            renderSuggestion={this.renderSuggestion}
+            renderSectionTitle={renderSectionTitle}
+            getSectionSuggestions={getSectionSuggestions}
+            inputProps={inputProps}
+          />
       </div>
+    </form>
     );
   }
 }
 
-export default Search;
+export default withRouter(Search);

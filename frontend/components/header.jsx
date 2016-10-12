@@ -9,15 +9,6 @@ class Header extends React.Component {
     this.state = {
     }
   }
-  // handleSubmit(e) {
-  //   e.preventDefault();
-  //   const suggestion = Object.assign(this.state, {suggestable_type: this.props.placeType, suggestable_id: this.props.placeId});
-  //   console.log("submit suggestion attempt", suggestion);
-  //   this.props.processSuggestionForm({suggestion: suggestion});
-  //   this.setState(Object.assign(
-  //     {}, this.state, {body: ""}
-  //   ));
-  // }
 
   render() {
 
@@ -70,9 +61,7 @@ class Header extends React.Component {
             <li>The Feed</li>
             <li>Top Places</li>
             <li>Write a Review</li>
-            <form className="header-search-form">
-              <SearchContainer />
-            </form>
+            <SearchContainer />
             {headerVaryingContent}
           </ul>
         </nav>
