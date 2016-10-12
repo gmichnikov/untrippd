@@ -120,10 +120,17 @@ challenges
 follows for random users, not user profile
 
 things missing
-  update suggestions
-  guidebooks
+  update individual suggestions
+  guidebooks -> possibly just a single guidebook?
   aws
   scroll
+  suggestions view page
   better sidebars (top users for a place)
   most popular places page? (sidebar top suggesters)
   user profile sidebar (just links to each part)
+
+later
+  remove error message about minified
+  remove logger in production
+  explore button
+  remove single suggestion view

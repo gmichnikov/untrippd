@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     get 'cities/popular' => 'cities#popular', as: :popular_cities
+    get 'cities/explore' => 'cities#explore', as: :explore_cities
     resources :countries, only: [:show]
     resources :regions, only: [:show]
     resources :cities, only: [:show]

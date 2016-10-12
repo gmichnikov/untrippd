@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, IndexRoute, hashHistory, Link } from 'react-router';
+import { Router, Route, IndexRoute, hashHistory, Link, withRouter } from 'react-router';
 import SearchContainer from './search/search_container';
 
 class Header extends React.Component {
@@ -8,12 +8,37 @@ class Header extends React.Component {
     super(props);
     this.state = {
     }
+    this.goExplore = this.goExplore.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.requestRandomCity();
+  }
+
+  componentWillReceiveProps() {
+  }
+
+  goExplore(exploreLink) {
+    this.props.router.push(exploreLink);
   }
 
   render() {
 
     let currentUser = this.props.currentUser;
     let logout = this.props.logout;
+
+    let randomCity = this.props.randomCity;
+    let exploreLink = "";
+    if(!randomCity[0]) {
+      return null;
+    }
+    if (randomCity && randomCity.length == 2) {
+      exploreLink = `/cities/${randomCity[0].id}`;
+    }
+
+    if (this.props.currentCityId === this.props.randomCity[0].id) {
+      exploreLink = `/cities/${randomCity[1].id}`;
+    }
 
     const sessionLinks = () => {
       return (
@@ -58,9 +83,8 @@ class Header extends React.Component {
         <nav className="header-nav">
           <ul className="group">
             <li className="header-logo"><Link to="/">Untrippd</Link><Link to="/"><span>Travel Socially</span></Link></li>
-            <li>The Feed</li>
-            <li>Top Places</li>
-            <li>Write a Review</li>
+            <li><Link to="/home">The Feed</Link></li>
+            <li className="explore-link" onClick={() => this.goExplore(exploreLink)}>Explore the World</li>
             <SearchContainer />
             {headerVaryingContent}
           </ul>
@@ -70,4 +94,4 @@ class Header extends React.Component {
   }
 };
 
-export default Header;
+export default withRouter(Header);

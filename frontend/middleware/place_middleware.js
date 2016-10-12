@@ -6,10 +6,12 @@ export default ({ getState, dispatch }) => next => action => {
   const receiveSingleCitySuccess = (city) => dispatch(ACTIONS.receiveSingleCity(city));
 
   const receivePopularCitiesSuccess = (cities) => {
-    console.log("cities", cities);
     return dispatch(ACTIONS.receivePopularCities(cities));
   }
   // const errorCallback = xhr => dispatch(ACTIONS.???(xhr.responseJSON));
+  const receiveRandomCitySuccess = (city) => dispatch(ACTIONS.receiveRandomCity(city));
+
+
 
   switch(action.type) {
     case ACTIONS.REQUEST_SINGLE_CITY:
@@ -17,6 +19,9 @@ export default ({ getState, dispatch }) => next => action => {
       return next(action);
     case ACTIONS.REQUEST_POPULAR_CITIES:
       API.fetchPopularCities(receivePopularCitiesSuccess);
+      return next(action);
+    case ACTIONS.REQUEST_RANDOM_CITY:
+      API.fetchRandomCity(receiveRandomCitySuccess);
       return next(action);
     default:
       return next(action);

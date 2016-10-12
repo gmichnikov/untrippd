@@ -11,4 +11,9 @@ class Api::CitiesController < ApplicationController
     render :popular
   end
 
+  def explore
+    @city = City.explore
+    render json: @city
+  end
+
 end

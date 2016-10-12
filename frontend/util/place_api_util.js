@@ -15,3 +15,12 @@ export const fetchPopularCities = (success, error) => {
     error: error,
 	});
 };
+
+export const fetchRandomCity = (success, error) => {
+	$.ajax({
+		method: 'GET',
+  	url: `/api/cities/explore`,
+    success: success,
+    error: error,
+	});
+};

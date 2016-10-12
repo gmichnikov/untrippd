@@ -60,7 +60,6 @@ class PlaceMainTop extends React.Component {
           </div>
           <div className="place-main-top-buttons group">
             <div className="place-main-top-write" onClick={this.openModal} data-tip={writeText}></div>
-            <div className="place-main-top-book" data-tip={followText}></div>
             <ReactTooltip />
           </div>
         </section>

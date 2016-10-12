@@ -18,7 +18,6 @@ class HomeSidebar extends React.Component {
 
     let popularCities = this.props.popularCities;
     if (!popularCities) { return null };
-    console.log("popularCities", popularCities);
 
     let citiesList = popularCities.map((city) => {
       return <PopularCityItem key={city.id} city={city} />

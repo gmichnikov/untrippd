@@ -27,18 +27,13 @@ const SuggestionReducer = (oldState = default_suggestion_state, action) => {
       let existingSuggestionsIds = oldSuggestions.map((sugg) => {
         return sugg.id;
       });
-      console.log("exisiting ids", existingSuggestionsIds);
       const suggIndex = existingSuggestionsIds.indexOf(action.suggestion.id);
-      console.log("index", suggIndex);
       if (suggIndex === -1) {
         return oldState;
       } else {
-        console.log("old length", oldSuggestions.length, oldSuggestions);
         oldSuggestions = oldSuggestions.filter((sugg) => {
           return sugg.id !== action.suggestion.id;
         });
-
-        console.log("new len", oldSuggestions.length, oldSuggestions);
         return Object.assign({}, oldState, { manySuggestions: oldSuggestions });
       }
     default:

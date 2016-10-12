@@ -30,7 +30,6 @@ class Search extends React.Component {
   // input value for every given suggestion.
   // (how they show up when you click one)
   getSuggestionValue(suggestion) {
-    console.log("search suggestion", suggestion);
     this.suggestion = suggestion;
     return suggestion.name;
   }

@@ -28,6 +28,12 @@ class City < ActiveRecord::Base
     @cities
   end
 
+  def self.explore
+    @cities = City.find_by_sql("SELECT cities.id, cities.name, cities.region_id, count(cities.id) FROM suggestions INNER JOIN cities ON suggestions.suggestable_id = cities.id AND suggestions.suggestable_type = 'City' GROUP BY cities.id")
+
+    @cities.shuffle.take(2)
+  end
+
   def secondary_place
     if country.name == "United States"
       "#{region.name}, USA"

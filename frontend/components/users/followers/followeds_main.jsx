@@ -29,7 +29,6 @@ class FollowedsMain extends React.Component {
     if (currentUser && this.props.user.id === currentUser.id) {
       numFolloweds = currentUser.followeds_ids.length;
     }
-    console.log(followeds, numFolloweds);
     let first_name = this.props.user.first_name;
     let username = this.props.user.username;
     if (!followeds) { return null; }

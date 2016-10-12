@@ -42,7 +42,7 @@ class SuggestionFeedItem extends React.Component {
           </div>
           <div className="feed-item-details">
             <TimeAgo date={s.created_at} live={false}/>
-            <Link to="">View Suggestion Details</Link>
+            
             {highlightIcon}
             {followedIcon}
             {foodIcon}

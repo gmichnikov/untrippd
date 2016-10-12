@@ -29,7 +29,6 @@ class SuggestionFeed extends React.Component {
     }
     let currentUser = this.props.currentUser;
 
-    console.log("ThecurrentUser", currentUser);
     let suggestionsToShow = this.props.suggestions;
 
     let followedsIds;
@@ -95,7 +94,6 @@ class SuggestionFeed extends React.Component {
         </span>
       )
     } else {
-      console.log("no current user");
       followToggle = null;
     }
 

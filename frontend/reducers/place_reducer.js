@@ -3,7 +3,7 @@ import * as ACTIONS from '../actions/place_actions.js';
 const defaultPlacesState = {
   singleCity: {},
   popularCities: [],
-  // singleRegion: {},
+  randomCity: [],
   // regions: [],
   // singleCountry: {},
   // countries: [],
@@ -14,8 +14,9 @@ const PlaceReducer = (oldState = defaultPlacesState, action) => {
     case ACTIONS.RECEIVE_SINGLE_CITY:
       return Object.assign({}, oldState, { singleCity: action.city_info });
     case ACTIONS.RECEIVE_POPULAR_CITIES:
-      console.log("Action.cities", action);
       return Object.assign({}, oldState, { popularCities: action.cities.popular_cities });
+    case ACTIONS.RECEIVE_RANDOM_CITY:
+      return Object.assign({}, oldState, { randomCity: action.city });
     default:
       return oldState;
   }

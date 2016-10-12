@@ -29,6 +29,9 @@ const Root = ({ store }) => {
   };
 
   const requestSingleCityOnEnter = (nextState) => {
+    console.log(nextState.params.cityId);
+    store.dispatch(PLACE_ACTIONS.requestRandomCity());
+
 		// store.dispatch(PLACE_ACTIONS.requestSingleCity(nextState.params.cityId));
 	};
 
