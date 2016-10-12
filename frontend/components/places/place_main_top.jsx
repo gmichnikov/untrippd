@@ -2,7 +2,7 @@ import React from 'react';
 import PlaceMap from './place_map';
 import { Link } from 'react-router';
 import ReactTooltip from 'react-tooltip'
-
+import SuggestionCreateContainer from '../suggestions/suggestion_create_container';
 
 class PlaceMainTop extends React.Component {
 
@@ -41,6 +41,7 @@ class PlaceMainTop extends React.Component {
           {mapComponent}
   				<a href={fullMapLink} target="_blank">Full Map</a>
         </section>
+        <SuggestionCreateContainer placeType={city.place_type_name} placeId={city.id}/>
 			</section>
     );
   }

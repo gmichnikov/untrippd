@@ -1,5 +1,6 @@
 import React from 'react';
 import { Router, Route, IndexRoute, hashHistory, Link, withRouter } from 'react-router';
+import Modal from 'react-modal';
 
 // #  body             :text             not null
 // #  food             :boolean          default(FALSE)
@@ -18,8 +19,11 @@ class SuggestionForm extends React.Component {
       attraction: false,
       accommodation: false,
       highlight: false,
+      modalIsOpen: false,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   handleSubmit(e) {
@@ -40,11 +44,38 @@ class SuggestionForm extends React.Component {
     return e => this.setState({[property]: e.target.checked});
   }
 
+  openModal() {
+    this.setState({modalIsOpen: true});
+  }
+
+  closeModal() {
+    this.setState({modalIsOpen: false});
+  }
+
 
   render () {
 
+    const customStyles = {
+      content : {
+        top                   : '50%',
+        left                  : '50%',
+        right                 : 'auto',
+        bottom                : 'auto',
+        marginRight           : '-50%',
+        transform             : 'translate(-50%, -50%)'
+      }
+    };
+
     return (
       <section className="suggestion-form-section">
+        <button onClick={this.openModal}>Open Modal</button>
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onRequestClose={this.closeModal}
+          style={customStyles}
+        >
+        <button onClick={this.closeModal}>close</button>
+
         <form className="suggestion-form" onSubmit={this.handleSubmit}>
           <textarea className="suggestion-body"
             value={this.state.body}
@@ -77,6 +108,8 @@ class SuggestionForm extends React.Component {
           />
           <button>Create Suggestion</button>
         </form>
+      </Modal>
+
       </section>
     );
   }
