@@ -104,6 +104,9 @@ Some next steps
     user profile -> links to most reviewed places, guidebooks, followers, follows
     other cities in the same country sorted by review
 
+    new things to address
+      search -- when you click enter
+      links of usa image in feed
 
 For later
   add more styling to login buttons

@@ -8,6 +8,7 @@ import { Link } from 'react-router';
 // input value for every given suggestion.
 // (how they show up when you click one)
 const getSuggestionValue = (suggestion) => {
+  console.log("search suggestion", suggestion);
   return suggestion.name;
 }
 
