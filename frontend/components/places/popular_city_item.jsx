@@ -12,6 +12,7 @@ class PopularCityItem extends React.Component {
   render () {
     let c = this.props.place;
     let placeLink = `/${this.props.placeTypePlural}/${c.id}`;
+    let pluralSuggestionsText = (c.count === 1 ? " suggestion" : " suggestions");
 
     return (
       <li className="popular-city">
@@ -19,7 +20,7 @@ class PopularCityItem extends React.Component {
             <Link to={placeLink}>{c.display_name}</Link>
           </div>
           <div className="popular-city-num-suggestions">
-            {c.count}{" suggestions"}
+            {c.count}{pluralSuggestionsText}
           </div>
       </li>
     );

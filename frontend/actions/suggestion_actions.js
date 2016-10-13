@@ -58,3 +58,19 @@ export const removeSingleSuggestion = (suggestion) => ({
 	type: REMOVE_SINGLE_SUGGESTION,
 	suggestion
 });
+
+
+export const likeSuggestion = (id) => ({
+	type: LIKE_SUGGESTION,
+	id
+});
+
+export const unlikeSuggestion = (id) => ({
+	type: UNLIKE_SUGGESTION,
+	id
+});
+
+export const adjustCurrentUserFollows = (id) => ({
+	type: ADJUST_CURRENT_USER_FOLLOWS,
+  id
+});
