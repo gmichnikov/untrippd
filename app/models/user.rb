@@ -76,6 +76,10 @@ class User < ActiveRecord::Base
     followeds.pluck(:id)
   end
 
+  def liked_suggestion_ids
+    liked_suggestions.pluck(:id)
+  end
+
   # Auth methods
 
   def self.generate_session_token

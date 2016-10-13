@@ -7,3 +7,4 @@ json.user_link "/users/#{suggestion.author.username}"
 json.image_url asset_path(suggestion.image.url)
 json.image_file_name suggestion.image_file_name
 json.has_image !!suggestion.image_file_name
+json.num_likers suggestion.likers.count

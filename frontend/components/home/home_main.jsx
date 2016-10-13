@@ -36,8 +36,19 @@ class HomeMain extends React.Component {
 
     return (
       <div className="home-main">
-        <Notification isActive={this.state.notificationActive} message={messageText} barStyle={barStyle} />
-        <SuggestionFeed suggestions={this.props.suggestions} currentUser={this.props.currentUser} deleteSingleSuggestion={this.props.deleteSingleSuggestion} feedTitle={feedTitle}/>
+        <Notification
+          isActive={this.state.notificationActive}
+          message={messageText}
+          barStyle={barStyle}
+        />
+        <SuggestionFeed
+          suggestions={this.props.suggestions}
+          currentUser={this.props.currentUser}
+          deleteSingleSuggestion={this.props.deleteSingleSuggestion}
+          feedTitle={feedTitle}
+          likeSuggestion={this.props.likeSuggestion}
+          unlikeSuggestion={this.props.unlikeSuggestion}
+        />
       </div>
     )
   }

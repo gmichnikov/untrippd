@@ -67,6 +67,7 @@ class SuggestionFeed extends React.Component {
     }
 
     let byFollowedUser;
+    let currentUserLikesSuggestion;
     let ownSuggestion;
     let feed = suggestionsToShow.map((suggestion, i) => {
       ownSuggestion = false;
@@ -79,7 +80,27 @@ class SuggestionFeed extends React.Component {
         byFollowedUser = true;
       }
 
-      return <SuggestionFeedItem key={suggestion.id} suggestion={suggestion} byFollowedUser={byFollowedUser} ownSuggestion={ownSuggestion} deleteSingleSuggestion={this.props.deleteSingleSuggestion} />
+      if (currentUser && currentUser.liked_suggestion_ids.indexOf(suggestion.id) !== -1) {
+        currentUserLikesSuggestion = true;
+      } else {
+        currentUserLikesSuggestion = false;
+      }
+
+
+      return (
+        <SuggestionFeedItem
+          key={suggestion.id}
+          {...this.props}
+          suggestion={suggestion}
+          byFollowedUser={byFollowedUser}
+          ownSuggestion={ownSuggestion}
+          deleteSingleSuggestion={this.props.deleteSingleSuggestion}
+          likeSuggestion={this.props.likeSuggestion}
+          unlikeSuggestion={this.props.unlikeSuggestion}
+          currentUser={this.props.currentUser}
+          currentUserLikesSuggestion={currentUserLikesSuggestion}
+        />
+      );
     })
 
     let followToggle;

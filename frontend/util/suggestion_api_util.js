@@ -37,3 +37,20 @@ export const destroySingleSuggestion = (id, success, error) => {
     error: error,
 	});
 };
+
+
+export const likeSuggestion = (id, success) => {
+	$.ajax({
+		method: 'POST',
+  	url: `/api/suggestions/${id}/like`,
+    success: success,
+	});
+};
+
+export const unlikeSuggestion = (id, success) => {
+	$.ajax({
+		method: 'POST',
+  	url: `/api/suggestions/${id}/unlike`,
+    success: success,
+	});
+};

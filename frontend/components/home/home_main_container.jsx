@@ -16,7 +16,11 @@ const mapDispatchToProps = dispatch => {
     changeWelcomeNotification: (status) => dispatch(SESSION_ACTIONS.changeWelcomeNotification(status)),
 
     requestAllSuggestions: () => dispatch(SUGGESTION_ACTIONS.requestAllSuggestions()),
-    deleteSingleSuggestion: (id) => dispatch(SUGGESTION_ACTIONS.deleteSingleSuggestion(id))
+    deleteSingleSuggestion: (id) => dispatch(SUGGESTION_ACTIONS.deleteSingleSuggestion(id)),
+
+    likeSuggestion: (id) => dispatch(SUGGESTION_ACTIONS.likeSuggestion(id)),
+    unlikeSuggestion: (id) => dispatch(SUGGESTION_ACTIONS.unlikeSuggestion(id)),
+
   };
 };
 

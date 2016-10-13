@@ -36,6 +36,26 @@ const SuggestionReducer = (oldState = default_suggestion_state, action) => {
         });
         return Object.assign({}, oldState, { manySuggestions: oldSuggestions });
       }
+    case ACTIONS.INCREMENT_CURRENT_USER_SUGGESTION_LIKES:
+      let newSuggestionsInc = oldState.manySuggestions.map((sugg) => {
+        if (sugg.id === action.id) {
+          sugg.num_likers += 1;
+          return sugg;
+        } else {
+          return sugg;
+        }
+      });
+      return Object.assign({}, oldState, { manySuggestions: newSuggestionsInc });
+    case ACTIONS.DECREMENT_CURRENT_USER_SUGGESTION_LIKES:
+      let newSuggestionsDec = oldState.manySuggestions.map((sugg) => {
+        if (sugg.id === action.id) {
+          sugg.num_likers -= 1;
+          return sugg;
+        } else {
+          return sugg;
+        }
+      });
+      return Object.assign({}, oldState, { manySuggestions: newSuggestionsDec });
     default:
       return oldState;
   }

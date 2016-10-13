@@ -30,7 +30,7 @@ class Api::SuggestionsController < ApplicationController
     render json: params[:id]
   end
 
-  def unfollow
+  def unlike
     @sl = SuggestionLike.where(suggestion_id: params[:id], liker_id: current_user.id).first
     @sl.destroy
     render json: params[:id]

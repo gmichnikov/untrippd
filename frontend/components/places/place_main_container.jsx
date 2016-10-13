@@ -14,7 +14,10 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
       requestSingleCity: (place_type, id) => dispatch(ACTIONS.requestSingleCity(place_type, id)),
-      deleteSingleSuggestion: (id) => dispatch(SUGGESTION_ACTIONS.deleteSingleSuggestion(id))
+      deleteSingleSuggestion: (id) => dispatch(SUGGESTION_ACTIONS.deleteSingleSuggestion(id)),
+      likeSuggestion: (id) => dispatch(SUGGESTION_ACTIONS.likeSuggestion(id)),
+      unlikeSuggestion: (id) => dispatch(SUGGESTION_ACTIONS.unlikeSuggestion(id)),
+
     };
 };
 

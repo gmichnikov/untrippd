@@ -24,7 +24,14 @@ class UserFeedMain extends React.Component {
 
     return (
       <div className="user-feed-main">
-        <SuggestionFeed suggestions={userSuggestions} currentUser={this.props.currentUser} deleteSingleSuggestion={this.props.deleteSingleSuggestion} feedTitle={feedTitle}/>
+        <SuggestionFeed
+          suggestions={userSuggestions}
+          currentUser={this.props.currentUser}
+          deleteSingleSuggestion={this.props.deleteSingleSuggestion}
+          feedTitle={feedTitle}
+          likeSuggestion={this.props.likeSuggestion}
+          unlikeSuggestion={this.props.unlikeSuggestion}
+        />
       </div>
     )
   }

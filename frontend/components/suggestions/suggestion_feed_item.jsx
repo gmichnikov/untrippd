@@ -14,6 +14,7 @@ class SuggestionFeedItem extends React.Component {
 
   render () {
     let s = this.props.suggestion;
+    let currentUser = this.props.currentUser;
 
     let deleteSuggestionButton = null;
     if (this.props.ownSuggestion) {
@@ -38,6 +39,30 @@ class SuggestionFeedItem extends React.Component {
     }
 
 
+    let notLoggedInButton = <div>
+      <i className="material-icons icon-no-favorite">favorite</i>
+    </div>
+
+    let likeButton = <div onClick={() => this.props.likeSuggestion(s.id)}>
+      <i className="material-icons icon-favorite">favorite_border</i>
+    </div>
+
+    let unlikeButton = <div onClick={() => this.props.unlikeSuggestion(s.id)}>
+      <i className="material-icons icon-unfavorite">favorite</i>
+    </div>
+
+    let correctButton;
+    if (currentUser === null || currentUser.id === s.author_id) {
+      correctButton = notLoggedInButton;
+    } else if (currentUser.liked_suggestion_ids.indexOf(s.id) === -1) {
+      correctButton = likeButton;
+    } else {
+      correctButton = unlikeButton;
+    }
+
+    let likesPlural = (s.num_likers === 1 ? "like" : "likes");
+    let numLikes = `${s.num_likers} ${likesPlural}`;
+
     return (
       <li className="suggestion-feed-item group">
         <div className="feed-user-profile-photo"><Link to=""><img></img></Link></div>
@@ -60,6 +85,10 @@ class SuggestionFeedItem extends React.Component {
             {foodIcon}
             {attractionIcon}
             {accommodationIcon}
+          </div>
+          <div className="feed-item-likes">
+            {correctButton}
+            <span className="num-likes">{numLikes}</span>
           </div>
         </div>
         <div className="feed-place-photo">

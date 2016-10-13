@@ -7,7 +7,10 @@ export const REQUEST_ALL_SUGGESTIONS = 'REQUEST_ALL_SUGGESTIONS';
 export const RECEIVE_ALL_SUGGESTIONS = 'RECEIVE_ALL_SUGGESTIONS';
 export const DELETE_SINGLE_SUGGESTION = 'DELETE_SINGLE_SUGGESTION';
 export const REMOVE_SINGLE_SUGGESTION = 'REMOVE_SINGLE_SUGGESTION';
-
+export const UNLIKE_SUGGESTION = 'UNLIKE_SUGGESTION';
+export const LIKE_SUGGESTION = 'LIKE_SUGGESTION';
+export const INCREMENT_CURRENT_USER_SUGGESTION_LIKES = 'INCREMENT_CURRENT_USER_SUGGESTION_LIKES';
+export const DECREMENT_CURRENT_USER_SUGGESTION_LIKES = 'DECREMENT_CURRENT_USER_SUGGESTION_LIKES';
 
 export const createSuggestion = (suggestion) => {
   return {
@@ -70,7 +73,12 @@ export const unlikeSuggestion = (id) => ({
 	id
 });
 
-export const adjustCurrentUserFollows = (id) => ({
-	type: ADJUST_CURRENT_USER_FOLLOWS,
+export const incrementCurrentUserSuggestionLikes = (id) => ({
+	type: INCREMENT_CURRENT_USER_SUGGESTION_LIKES,
+  id
+});
+
+export const decrementCurrentUserSuggestionLikes = (id) => ({
+	type: DECREMENT_CURRENT_USER_SUGGESTION_LIKES,
   id
 });

@@ -259,15 +259,8 @@
   margin-left: 10px;
 }
 
-.material-icons.icon-dining, .material-icons.icon-visibility, .material-icons.icon-hotel, .material-icons.icon-person-outline {
+.material-icons.icon-dining, .material-icons.icon-visibility, .material-icons.icon-hotel, .material-icons.icon-person-outline, .material-icons.icon-star {
   color: maroon;
-  font-size: 24px;
-  margin-left: 20px;
-  cursor: default;
-}
-
-.material-icons.icon-star {
-  color: rgb(255, 204, 0);
   font-size: 24px;
   margin-left: 20px;
   cursor: default;
@@ -300,4 +293,28 @@ img.suggestion-feed-photo {
   height: 100%;
   width: auto;
   margin: 0 auto;
+}
+
+.feed-item-likes {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.material-icons.icon-favorite, .material-icons.icon-unfavorite {
+  color: rgb(255, 204, 0);
+  display: inline-block;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.material-icons.icon-no-favorite {
+  color: #999;
+  display: inline-block;
+  margin-right: 5px;
+  cursor: default;
+}
+
+.num-likes {
+  font-size: 14px;
 }
