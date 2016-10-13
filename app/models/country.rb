@@ -21,14 +21,7 @@ class Country < ActiveRecord::Base
   has_many :suggestions, as: :suggestable
 
   def self.most_suggested
-    City.joins(:region)
-      .joins(:country)
-      .joins(:suggestions)
-      .where(suggestions: {suggestable_type: "City"})
-      .group("countries.id")
-      .order("count(countries.id) desc")
-      .limit(20)
-      .select("countries.id, countries.name, count(countries.id)")
+    Country.joins(:cities).joins("INNER JOIN suggestions ON suggestions.suggestable_id = cities.id AND suggestions.suggestable_type = 'City'").group("countries.id").order("count(countries.id) desc").limit(20).select("countries.id, countries.name, count(countries.id)")
   end
 
   def is_US_or_UK?

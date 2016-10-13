@@ -18,6 +18,7 @@ json.user_info do
   end
   json.num_followers followers.count
   json.num_followeds followeds.count
+  json.num_liked_suggestions user.liked_suggestions.count
 end
 json.suggestions suggestions do |suggestion|
   json.partial!('api/suggestions/suggestion', suggestion: suggestion)

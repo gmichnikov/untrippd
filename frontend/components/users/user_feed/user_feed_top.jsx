@@ -43,6 +43,10 @@ class UserFeedTop extends React.Component {
     let linkUserFeed = `/users/${user.username}`;
     let linkFollowersList = `/users/${user.username}/followers`;
     let linkFollowedsList = `/users/${user.username}/follows`;
+    let pluralSuggestions = (user.num_suggestions === 1 ? "suggestion" : "suggestions");
+    let pluralLikes = (user.num_liked_suggestions === 1 ? "like" : "likes");
+    let pluralFollows = (user.num_followeds === 1 ? "follow" : "follows");
+    let pluralFollowers = (user.num_followers === 1 ? "follower" : "followers");
 
     return (
       <div className="user-feed-top">
@@ -55,19 +59,19 @@ class UserFeedTop extends React.Component {
           <div className="user-feed-top-stats">
             <Link to={linkUserFeed}>
               <span className="user-feed-top-stats-num">{user.num_suggestions}</span>
-              <span className="user-feed-top-stats-label">suggestions</span>
+              <span className="user-feed-top-stats-label">{pluralSuggestions}</span>
             </Link>
             <Link to="">
-              <span className="user-feed-top-stats-num">#</span>
-              <span className="user-feed-top-stats-label">guidebooks</span>
+              <span className="user-feed-top-stats-num">{user.num_liked_suggestions}</span>
+              <span className="user-feed-top-stats-label">{pluralLikes}</span>
             </Link>
             <Link to={linkFollowedsList}>
               <span className="user-feed-top-stats-num">{user.num_followeds}</span>
-              <span className="user-feed-top-stats-label">follows</span>
+              <span className="user-feed-top-stats-label">{pluralFollows}</span>
             </Link>
             <Link to={linkFollowersList}>
               <span className="user-feed-top-stats-num">{user.num_followers}</span>
-              <span className="user-feed-top-stats-label">followers</span>
+              <span className="user-feed-top-stats-label">{pluralFollowers}</span>
             </Link>
           </div>
         </div>
