@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     get 'cities/popular' => 'cities#popular', as: :popular_cities
     get 'countries/popular' => 'countries#popular', as: :popular_countries
     get 'cities/explore' => 'cities#explore', as: :explore_cities
+    post 'suggestions/:id/like' => 'suggestions#like', as: :suggestion_like
+    post 'suggestions/:id/unlike' => 'suggestions#unlike', as: :suggestion_unlike
     resources :countries, only: [:show]
     resources :regions, only: [:show]
     resources :cities, only: [:show]

@@ -43,6 +43,13 @@ class User < ActiveRecord::Base
     through: :user_followeds,
     source: :followed
 
+  has_many :suggestion_likes,
+    foreign_key: :liker_id
+
+  has_many :liked_suggestions,
+    through: :suggestion_likes,
+    source: :suggestion
+
 
   def passwords_must_match
     errors.add(:confirm_password, 'must match password') unless password == confirm_password

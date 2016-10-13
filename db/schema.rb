@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161012230641) do
+ActiveRecord::Schema.define(version: 20161013175644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,16 @@ ActiveRecord::Schema.define(version: 20161012230641) do
   add_index "regions", ["country_id"], name: "index_regions_on_country_id", using: :btree
   add_index "regions", ["name"], name: "index_regions_on_name", using: :btree
   add_index "regions", ["place_type_id"], name: "index_regions_on_place_type_id", using: :btree
+
+  create_table "suggestion_likes", force: :cascade do |t|
+    t.integer  "suggestion_id", null: false
+    t.integer  "liker_id",      null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "suggestion_likes", ["liker_id"], name: "index_suggestion_likes_on_liker_id", using: :btree
+  add_index "suggestion_likes", ["suggestion_id"], name: "index_suggestion_likes_on_suggestion_id", using: :btree
 
   create_table "suggestions", force: :cascade do |t|
     t.integer  "author_id",                          null: false

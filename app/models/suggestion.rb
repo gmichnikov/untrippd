@@ -34,6 +34,12 @@ class Suggestion < ActiveRecord::Base
 
   belongs_to :suggestable, polymorphic: true
 
+  has_many :suggestion_likes
+
+  has_many :likers,
+    through: :suggestion_likes,
+    source: :liker
+
   def place_name
     suggestable.name
   end

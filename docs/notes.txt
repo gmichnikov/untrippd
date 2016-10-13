@@ -1,11 +1,10 @@
-  Following places?
+Following places?
   single suggestion
 
 Some next steps
   google analytics
-  fix suggestion detail view
 
-  Update/delete suggestions
+  Update suggestions
   adjust zoom on map depending on place_type
 
   icons
@@ -13,54 +12,23 @@ Some next steps
     wallpaper - guidebook
     favorite for liking
 
-  sidebars
-    most popular countries
-    most popular cities
-    top users who suggest a place
-    related places?
-    user profile -> links to most reviewed places, guidebooks, followers, follows
-    other cities in the same country sorted by review
-
-    new things to address
-      links of usa image in feed
-
   consider liking of suggestions
-
-  change font size and line height of sugg text area - 14 1.25
 
 For later
   add more styling to login buttons
-  save all visible reviews to a guidebook
-  nest guidebooks index under user, but guidebooks on its own?
-  get icons for major cities ...
-Figure out a photo strategy, for checkins, users, places
-
-challenges
-follows for random users, not user profile
 
   remove seed data, add my own seed data
-  mom pw
 
 things missing
-  update individual suggestions
   guidebooks -> possibly just a single guidebook?
-  aws
+  likes
   scroll
-  suggestions view page
-  better sidebars (top users for a place)
-  most popular places page? (sidebar top suggesters)
-  user profile sidebar (just links to each part)
-  most popular cities and states as well
   read suggested features list - ruby geocoder
-  move display name into db?
   optional url in form
   optional address? -> look it up and put it on a map
-  calculate column when creating entry?
   google maps api for posts?
 
 
 later
   remove error message about minified
   remove logger in production
-  explore button
-  remove single suggestion view

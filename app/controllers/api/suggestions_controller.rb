@@ -24,6 +24,18 @@ class Api::SuggestionsController < ApplicationController
     render json: @suggestion
   end
 
+  def like
+    @suggestion = Suggestion.find(params[:id])
+    @suggestion.likers << current_user
+    render json: params[:id]
+  end
+
+  def unfollow
+    @sl = SuggestionLike.where(suggestion_id: params[:id], liker_id: current_user.id).first
+    @sl.destroy
+    render json: params[:id]
+  end
+
 
   def suggestion_params
     params.require(:suggestion).permit(:body, :food, :attraction, :accommodation, :highlight, :suggestable_id, :suggestable_type, :image)
