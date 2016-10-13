@@ -121,6 +121,9 @@ Figure out a photo strategy, for checkins, users, places
 challenges
 follows for random users, not user profile
 
+  remove seed data, add my own seed data
+  mom pw
+
 things missing
   update individual suggestions
   guidebooks -> possibly just a single guidebook?
@@ -131,6 +134,13 @@ things missing
   most popular places page? (sidebar top suggesters)
   user profile sidebar (just links to each part)
   most popular cities and states as well
+  read suggested features list - ruby geocoder
+  move display name into db?
+  optional url in form
+  optional address? -> look it up and put it on a map
+  calculate column when creating entry?
+  google maps api for posts?
+
 
 later
   remove error message about minified

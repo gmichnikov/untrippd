@@ -29,7 +29,6 @@ class SuggestionFeedItem extends React.Component {
     let followedIcon = this.props.byFollowedUser ? <i className="material-icons icon-person-outline" data-tip={"By a user you follow"}>person_outline</i> : null;
 
     let suggestionImage = null;
-    console.log("img url", s.image_url);
     if (s.image_url && !s.image_url.startsWith("/assets/missing")) {
       suggestionImage = (
         <div className="suggestion-feed-photo-box">

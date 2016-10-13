@@ -23,15 +23,23 @@ class City < ActiveRecord::Base
   alias_attribute :state, :region
 
   def self.most_suggested
-    @cities = City.find_by_sql("SELECT cities.id, cities.name, cities.region_id, count(cities.id) FROM suggestions INNER JOIN cities ON suggestions.suggestable_id = cities.id AND suggestions.suggestable_type = 'City' GROUP BY cities.id ORDER BY count(cities.id) DESC LIMIT 20")
+    # @cities = City.includes(region: :country).find_by_sql("SELECT cities.id, cities.name, cities.region_id, count(cities.id) FROM suggestions INNER JOIN cities ON suggestions.suggestable_id = cities.id AND suggestions.suggestable_type = 'City' GROUP BY cities.id ORDER BY count(cities.id) DESC LIMIT 20")
 
-    @cities
+    City.includes(:region, :country)
+      .joins(:suggestions)
+      .where(suggestions: {suggestable_type: "City"})
+      .group("cities.id")
+      .order("count(cities.id) desc")
+      .limit(20)
+      .select("cities.id, cities.name, cities.region_id, count(cities.id)")
   end
 
   def self.explore
     @cities = City.find_by_sql("SELECT cities.id, cities.name, cities.region_id, count(cities.id) FROM suggestions INNER JOIN cities ON suggestions.suggestable_id = cities.id AND suggestions.suggestable_type = 'City' GROUP BY cities.id")
 
     @cities.shuffle.take(2)
+
+    # City.joins(:suggestions).where(suggestions: {suggestable_type: "City"}).distinct.ids.shuffle
   end
 
   def secondary_place
@@ -56,9 +64,9 @@ class City < ActiveRecord::Base
     # usa = Country.find_by(name: "United States")
     # uk = Country.find_by(name: "United Kingdom")
 
-    if country.id == 220
-      after_comma = ", #{state.name}, USA"
-    elsif country.id == 219
+    if country.name == "United States"
+      after_comma = ", #{region.name}, USA"
+    elsif country.name == "United Kingdom"
       after_comma = ", #{region.name}, UK"
     else
       after_comma = ", #{country.name}"
