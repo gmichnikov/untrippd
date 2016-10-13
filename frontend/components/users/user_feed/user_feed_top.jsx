@@ -41,6 +41,7 @@ class UserFeedTop extends React.Component {
     }
 
     let linkUserFeed = `/users/${user.username}`;
+    let linkUserLikes = `/users/${user.username}/likes`;
     let linkFollowersList = `/users/${user.username}/followers`;
     let linkFollowedsList = `/users/${user.username}/follows`;
     let pluralSuggestions = (user.num_suggestions === 1 ? "suggestion" : "suggestions");
@@ -61,7 +62,7 @@ class UserFeedTop extends React.Component {
               <span className="user-feed-top-stats-num">{user.num_suggestions}</span>
               <span className="user-feed-top-stats-label">{pluralSuggestions}</span>
             </Link>
-            <Link to="">
+            <Link to={linkUserLikes}>
               <span className="user-feed-top-stats-num">{user.num_liked_suggestions}</span>
               <span className="user-feed-top-stats-label">{pluralLikes}</span>
             </Link>

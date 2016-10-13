@@ -3,6 +3,8 @@ export const REQUEST_SINGLE_USER = 'REQUEST_SINGLE_USER';
 export const FOLLOW_USER = 'FOLLOW_USER';
 export const UNFOLLOW_USER = 'UNFOLLOW_USER';
 export const TOGGLE_FOLLOW_STATUS = 'TOGGLE_FOLLOW_STATUS';
+export const REQUEST_LIKED_SUGGESTIONS = 'REQUEST_LIKED_SUGGESTIONS';
+export const RECEIVE_LIKED_SUGGESTIONS = 'RECEIVE_LIKED_SUGGESTIONS';
 
 export const receiveSingleUser = (user) => ({
 	type: RECEIVE_SINGLE_USER,
@@ -27,4 +29,14 @@ export const unfollowUser = (id) => ({
 
 export const toggleFollowStatus = () => ({
 	type: TOGGLE_FOLLOW_STATUS,
+});
+
+export const requestLikedSuggestions = (id) => ({
+	type: REQUEST_LIKED_SUGGESTIONS,
+	id
+});
+
+export const receiveLikedSuggestions = (suggestions) => ({
+	type: RECEIVE_LIKED_SUGGESTIONS,
+	suggestions
 });

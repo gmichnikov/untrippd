@@ -52,6 +52,7 @@ class Header extends React.Component {
     const welcomeAndLogout = (currentUser, logout) => {
 
       let linkUserFeed = `/users/${currentUser.username}`;
+      let linkUserLikes = `/users/${currentUser.username}/likes`;
       let linkFollowersList = `/users/${currentUser.username}/followers`;
       let linkFollowsList = `/users/${currentUser.username}/follows`;
 
@@ -62,7 +63,7 @@ class Header extends React.Component {
               <li>
                 <ul>
                   <li><Link to={linkUserFeed}>My Suggestions</Link></li>
-                  <li><a href="#">My Guidebooks</a></li>
+                  <li><Link to={linkUserLikes}>My Likes</Link></li>
                   <li><Link to={linkFollowsList}>My Follows</Link></li>
                   <li><Link to={linkFollowersList}>My Followers</Link></li>
                   <li><button onClick={logout}>Log out!</button></li>

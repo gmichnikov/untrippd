@@ -35,14 +35,10 @@ class Api::UsersController < ApplicationController
     render json: params[:id]
   end
 
+  def likes
+    @user = User.find_by(username: params[:id])
+    @suggestions = @user.liked_suggestions
+    render :likes
+  end
+
 end
-
-
-# $.ajax({
-#   method: "POST",
-#   url: "some.php",
-#   data: { name: "John", location: "Boston" }
-# })
-#   .done(function( msg ) {
-#     alert( "Data Saved: " + msg );
-#   });

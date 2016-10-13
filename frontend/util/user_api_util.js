@@ -22,3 +22,13 @@ export const unfollowUser = (id, success) => {
     success: success,
 	});
 };
+
+export const fetchLikedSuggestions = (id, success, error) => {
+	console.log("util", id);
+	$.ajax({
+		method: 'GET',
+  	url: `/api/users/${id}/likes`,
+    success: success,
+    error: error,
+	});
+};

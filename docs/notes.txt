@@ -32,3 +32,6 @@ things missing
 later
   remove error message about minified
   remove logger in production
+
+
+read doc on extra stuff in docs

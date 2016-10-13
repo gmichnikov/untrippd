@@ -8,6 +8,8 @@ export default ({ getState, dispatch }) => next => action => {
   // const errorCallback = xhr => dispatch(ACTIONS.???(xhr.responseJSON));
   const followAndUnfollowSuccess = (id) => dispatch(SESSION_ACTIONS.adjustCurrentUserFollows(id));
 
+  const receiveLikedSuggestionsSuccess = (suggestions) => dispatch(USER_ACTIONS.receiveLikedSuggestions(suggestions));
+
 
   switch(action.type) {
     case USER_ACTIONS.REQUEST_SINGLE_USER:
@@ -18,6 +20,9 @@ export default ({ getState, dispatch }) => next => action => {
       return next(action);
     case USER_ACTIONS.UNFOLLOW_USER:
       API.unfollowUser(action.id, followAndUnfollowSuccess);
+      return next(action);
+    case USER_ACTIONS.REQUEST_LIKED_SUGGESTIONS:
+      API.fetchLikedSuggestions(action.id, receiveLikedSuggestionsSuccess);
       return next(action);
     default:
       return next(action);

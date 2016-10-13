@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     get 'cities/explore' => 'cities#explore', as: :explore_cities
     post 'suggestions/:id/like' => 'suggestions#like', as: :suggestion_like
     post 'suggestions/:id/unlike' => 'suggestions#unlike', as: :suggestion_unlike
+    get 'users/:id/likes' => 'users#likes', as: :user_likes
     resources :countries, only: [:show]
     resources :regions, only: [:show]
     resources :cities, only: [:show]

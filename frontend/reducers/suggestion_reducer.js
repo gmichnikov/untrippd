@@ -6,6 +6,7 @@ const default_suggestion_state = {
   singleSuggestion: null,
   manySuggestions: [],
   suggestionErrors: [],
+  // likedSuggestions: [],
 };
 
 const SuggestionReducer = (oldState = default_suggestion_state, action) => {
@@ -56,6 +57,9 @@ const SuggestionReducer = (oldState = default_suggestion_state, action) => {
         }
       });
       return Object.assign({}, oldState, { manySuggestions: newSuggestionsDec });
+    case USER_ACTIONS.RECEIVE_LIKED_SUGGESTIONS:
+      console.log("likedSuggestions", action.suggestions);
+      return Object.assign({}, oldState, { manySuggestions: action.suggestions.suggestions });
     default:
       return oldState;
   }

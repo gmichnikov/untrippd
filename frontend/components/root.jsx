@@ -11,6 +11,7 @@ import Place from './places/place';
 import SearchContainer from './search/search_container';
 import SingleSuggestionContainer from './suggestions/single_suggestion_container';
 import UserFeed from './users/user_feed/user_feed';
+import UserLikes from './users/user_likes/user_likes';
 import Followers from './users/followers/followers';
 import Followeds from './users/followers/followeds';
 
@@ -41,6 +42,7 @@ const Root = ({ store }) => {
 
   const requestSingleUserOnEnter = (nextState) => {
 		store.dispatch(USER_ACTIONS.requestSingleUser(nextState.params.username));
+    store.dispatch(USER_ACTIONS.requestLikedSuggestions(nextState.params.username));    
 	};
 
 
@@ -57,6 +59,7 @@ const Root = ({ store }) => {
           <Route path="/suggestions/:suggestionId" component={SingleSuggestionContainer} onEnter={requestSingleSuggestionOnEnter} />
           <Route path="/users/:username/followers" component={Followers} onEnter={requestSingleUserOnEnter} />
           <Route path="/users/:username/follows" component={Followeds} onEnter={requestSingleUserOnEnter} />
+          <Route path="/users/:username/likes" component={UserLikes} onEnter={requestSingleUserOnEnter} />
           <Route path="/users/:username" component={UserFeed} onEnter={requestSingleUserOnEnter} />
         </Route>
         <Route path="/" component={LandingPageContainer} onEnter={redirectIfLoggedIn} />
