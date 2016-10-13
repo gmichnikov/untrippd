@@ -17,7 +17,7 @@ class HomeMain extends React.Component {
     this.welcomeTimeout = setTimeout(() => {
       this.setState({notificationActive: false});
       this.props.changeWelcomeNotification(null);
-    }, 2000);
+    }, 1500);
 
     this.props.requestAllSuggestions();
   }
@@ -32,10 +32,11 @@ class HomeMain extends React.Component {
     let messageText = this.props.welcomeNotificationStatus ? this.props.welcomeNotificationStatus : "";
 
     let feedTitle = "All Recent Activity";
+    let barStyle = {backgroundColor: "rgb(255, 204, 0)", color: "white", width: "200px", textAlign: "center", fontSize: "18px"};
 
     return (
       <div className="home-main">
-        <Notification isActive={this.state.notificationActive} message={messageText} />
+        <Notification isActive={this.state.notificationActive} message={messageText} barStyle={barStyle} />
         <SuggestionFeed suggestions={this.props.suggestions} currentUser={this.props.currentUser} deleteSingleSuggestion={this.props.deleteSingleSuggestion} feedTitle={feedTitle}/>
       </div>
     )

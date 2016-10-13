@@ -23,8 +23,6 @@ class City < ActiveRecord::Base
   alias_attribute :state, :region
 
   def self.most_suggested
-    # @cities = City.includes(region: :country).find_by_sql("SELECT cities.id, cities.name, cities.region_id, count(cities.id) FROM suggestions INNER JOIN cities ON suggestions.suggestable_id = cities.id AND suggestions.suggestable_type = 'City' GROUP BY cities.id ORDER BY count(cities.id) DESC LIMIT 20")
-
     City.includes(:region, :country)
       .joins(:suggestions)
       .where(suggestions: {suggestable_type: "City"})
@@ -35,11 +33,7 @@ class City < ActiveRecord::Base
   end
 
   def self.explore
-    @cities = City.find_by_sql("SELECT cities.id, cities.name, cities.region_id, count(cities.id) FROM suggestions INNER JOIN cities ON suggestions.suggestable_id = cities.id AND suggestions.suggestable_type = 'City' GROUP BY cities.id")
-
-    @cities.shuffle.take(2)
-
-    # City.joins(:suggestions).where(suggestions: {suggestable_type: "City"}).distinct.ids.shuffle
+    City.joins(:suggestions).where(suggestions: {suggestable_type: "City"}).distinct.ids.shuffle.take(2)
   end
 
   def secondary_place
@@ -61,9 +55,6 @@ class City < ActiveRecord::Base
   end
 
   def display_name
-    # usa = Country.find_by(name: "United States")
-    # uk = Country.find_by(name: "United Kingdom")
-
     if country.name == "United States"
       after_comma = ", #{region.name}, USA"
     elsif country.name == "United Kingdom"

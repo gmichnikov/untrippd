@@ -33,11 +33,11 @@ class Header extends React.Component {
       return null;
     }
     if (randomCity && randomCity.length == 2) {
-      exploreLink = `/cities/${randomCity[0].id}`;
+      exploreLink = `/cities/${randomCity[0]}`;
     }
 
-    if (this.props.currentCityId === this.props.randomCity[0].id) {
-      exploreLink = `/cities/${randomCity[1].id}`;
+    if (this.props.currentCityId === this.props.randomCity[0]) {
+      exploreLink = `/cities/${randomCity[1]}`;
     }
 
     const sessionLinks = () => {

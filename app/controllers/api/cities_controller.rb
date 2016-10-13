@@ -12,8 +12,8 @@ class Api::CitiesController < ApplicationController
   end
 
   def explore
-    @city = City.explore
-    render json: @city
+    @city_ids = City.explore
+    render json: @city_ids
   end
 
 end
