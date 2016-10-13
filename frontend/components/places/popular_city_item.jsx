@@ -10,13 +10,13 @@ class PopularCityItem extends React.Component {
   }
 
   render () {
-    let c = this.props.city;
-    let cityLink = `/cities/${c.id}`;
+    let c = this.props.place;
+    let placeLink = `/${this.props.placeTypePlural}/${c.id}`;
 
     return (
       <li className="popular-city">
           <div className="popular-city-name">
-            <Link to={cityLink}>{c.display_name}</Link>
+            <Link to={placeLink}>{c.display_name}</Link>
           </div>
           <div className="popular-city-num-suggestions">
             {c.count}{" suggestions"}

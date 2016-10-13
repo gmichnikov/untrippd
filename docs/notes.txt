@@ -1,10 +1,7 @@
   Following places?
   single suggestion
 
-Routes Questions
-
 Some next steps
-  check which pages i should not get into if logged out
   google analytics
   fix suggestion detail view
 
@@ -14,9 +11,6 @@ Some next steps
   icons
     media - guidebook
     wallpaper - guidebook
-    border color - pencil writing
-    mode edit - pencil also
-    photo library - photo lib
     favorite for liking
 
   sidebars

@@ -6,4 +6,8 @@ class Api::CountriesController < ApplicationController
       render :show
     end
 
+    def popular
+      @countries = Country.most_suggested
+      render :popular
+    end
 end

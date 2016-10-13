@@ -12,19 +12,31 @@ class HomeSidebar extends React.Component {
 
   componentDidMount() {
     this.props.requestPopularCities();
+    this.props.requestPopularCountries();
   }
 
   render() {
 
     let popularCities = this.props.popularCities;
-    if (!popularCities) { return null };
+    let popularCountries = this.props.popularCountries;
+    if (!popularCities || !popularCountries) { return null };
 
     let citiesList = popularCities.map((city) => {
-      return <PopularCityItem key={city.id} city={city} />
+      return <PopularCityItem key={city.id} place={city} placeTypePlural={"cities"}/>
+    })
+
+    let countriesList = popularCountries.map((country) => {
+      return <PopularCityItem key={country.id} place={country} placeTypePlural={"countries"}/>
     })
 
     return (
       <div className="home-sidebar">
+        <div className="popular-cities-sidebar">
+          <h3>Most Popular Countries</h3>
+          <ul className="suggestion-feed-items">
+            {countriesList}
+          </ul>
+        </div>
         <div className="popular-cities-sidebar">
           <h3>Most Popular Cities</h3>
           <ul className="suggestion-feed-items">
