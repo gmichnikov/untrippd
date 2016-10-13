@@ -18,7 +18,7 @@ class SuggestionFeedItem extends React.Component {
     let deleteSuggestionButton = null;
     if (this.props.ownSuggestion) {
       deleteSuggestionButton = (
-        <div className="suggestion-delete-button" data-tip={"Delete this suggestion"} onClick={() => this.props.deleteSingleSuggestion(s.id)}></div>
+        <div className="suggestion-delete-button" data-tip={"Delete this suggestion"} onClick={() => this.props.deleteSingleSuggestion(s.id)}><i className="material-icons delete-forever">delete_forever</i></div>
       )
     }
 
@@ -64,7 +64,6 @@ class SuggestionFeedItem extends React.Component {
           </div>
         </div>
         <div className="feed-place-photo">
-          <Link to=""><img></img></Link>
           {deleteSuggestionButton}
         </div>
         <ReactTooltip />

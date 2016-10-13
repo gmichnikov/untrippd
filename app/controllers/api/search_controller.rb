@@ -3,16 +3,16 @@ class Api::SearchController < ApplicationController
   def index
     # @cities = City.pluck(:id, :name).map {|arr| arr.push("cities")}
 
-    usa = Country.find_by(name: "United States")
-    uk = Country.find_by(name: "United Kingdom")
+    # usa = Country.find_by(name: "United States")
+    # uk = Country.find_by(name: "United Kingdom")
 
     @cities = City.all.includes(:country).map do |city|
       [city.id, city.display_name, "cities"]
     end
 
-    @states = Region.where(["country_id = ?", usa.id]).pluck(:id, :name).map {|arr| arr.push("regions")}
+    @states = Region.where(["country_id = ?", 220]).pluck(:id, :name).map {|arr| arr.push("regions")}
 
-    @uk_countries = Region.where(["country_id = ?", uk.id]).pluck(:id, :name).map {|arr| arr.push("regions")}
+    @uk_countries = Region.where(["country_id = ?", 219]).pluck(:id, :name).map {|arr| arr.push("regions")}
 
     @countries = Country.pluck(:id, :name).map {|arr| arr.push("countries")}
 
@@ -28,8 +28,8 @@ class Api::SearchController < ApplicationController
   end
 
   def filter
-    usa = Country.find_by(name: "United States")
-    uk = Country.find_by(name: "United Kingdom")
+    # usa = Country.find_by(name: "United States")
+    # uk = Country.find_by(name: "United Kingdom")
 
     @query = params[:query]
     @cities = City.where('name ~* ?', @query).includes(:country)
@@ -37,9 +37,9 @@ class Api::SearchController < ApplicationController
       [city.id, city.display_name, "cities"]
     end
 
-    @states = Region.where(["country_id = ?", usa.id]).where('name ~* ?', @query).pluck(:id, :name).map {|arr| arr.push("regions")}
+    @states = Region.where(["country_id = ?", 220]).where('name ~* ?', @query).pluck(:id, :name).map {|arr| arr.push("regions")}
 
-    @uk_countries = Region.where(["country_id = ?", uk.id]).where('name ~* ?', @query).pluck(:id, :name).map {|arr| arr.push("regions")}
+    @uk_countries = Region.where(["country_id = ?", 219]).where('name ~* ?', @query).pluck(:id, :name).map {|arr| arr.push("regions")}
 
     @countries = Country.where('name ~* ?', @query).pluck(:id, :name).map {|arr| arr.push("countries")}
 
