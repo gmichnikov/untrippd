@@ -5,3 +5,4 @@ json.place_name suggestion.place_name
 json.place_link suggestion.place_link
 json.user_link "/users/#{suggestion.author.username}"
 json.image_url asset_path(suggestion.image.url)
+json.has_image !!suggestion.image_file_name

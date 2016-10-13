@@ -70,14 +70,23 @@
   font-size: 28px;
 }
 
-.icon-photo-box {
+
+.file-input-container {
+  display: inline-block;
+  position: relative;
+}
+
+ .file-input-fake {
   background-color: rgb(255, 204, 0);
-  height: 72px;
-  width: 80px;
-  padding-top: 8px;
+  // height: 72px;
+  // width: 80px;
+  height: 79px;
+  width: 79px;
+  // padding-top: 8px;
   display: inline-block;
   position: relative;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .material-icons.icon-add-photo {
@@ -86,6 +95,12 @@
   position: absolute;
   top: 14px;
   left: 16px;
+  cursor: pointer;
+}
+
+
+.suggestion-form-file-input {
+  display: none;
 }
 
 .check-all-that-apply {
@@ -224,4 +239,15 @@
   height: 42px;
   background-color: red;
   margin-top: 31px;
+}
+
+.suggestion-feed-photo-box {
+  width: 400px;
+  height: 300px;
+  overflow: hidden;
+  margin: 0 auto 10px auto;
+}
+
+img.suggestion-feed-photo {
+  width: 100%;
 }

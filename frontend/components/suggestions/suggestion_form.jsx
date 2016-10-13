@@ -36,7 +36,9 @@ class SuggestionForm extends React.Component {
     formData.append("suggestion[highlight]", this.state.highlight);
     formData.append("suggestion[suggestable_type]", this.props.placeType);
     formData.append("suggestion[suggestable_id]", this.props.placeId);
-    formData.append("suggestion[image]", this.state.imageFile);
+    if (this.state.imageFile) {
+      formData.append("suggestion[image]", this.state.imageFile);
+    }
 
     // const suggestion = Object.assign(this.state, {suggestable_type: this.props.placeType, suggestable_id: this.props.placeId});
     // console.log("submit suggestion attempt", suggestion);
@@ -82,13 +84,20 @@ class SuggestionForm extends React.Component {
             placeholder="suggestion text ..."
             onChange={this.updateBody()}
           />
-          <div className="icon-photo-box">
-            <i className="material-icons icon-add-photo">add_a_photo</i>
+          <div className="file-input-container">
+            <div className="file-input-fake" onClick={() => document.getElementById('suggestion-form-file-input').click()}></div>
+            <i className="material-icons icon-add-photo" onClick={() => document.getElementById('suggestion-form-file-input').click()}>add_a_photo</i>
+              <input type="file" className="suggestion-form-file-input" id="suggestion-form-file-input" onChange={this.updateFile} />
+
           </div>
+
+
+
           <img src={this.state.imageUrl} />
-          <input type="file" onChange={this.updateFile} />
+
           <br/>
-          <span className="check-all-that-apply">Check all that apply: </span>
+
+        <span className="check-all-that-apply">Check all that apply: </span>
           <label>Food?</label>
           <input className="suggestion-form-checkbox"
             type="checkbox"

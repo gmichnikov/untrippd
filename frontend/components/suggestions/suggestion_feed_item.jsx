@@ -28,11 +28,22 @@ class SuggestionFeedItem extends React.Component {
     let highlightIcon = s.highlight ? <i className="material-icons icon-star">star</i> : null;
     let followedIcon = this.props.byFollowedUser ? <i className="material-icons icon-person-outline" data-tip={"By a user you follow"}>person_outline</i> : null;
 
+    let suggestionImage = null;
+    console.log("img url", s.image_url);
+    if (s.image_url && !s.image_url.startsWith("/assets/missing")) {
+      suggestionImage = (
+        <div className="suggestion-feed-photo-box">
+          <img className="suggestion-feed-photo" src={s.image_url} />
+        </div>
+      )
+    }
+
+
     return (
       <li className="suggestion-feed-item group">
         <div className="feed-user-profile-photo"><Link to=""><img></img></Link></div>
         <div className="feed-middle">
-          <img src={s.image_url} />
+
           <div className="feed-item-title">
             <Link to={s.user_link}>{s.author_display_name}</Link>
             {" made a suggestion about "}
@@ -41,6 +52,7 @@ class SuggestionFeedItem extends React.Component {
           <div className="feed-item-body">
             {ReactEmoji.emojify(s.body)}
           </div>
+          {suggestionImage}
           <div className="feed-item-details">
             <TimeAgo date={s.created_at} live={false}/>
 
