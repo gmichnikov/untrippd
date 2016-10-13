@@ -19,15 +19,28 @@ class SuggestionForm extends React.Component {
       attraction: false,
       accommodation: false,
       highlight: false,
+      imageFile: null,
+      imageUrl: null,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateFile = this.updateFile.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const suggestion = Object.assign(this.state, {suggestable_type: this.props.placeType, suggestable_id: this.props.placeId});
-    console.log("submit suggestion attempt", suggestion);
-    this.props.processSuggestionForm({suggestion: suggestion});
+    let formData = new FormData();
+    formData.append("suggestion[body]", this.state.body);
+    formData.append("suggestion[food]", this.state.food);
+    formData.append("suggestion[attraction]", this.state.attraction);
+    formData.append("suggestion[accommodation]", this.state.accommodation);
+    formData.append("suggestion[highlight]", this.state.highlight);
+    formData.append("suggestion[suggestable_type]", this.props.placeType);
+    formData.append("suggestion[suggestable_id]", this.props.placeId);
+    formData.append("suggestion[image]", this.state.imageFile);
+
+    // const suggestion = Object.assign(this.state, {suggestable_type: this.props.placeType, suggestable_id: this.props.placeId});
+    // console.log("submit suggestion attempt", suggestion);
+    this.props.processSuggestionForm(formData);
     this.setState(Object.assign(
       {}, this.state, {body: ""}
     ));
@@ -41,6 +54,19 @@ class SuggestionForm extends React.Component {
   updateCheckbox(property) {
     return e => this.setState({[property]: e.target.checked});
   }
+
+  updateFile(e) {
+    let file = e.currentTarget.files[0];
+    let fileReader = new FileReader();
+    fileReader.onloadend = function () {
+      this.setState({ imageFile: file, imageUrl: fileReader.result})
+    }.bind(this);
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
+
+
 
   render () {
 
@@ -59,6 +85,8 @@ class SuggestionForm extends React.Component {
           <div className="icon-photo-box">
             <i className="material-icons icon-add-photo">add_a_photo</i>
           </div>
+          <img src={this.state.imageUrl} />
+          <input type="file" onChange={this.updateFile} />
           <br/>
           <span className="check-all-that-apply">Check all that apply: </span>
           <label>Food?</label>
