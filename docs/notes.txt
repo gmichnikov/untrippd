@@ -109,6 +109,8 @@ Some next steps
 
   consider liking of suggestions
 
+  change font size and line height of sugg text area - 14 1.25
+
 For later
   add more styling to login buttons
   save all visible reviews to a guidebook
