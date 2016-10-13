@@ -21,7 +21,7 @@
 
 class Suggestion < ActiveRecord::Base
 
-  attr_accessor :image_file_name
+  # attr_accessor :image_file_name
 
   validates :author_id, :body, :suggestable_id, :suggestable_type, presence: true
 
