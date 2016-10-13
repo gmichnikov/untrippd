@@ -21,6 +21,8 @@
 
 class Suggestion < ActiveRecord::Base
 
+  attr_accessor :image_file_name
+
   validates :author_id, :body, :suggestable_id, :suggestable_type, presence: true
 
   has_attached_file :image, default_url: "missing.png"
