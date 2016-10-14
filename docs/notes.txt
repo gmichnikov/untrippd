@@ -22,3 +22,4 @@ allow to add address to form?
 Caitlin's suggestions are showing her likes
 add number in parens after feed title
 change links on follow tabs to stay on page
+fix scroll number
