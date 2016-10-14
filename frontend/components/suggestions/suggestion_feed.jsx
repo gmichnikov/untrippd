@@ -1,6 +1,7 @@
 import React from 'react';
 import SuggestionFeedItem from './suggestion_feed_item';
 import Toggle from 'react-toggle'
+import Infinite from 'react-infinite';
 
 class SuggestionFeed extends React.Component {
 
@@ -148,9 +149,13 @@ class SuggestionFeed extends React.Component {
             />
           </form>
         </section>
+
 				<ul className="suggestion-feed-items">
-          {feed}
+          <Infinite elementHeight={180} useWindowAsScrollContainer >
+            {feed}
+          </Infinite>
 				</ul>
+
 			</section>
     );
   }

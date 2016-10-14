@@ -42,7 +42,7 @@ const Root = ({ store }) => {
 
   const requestSingleUserOnEnter = (nextState) => {
 		store.dispatch(USER_ACTIONS.requestSingleUser(nextState.params.username));
-    store.dispatch(USER_ACTIONS.requestLikedSuggestions(nextState.params.username));    
+    store.dispatch(USER_ACTIONS.requestLikedSuggestions(nextState.params.username));
 	};
 
 

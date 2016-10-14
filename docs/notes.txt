@@ -1,37 +1,24 @@
-Following places?
-  single suggestion
-
 Some next steps
   google analytics
-
   Update suggestions
   adjust zoom on map depending on place_type
-
-  icons
-    media - guidebook
-    wallpaper - guidebook
-    favorite for liking
-
-  consider liking of suggestions
-
 For later
   add more styling to login buttons
-
   remove seed data, add my own seed data
-
 things missing
-  guidebooks -> possibly just a single guidebook?
-  likes
   scroll
   read suggested features list - ruby geocoder
   optional url in form
   optional address? -> look it up and put it on a map
   google maps api for posts?
-
-
 later
   remove error message about minified
   remove logger in production
 
 
 read doc on extra stuff in docs
+
+footer
+better seeding
+bullet?
+https://github.com/appacademy/curriculum/blob/master/full-stack-project/readings/react-v15-warning.md
