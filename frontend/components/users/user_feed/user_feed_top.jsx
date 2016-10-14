@@ -44,9 +44,15 @@ class UserFeedTop extends React.Component {
     let linkUserLikes = `/users/${user.username}/likes`;
     let linkFollowersList = `/users/${user.username}/followers`;
     let linkFollowedsList = `/users/${user.username}/follows`;
+
+    let numFolloweds = user.num_followeds;
+    if (user.id === currentUser.id) {
+      numFolloweds = currentUser.followeds_ids.length;
+    }
+
     let pluralSuggestions = (user.num_suggestions === 1 ? "suggestion" : "suggestions");
     let pluralLikes = (user.num_liked_suggestions === 1 ? "like" : "likes");
-    let pluralFollows = (user.num_followeds === 1 ? "follow" : "follows");
+    let pluralFollows = (numFolloweds === 1 ? "follow" : "follows");
     let pluralFollowers = (user.num_followers === 1 ? "follower" : "followers");
 
     return (
@@ -67,7 +73,7 @@ class UserFeedTop extends React.Component {
               <span className="user-feed-top-stats-label">{pluralLikes}</span>
             </Link>
             <Link to={linkFollowedsList}>
-              <span className="user-feed-top-stats-num">{user.num_followeds}</span>
+              <span className="user-feed-top-stats-num">{numFolloweds}</span>
               <span className="user-feed-top-stats-label">{pluralFollows}</span>
             </Link>
             <Link to={linkFollowersList}>

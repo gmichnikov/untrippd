@@ -11,17 +11,24 @@ const UserReducer = (oldState = {}, action) => {
       let currentFollowStatus = oldState.followed_by_current_user;
       return Object.assign({}, oldState, { followed_by_current_user: !currentFollowStatus });
     case SESSION_ACTIONS.INCREASE_CURRENT_USER_FOLLOWS:
-      let incNumFollowers = oldState.num_followers + 1;
-      let currentUserItem = {
-        current_user_follows_user: true,
-        display_name: window.currentUser.display_name,
-        id: window.currentUser.id,
-        username: currentUser.username,
+      let incNumFollowers = oldState.num_followers;
+      let increasedFollowers = oldState.followers;
+      if (oldState.id === action.id) {
+        incNumFollowers = oldState.num_followers + 1;
+        let currentUserItem = {
+          current_user_follows_user: true,
+          display_name: window.currentUser.display_name,
+          id: window.currentUser.id,
+          username: currentUser.username,
+        }
+        increasedFollowers = increasedFollowers.concat([currentUserItem])
       }
-      let increasedFollowers = oldState.followers.concat([currentUserItem])
       return Object.assign({}, oldState, { num_followers: incNumFollowers, followers: increasedFollowers })
     case SESSION_ACTIONS.DECREASE_CURRENT_USER_FOLLOWS:
-      let decNumFollowers = oldState.num_followers - 1;
+      let decNumFollowers = oldState.num_followers;
+      if (oldState.id === action.id) {
+        decNumFollowers = oldState.num_followers - 1;
+      }
       let decreasedFollowers = oldState.followers.filter((follower) => {
         return follower.id !== window.currentUser.id;
       });
