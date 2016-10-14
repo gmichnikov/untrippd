@@ -1,0 +1,27 @@
+.footer {
+  width: 1024px;
+  margin: -30px auto 0px auto;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.footer-left {
+  display: block;
+  padding: 20px;
+  float: left;
+}
+
+.footer-links {
+  padding: 20px;
+  float: right;
+}
+
+.footer-links > li {
+  float: left;
+  padding: 0 0 0 20px;
+}
+
+.footer a:hover {
+  color: #000;
+  cursor: pointer;
+}

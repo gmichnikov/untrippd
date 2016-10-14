@@ -4,19 +4,14 @@ Some next steps
   adjust zoom on map depending on place_type
 For later
   add more styling to login buttons
-  remove seed data, add my own seed data
+*  remove seed data, add my own seed data
 things missing
-  scroll
-  read suggested features list - ruby geocoder
   optional url in form
   optional address? -> look it up and put it on a map
   google maps api for posts?
 later
-  remove error message about minified
+*  remove error message about minified
   remove logger in production
-
-
-read doc on extra stuff in docs
 
 footer
 better seeding
