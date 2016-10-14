@@ -31,9 +31,9 @@ export const toggleFollowStatus = () => ({
 	type: TOGGLE_FOLLOW_STATUS,
 });
 
-export const requestLikedSuggestions = (id) => ({
+export const requestLikedSuggestions = (username) => ({
 	type: REQUEST_LIKED_SUGGESTIONS,
-	id
+	username
 });
 
 export const receiveLikedSuggestions = (suggestions) => ({

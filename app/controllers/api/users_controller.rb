@@ -36,8 +36,10 @@ class Api::UsersController < ApplicationController
   end
 
   def likes
-    @user = User.find_by(username: params[:id])
+    @user = User.find_by(username: params[:username])
     @suggestions = @user.liked_suggestions
+    @followers = @user.followers.order(:first_name)
+    @followeds = @user.followeds.order(:first_name)
     render :likes
   end
 

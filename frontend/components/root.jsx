@@ -29,10 +29,8 @@ const Root = ({ store }) => {
     }
   };
 
-  const requestSingleCityOnEnter = (nextState) => {
-    console.log(nextState.params.cityId);
+  const requestRandomCityOnEnter = (nextState) => {
     store.dispatch(PLACE_ACTIONS.requestRandomCity());
-
 		// store.dispatch(PLACE_ACTIONS.requestSingleCity(nextState.params.cityId));
 	};
 
@@ -40,8 +38,11 @@ const Root = ({ store }) => {
 		store.dispatch(SUGGESTION_ACTIONS.requestSingleSuggestion(nextState.params.suggestionId));
 	};
 
-  const requestSingleUserOnEnter = (nextState) => {
+  const requestUserFeedOnEnter = (nextState) => {
 		store.dispatch(USER_ACTIONS.requestSingleUser(nextState.params.username));
+	};
+
+  const requestUserLikesOnEnter = (nextState) => {
     store.dispatch(USER_ACTIONS.requestLikedSuggestions(nextState.params.username));
 	};
 
@@ -53,14 +54,14 @@ const Root = ({ store }) => {
         <Route path="/login" component={LoginFormContainer} onEnter={redirectIfLoggedIn} />
         <Route path="/home" component={App}>
           <IndexRoute component={Home} />
-          <Route path="/cities/:cityId" component={Place} onEnter={requestSingleCityOnEnter} />
+          <Route path="/cities/:cityId" component={Place} onEnter={requestRandomCityOnEnter} />
           <Route path="/countries/:cityId" component={Place} />
           <Route path="/regions/:cityId" component={Place} />
           <Route path="/suggestions/:suggestionId" component={SingleSuggestionContainer} onEnter={requestSingleSuggestionOnEnter} />
-          <Route path="/users/:username/followers" component={Followers} onEnter={requestSingleUserOnEnter} />
-          <Route path="/users/:username/follows" component={Followeds} onEnter={requestSingleUserOnEnter} />
-          <Route path="/users/:username/likes" component={UserLikes} onEnter={requestSingleUserOnEnter} />
-          <Route path="/users/:username" component={UserFeed} onEnter={requestSingleUserOnEnter} />
+          <Route path="/users/:username/followers" component={Followers} onEnter={requestUserFeedOnEnter} />
+          <Route path="/users/:username/follows" component={Followeds} onEnter={requestUserFeedOnEnter} />
+          <Route path="/users/:username/likes" component={UserLikes} onEnter={requestUserLikesOnEnter} />
+          <Route path="/users/:username" component={UserFeed} onEnter={requestUserFeedOnEnter} />
         </Route>
         <Route path="/" component={LandingPageContainer} onEnter={redirectIfLoggedIn} />
       </Router>

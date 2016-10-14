@@ -16,3 +16,9 @@ later
 better seeding
 bullet?
 https://github.com/appacademy/curriculum/blob/master/full-stack-project/readings/react-v15-warning.md
+allow to add address to form?
+
+
+Caitlin's suggestions are showing her likes
+add number in parens after feed title
+change links on follow tabs to stay on page

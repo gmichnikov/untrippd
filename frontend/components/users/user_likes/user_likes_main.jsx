@@ -11,10 +11,13 @@ class UserLikesMain extends React.Component {
   }
 
   componentDidMount() {
-    // this.props.requestLikedSuggestions();
+    // console.log("mount likes props", this.props.user);
+    // this.props.requestLikedSuggestions(this.props.user.username);
   }
 
-  componentWillUnmount() {
+  componentWillReceiveProps() {
+    // console.log("will receive likes props", this.props.user);
+    // this.props.requestLikedSuggestions(this.props.user.username);
   }
 
 

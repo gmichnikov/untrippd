@@ -22,7 +22,7 @@ export default ({ getState, dispatch }) => next => action => {
       API.unfollowUser(action.id, followAndUnfollowSuccess);
       return next(action);
     case USER_ACTIONS.REQUEST_LIKED_SUGGESTIONS:
-      API.fetchLikedSuggestions(action.id, receiveLikedSuggestionsSuccess);
+      API.fetchLikedSuggestions(action.username, receiveLikedSuggestionsSuccess);
       return next(action);
     default:
       return next(action);

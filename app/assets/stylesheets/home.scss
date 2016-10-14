@@ -1,7 +1,12 @@
-.home, .place, .followers {
+.home, .place {
   width: 1024px;
   margin: 28px auto;
   padding: 0 12px;
+}
+
+.followers {
+  width: 1024px;
+  margin: 28px auto;
 }
 
 .home-main, .place-main, .user-feed-main, .followers-main {
