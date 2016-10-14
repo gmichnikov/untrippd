@@ -151,7 +151,7 @@ class SuggestionFeed extends React.Component {
         </section>
 
 				<ul className="suggestion-feed-items">
-          <Infinite elementHeight={400} useWindowAsScrollContainer >
+          <Infinite elementHeight={300} useWindowAsScrollContainer >
             {feed}
           </Infinite>
 				</ul>
