@@ -21,6 +21,7 @@ class FollowersMain extends React.Component {
   render() {
 
     let followers = this.props.user.followers;
+    let num_followers = this.props.user.num_followers;
     let first_name = this.props.user.first_name;
     let username = this.props.user.username;
     let currentUser = this.props.currentUser;
@@ -40,7 +41,7 @@ class FollowersMain extends React.Component {
           <li><Link to={linkFollows}>Follows</Link></li>
         </ul>
         <div className="followers-list">
-          <h4><Link to={linkFeed}>{first_name}</Link>{"'s Followers"} ({followers.length})</h4>
+          <h4><Link to={linkFeed}>{first_name}</Link>{"'s Followers"} ({num_followers})</h4>
           <ul className="followers-list-items">
             {followersList}
           </ul>

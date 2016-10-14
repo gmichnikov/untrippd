@@ -20,7 +20,8 @@ const SessionReducer = (oldState = default_session_state, action) => {
       return Object.assign({}, oldState, {currentUser: null, loginErrors: [], signupErrors: []});
     case SESSION_ACTIONS.CHANGE_WELCOME_NOTIFICATION:
       return Object.assign({}, oldState, {welcomeNotificationStatus: action.status});
-    case SESSION_ACTIONS.ADJUST_CURRENT_USER_FOLLOWS:
+    case SESSION_ACTIONS.INCREASE_CURRENT_USER_FOLLOWS:
+    case SESSION_ACTIONS.DECREASE_CURRENT_USER_FOLLOWS:
       let prevIds = oldState.currentUser.followeds_ids;
       let newIds;
       if (prevIds.indexOf(action.id) === -1) {
