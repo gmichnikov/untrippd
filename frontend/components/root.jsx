@@ -49,7 +49,7 @@ const Root = ({ store }) => {
 
   return (
     <Provider store={store}>
-      <Router history={hashHistory}>
+      <Router history={hashHistory} onUpdate={ () => window.scrollTo(0, 0) }>
         <Route path="/signup" component={SignupFormContainer} onEnter={redirectIfLoggedIn} />
         <Route path="/login" component={LoginFormContainer} onEnter={redirectIfLoggedIn} />
         <Route path="/home" component={App}>
