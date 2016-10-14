@@ -32,8 +32,8 @@ class Country < ActiveRecord::Base
     city_ids = City.joins(:region).where("regions.country_id = ?", self.id).pluck(:id)
 
     Suggestion.
-      joins("INNER JOIN cities ON suggestions.suggestable_id = cities.id").
-      joins("INNER JOIN regions ON suggestions.suggestable_id = regions.id").
+      joins("LEFT JOIN cities ON (suggestions.suggestable_id = cities.id AND suggestions.suggestable_type = 'City')").
+      joins("LEFT JOIN regions ON (suggestions.suggestable_id = regions.id AND suggestions.suggestable_type = 'Region')").
       where("regions.country_id = ? OR (suggestions.suggestable_id = ? AND suggestions.suggestable_type = 'Country') OR cities.id IN (?)", self.id, self.id, city_ids)
   end
 

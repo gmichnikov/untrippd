@@ -13,7 +13,6 @@ later
 *  remove error message about minified
   remove logger in production
 
-footer
 better seeding
 bullet?
 https://github.com/appacademy/curriculum/blob/master/full-stack-project/readings/react-v15-warning.md

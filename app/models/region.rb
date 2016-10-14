@@ -23,9 +23,8 @@ class Region < ActiveRecord::Base
 
   def all_suggestions
     Suggestion.
-      joins("INNER JOIN cities ON suggestions.suggestable_id = cities.id").
-      joins("INNER JOIN regions ON suggestions.suggestable_id = regions.id").
-      where("cities.region_id = ? OR (suggestions.suggestable_id = ? AND suggestions.suggestable_type = 'Region')", self.id, self.id)
+    joins("LEFT JOIN cities ON (suggestions.suggestable_id = cities.id AND suggestions.suggestable_type = 'City')").
+    where("cities.region_id = ? OR (suggestions.suggestable_id = ? AND suggestions.suggestable_type = 'Region')", self.id, self.id)
   end
 
 end
