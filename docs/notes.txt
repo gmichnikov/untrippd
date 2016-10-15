@@ -23,3 +23,13 @@ Caitlin's suggestions are showing her likes
 add number in parens after feed title
 change links on follow tabs to stay on page
 fix scroll number
+Remove all commented out code, console.log statements, and debugger statements
+
+
+add Hunter
+charleston
+most liked suggestions
+production readme
+special site for first-time users/guest account with tips?
+
+Use your seed data to welcome the Guest User to your site and introduce yourself (link to your Github, LinkedIn, etc)

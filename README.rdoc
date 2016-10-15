@@ -1,28 +1,20 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Country.allsuggestions Query
 
-Things you may want to cover:
+There is a polymorphic association between suggestions and countries/regions/cities, so users can add suggestions on each type of place. On each country page, I aggregate the suggestions made about the country (e.g. USA), each of its regions (e.g. the 50 states), and each of those region's cities. Joining suggestions on suggestable_id alone would not work, since the query would not be able to distinguish between a city and a region with the same id. So, each join includes a check for both suggestable_id and suggestable_type.
 
-* Ruby version
+city_ids = City.joins(:region).where("regions.country_id = ?", self.id).pluck(:id)
 
-* System dependencies
+Suggestion.
+  joins("LEFT JOIN cities ON (suggestions.suggestable_id = cities.id AND suggestions.suggestable_type = 'City')").
+  joins("LEFT JOIN regions ON (suggestions.suggestable_id = regions.id AND suggestions.suggestable_type = 'Region')").
+  where("regions.country_id = ? OR (suggestions.suggestable_id = ? AND suggestions.suggestable_type = 'Country') OR cities.id IN (?)", self.id, self.id, city_ids)
+end
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The initial city_ids query serves as a subquery that gathers the ids of all cities in the country. Left joins are required so that region-level suggestions are not eliminated after the cities join.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Custom routes for popular cities/countries, follow/unfollow users, like/unlike suggestions
+
+Challenges - updating everything on user profile page when follow status changes
