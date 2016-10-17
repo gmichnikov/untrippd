@@ -107,13 +107,11 @@ This allows the search results to appear in three sections (country, state, city
 #### Special Regions
 There are over 2000 Regions in the database, but the only ones that appear in the search, or in the display name's of their cities, are the 50 US states, the District of Columbia, and the 4 "regions" of the United Kingdom (England, Northern Ireland, Scotland, Wales). The latter are treated as countries in the search, while the former appear in a category of their own. If this were to acquire a global userbase, it would be worth consider if regions in other countries should appear as well (e.g. Rome, Lazio, Italy instead of Rome, Italy).
 
-### Exploring the World
+#### Exploring the World
 This link in the header takes the user to a random city page that has at least one suggestion on it. This feature would become more and more interesting as more suggestions are added to the site.
 
 
 ## Place Data
-
-### Source
 
 Place data was sourced from [Esri Open Data](http://beta.esri.opendata.arcgis.com/datasets/6996f03a1b364dbab4008d99380370ed_0). The `World Cities` data table was parsed into three postgreSQL tables (`cities`, `regions`, and `countries`) using Pivot Tables, VLookups, and CSV exports in Google Sheets.
 
@@ -133,33 +131,25 @@ Place data was sourced from [Esri Open Data](http://beta.esri.opendata.arcgis.co
 - [React Emoji](https://github.com/banyan/react-emoji) to allow emoji notation in suggestions
 - [Paperclip](https://github.com/thoughtbot/paperclip) to store the images users may add to any suggestion, using Amazon Web Services
 - [Figaro](https://github.com/laserlemon/figaro) to store AWS keys
-
-
-
-
-Country.allsuggestions Query
-
-
-
-Custom routes for popular cities/countries, follow/unfollow users, like/unlike suggestions
-
-Challenges - updating everything on user profile page when follow status changes
-
-To-dos/future features
-
+- [Google's Material Icons](https://design.google.com/icons/) for many button/tags, including like/unlike, delete suggestions, food/attraction/accomodation, add photo, and more.
 
 
 ## Next steps for further development of Untrippd
 
 I plan to continue to develop Untrippd, since I would genuinely would love to see the number of suggestions reach a point where, at the very least, a small set of users would be sure to visit this site while planning a trip. Some possible features include:
 
-- Google Place API
-  - Several people whom I asked to explore the site suggested adding a field to the suggestion form into which a user could enter an address associated with the suggestions. The suggestion would then be rendered with a google map that showed a marker on that address.
-- Pagination and/or Infinite Scroll
-  - Currently, all suggestions are loaded immediately on every page with the suggestion feed. As the site grows, it would be best to load results in batches.
-- Guidebooks
-  -  Currently users can like suggestions, which serves as a way to save suggestions for later viewing. Ideally, users would be able to save suggestions into custom collections ("guidebooks") for better organization.
-- Place following
-  - Similar to user follows. This would allow a user to see only suggestions about a subset of the places in the world.
+#### Google Place API
+- Several people whom I asked to explore the site suggested adding a field to the suggestion form into which a user could enter an address associated with the suggestions. The suggestion would then be rendered with a google map that showed a marker on that address.
+
+#### Pagination and/or Infinite Scroll
+- Currently, all suggestions are loaded immediately on every page with the suggestion feed. As the site grows, it would be best to load results in batches.
+
+#### Guidebooks
+-  Currently users can like suggestions, which serves as a way to save suggestions for later viewing. Ideally, users would be able to save suggestions into custom collections ("guidebooks") for better organization.
+
+#### Place following
+- Similar to user follows. This would allow a user to see only suggestions about a subset of the places in the world.
 
 ## Screenshots
+
+Coming Soon!
