@@ -33,3 +33,6 @@ production readme
 special site for first-time users/guest account with tips?
 
 Use your seed data to welcome the Guest User to your site and introduce yourself (link to your Github, LinkedIn, etc)
+
+PENCIL CANNOT BE PRESENT IF NOT LOGGED IN
+need to push people to login on many pages (all user pages, place pages)

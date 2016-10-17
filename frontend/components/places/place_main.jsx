@@ -42,7 +42,10 @@ class PlaceMain extends React.Component {
 
     return (
 			<section className="place-main">
-        <PlaceMainTop city={city} />
+        <PlaceMainTop
+          city={city}
+          currentUser={this.props.currentUser}
+        />
         <SuggestionFeed
           suggestions={citySuggestions}
           currentUser={this.props.currentUser}

@@ -29,19 +29,35 @@ const Root = ({ store }) => {
     }
   };
 
+  const redirectIfNotLoggedIn = (nextState, replace) => {
+    if(store.getState().session.currentUser === null) {
+      replace({
+        pathname: '/login'
+      });
+    }
+  };
+
+
   const requestRandomCityOnEnter = (nextState) => {
     store.dispatch(PLACE_ACTIONS.requestRandomCity());
 	};
 
-  const requestSingleSuggestionOnEnter = (nextState) => {
-		store.dispatch(SUGGESTION_ACTIONS.requestSingleSuggestion(nextState.params.suggestionId));
-	};
 
-  const requestUserFeedOnEnter = (nextState) => {
+  const requestUserFeedOnEnter = (nextState, replace) => {
+    if(store.getState().session.currentUser === null) {
+      replace({
+        pathname: '/login'
+      });
+    }
 		store.dispatch(USER_ACTIONS.requestSingleUser(nextState.params.username));
 	};
 
-  const requestUserLikesOnEnter = (nextState) => {
+  const requestUserLikesOnEnter = (nextState, replace) => {
+    if(store.getState().session.currentUser === null) {
+      replace({
+        pathname: '/login'
+      });
+    }
     store.dispatch(USER_ACTIONS.requestLikedSuggestions(nextState.params.username));
 	};
 
@@ -51,12 +67,11 @@ const Root = ({ store }) => {
       <Router history={hashHistory} onUpdate={ () => window.scrollTo(0, 0) }>
         <Route path="/signup" component={SignupFormContainer} onEnter={redirectIfLoggedIn} />
         <Route path="/login" component={LoginFormContainer} onEnter={redirectIfLoggedIn} />
-        <Route path="/home" component={App}>
-          <IndexRoute component={Home} />
+        <Route path="/home" component={App} >
+          <IndexRoute component={Home} onEnter={redirectIfNotLoggedIn} />
           <Route path="/cities/:cityId" component={Place} onEnter={requestRandomCityOnEnter} />
           <Route path="/countries/:cityId" component={Place} />
           <Route path="/regions/:cityId" component={Place} />
-          <Route path="/suggestions/:suggestionId" component={SingleSuggestionContainer} onEnter={requestSingleSuggestionOnEnter} />
           <Route path="/users/:username/followers" component={Followers} onEnter={requestUserFeedOnEnter} />
           <Route path="/users/:username/follows" component={Followeds} onEnter={requestUserFeedOnEnter} />
           <Route path="/users/:username/likes" component={UserLikes} onEnter={requestUserLikesOnEnter} />

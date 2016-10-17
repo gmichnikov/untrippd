@@ -47,6 +47,11 @@ class PlaceMainTop extends React.Component {
     let writeText = `Add a suggestion about ${city.name}`;
     let followText = `Add ${city.name} to My Places`;
 
+    let addSuggestion = null;
+    if (this.props.currentUser) {
+      addSuggestion = <div className="place-main-top-write" onClick={this.openModal} data-tip={writeText}></div>
+    }
+
     return (
 			<section className="place-main-top group">
         <section className="place-main-top-left">
@@ -59,12 +64,12 @@ class PlaceMainTop extends React.Component {
             </div>
           </div>
           <div className="place-main-top-buttons group">
-            <div className="place-main-top-write" onClick={this.openModal} data-tip={writeText}></div>
-            <ReactTooltip />
+            {addSuggestion}
           </div>
         </section>
         <section className="place-main-top-map">
           {mapComponent}
+          <ReactTooltip />
   				<a href={fullMapLink} target="_blank">Full Map</a>
         </section>
 
