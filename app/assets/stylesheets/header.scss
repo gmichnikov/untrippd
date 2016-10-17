@@ -66,7 +66,6 @@ li.header-logo {
   position: relative;
   padding: 8px 7px 8px 7px;
   margin-right: 10px;
-  // margin-top: 15px;
 }
 
 ////////////
@@ -123,11 +122,9 @@ li.header-logo {
 
 
 .header-search-form {
-  // display: none;
   background-color: white;
   margin-top: 9px;
   margin-right: 20px;
-  // padding: 0;
   float: right;
   border-radius: 5px;
   width: 240px;
@@ -139,8 +136,6 @@ li.header-logo {
   height: 25px;
   padding: 5px 10px;
   width: 190px;
-  // font-family: Helvetica, sans-serif;
-  // font-weight: 300;
   border: 0;
   color: black;
 }
@@ -170,4 +165,12 @@ li.header-logo {
 
 .explore-link {
   cursor: pointer;
+}
+
+.header-blue:hover {
+  background-color: #2980c3;
+}
+
+.header-blue:active {
+  font-size: 18px;;
 }

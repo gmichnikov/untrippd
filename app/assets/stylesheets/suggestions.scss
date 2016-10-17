@@ -14,7 +14,6 @@
 
 
 .suggestion-form {
-  // width: 500px;
   margin: 0 auto;
   padding: 18px;
   line-height: 1.75;
@@ -25,7 +24,6 @@
   display: block;
   width: 362px;
   height: 68px;
-  // margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   display: inline-block;
@@ -80,11 +78,8 @@
 
  .file-input-fake {
   background-color: rgb(255, 204, 0);
-  // height: 72px;
-  // width: 80px;
   height: 79px;
   width: 79px;
-  // padding-top: 8px;
   display: inline-block;
   position: relative;
   border-radius: 5px;
@@ -121,7 +116,6 @@
 
 
 .feed-item-body img {
-  // for emojis
   display: inline;
   width: 20px;
   margin-bottom: -2px;

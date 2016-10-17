@@ -31,7 +31,6 @@ const Root = ({ store }) => {
 
   const requestRandomCityOnEnter = (nextState) => {
     store.dispatch(PLACE_ACTIONS.requestRandomCity());
-		// store.dispatch(PLACE_ACTIONS.requestSingleCity(nextState.params.cityId));
 	};
 
   const requestSingleSuggestionOnEnter = (nextState) => {
@@ -70,5 +69,3 @@ const Root = ({ store }) => {
 };
 
 export default Root;
-
-// <Route path="/users/:userId/followed-users" component={FollowedUsers} />

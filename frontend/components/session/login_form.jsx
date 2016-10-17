@@ -17,7 +17,6 @@ class LoginForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    console.log("login attempt", user);
     this.props.processLoginForm({user: user});
     this.state = {
       username: "",
@@ -26,7 +25,6 @@ class LoginForm extends React.Component {
   }
 
   guestLogin(e) {
-    console.log("guest login attempt");
     this.props.processLoginForm({user: {username: "guest", password: "guestpassword"}});
     this.state = {
       username: "",
@@ -40,7 +38,6 @@ class LoginForm extends React.Component {
 
   componentWillReceiveProps (nextProps) {
     if(nextProps.loggedIn) {
-      // window.localStorage.setItem("welcomeNote", "true");
       this.props.changeWelcomeNotification("Welcome back!");
       nextProps.router.push("/home");
     }
@@ -84,9 +81,9 @@ class LoginForm extends React.Component {
             placeholder="Password"
             onChange={this.update('password')}
           />
-        <button>Log In</button>
-        <div className="guest-login" onClick={this.guestLogin}>Demo Log In</div>
-        <p>New around here? <Link to="/signup">Sign up!</Link></p>
+        <button className="login-button">Log In</button>
+        <div className="guest-login login-button" onClick={this.guestLogin}>Demo Log In</div>
+        <p>New around here? <Link className="sign-up-link" to="/signup">Sign up!</Link></p>
         </form>
       </section>
     );

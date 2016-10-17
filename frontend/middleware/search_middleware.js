@@ -3,14 +3,11 @@ import * as API from '../util/search_api_util';
 
 export default ({ getState, dispatch }) => next => action => {
 
-  // const errorCallback = xhr => dispatch(ACTIONS.receiveSearchErrors(xhr.responseJSON));
-  const errorCallback = xhr => console.log("Search Error", xhr.responseJSON);
-
   const receiveAllSearchSuccess = searchPlaces => dispatch(ACTIONS.receiveAllSearchPlaces(searchPlaces));
 
   switch(action.type) {
     case ACTIONS.REQUEST_ALL_SEARCH_PLACES:
-      API.fetchAllSearchPlaces(receiveAllSearchSuccess, errorCallback);
+      API.fetchAllSearchPlaces(receiveAllSearchSuccess);
       return next(action);
     case ACTIONS.REQUEST_FILTERED_SEARCH_PLACES:
       API.fetchFilteredSearchPlaces(action.query, receiveAllSearchSuccess, errorCallback);

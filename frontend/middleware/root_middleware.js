@@ -12,7 +12,6 @@ const RootMiddleware = applyMiddleware(
   PlaceMiddleware,
   SearchMiddleware,
   UserMiddleware,
-  LoggerMiddleware
 );
 
 export default RootMiddleware;

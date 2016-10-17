@@ -20,7 +20,6 @@ class SignupForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    console.log("submit attempt", user);
     this.props.processSignupForm({user: user});
     this.setState(Object.assign(
       {}, this.state, {password: "", confirm_password: ""}
@@ -109,8 +108,8 @@ class SignupForm extends React.Component {
             placeholder="Last Name"
             onChange={this.update('lastName')}
           />
-        <button>Create Account</button>
-          <p>Already have an account? <Link to="/login">Log in!</Link></p>
+        <button className="signup-button">Create Account</button>
+          <p>Already have an account? <Link className="login-link" to="/login">Log in!</Link></p>
         </form>
       </section>
     );

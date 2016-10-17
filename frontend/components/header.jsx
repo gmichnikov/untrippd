@@ -43,8 +43,8 @@ class Header extends React.Component {
     const sessionLinks = () => {
       return (
         <div className="session-links">
-          <li><Link to="/login">Sign In</Link></li>
-          <li><Link to="/signup">Join Now</Link></li>
+          <li><Link to="/login" className="header-blue">Sign In</Link></li>
+          <li><Link to="/signup" className="header-blue">Join Now</Link></li>
         </div>
       )
     }

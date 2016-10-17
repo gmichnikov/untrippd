@@ -24,7 +24,6 @@ export const unfollowUser = (id, success) => {
 };
 
 export const fetchLikedSuggestions = (username, success, error) => {
-	console.log("util", username);
 	$.ajax({
 		method: 'GET',
   	url: `/api/users/${username}/likes`,

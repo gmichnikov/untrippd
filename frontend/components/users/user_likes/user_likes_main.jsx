@@ -10,22 +10,10 @@ class UserLikesMain extends React.Component {
     }
   }
 
-  componentDidMount() {
-    // console.log("mount likes props", this.props.user);
-    // this.props.requestLikedSuggestions(this.props.user.username);
-  }
-
-  componentWillReceiveProps() {
-    // console.log("will receive likes props", this.props.user);
-    // this.props.requestLikedSuggestions(this.props.user.username);
-  }
-
-
   render() {
 
     let userLikedSuggestions = this.props.suggestions;
     if (!userLikedSuggestions) { return null; }
-    console.log("sugglog", userLikedSuggestions);
     const feedTitle = `Suggestions Liked by ${this.props.user.first_name}`;
 
     return (

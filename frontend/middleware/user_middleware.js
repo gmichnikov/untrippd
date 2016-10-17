@@ -5,7 +5,6 @@ import * as API from '../util/user_api_util';
 export default ({ getState, dispatch }) => next => action => {
 
   const receiveSingleUserSuccess = user => dispatch(USER_ACTIONS.receiveSingleUser(user));
-  // const errorCallback = xhr => dispatch(ACTIONS.???(xhr.responseJSON));
   const followSuccess = (id) => dispatch(SESSION_ACTIONS.increaseCurrentUserFollows(id));
 
   const unfollowSuccess = (id) => dispatch(SESSION_ACTIONS.decreaseCurrentUserFollows(id));

@@ -4,9 +4,6 @@ import * as ACTIONS from '../../actions/suggestion_actions.js';
 
 const mapStateToProps = state => {
   return {
-    // loggedIn: state.session.currentUser !== null,
-    // loginErrors: [],
-    // signupErrors: state.session.signupErrors,
   };
 };
 

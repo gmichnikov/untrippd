@@ -12,7 +12,6 @@ export default ({ getState, dispatch }) => next => action => {
   const receivePopularCountriesSuccess = (countries) => {
     return dispatch(ACTIONS.receivePopularCountries(countries));
   }
-  // const errorCallback = xhr => dispatch(ACTIONS.???(xhr.responseJSON));
   const receiveRandomCitySuccess = (city) => dispatch(ACTIONS.receiveRandomCity(city));
 
 

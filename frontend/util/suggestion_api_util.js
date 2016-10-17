@@ -1,5 +1,4 @@
 export const createSuggestion = (suggestion, success, error) => {
-	console.log(suggestion);
 	$.ajax({
 		method: 'POST',
 		url: '/api/suggestions',

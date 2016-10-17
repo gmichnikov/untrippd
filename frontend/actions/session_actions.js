@@ -7,7 +7,6 @@ export const RECEIVE_SIGNUP_ERRORS = 'RECEIVE_SIGNUP_ERRORS';
 export const RECEIVE_LOGIN_ERRORS = 'RECEIVE_LOGIN_ERRORS';
 export const CHANGE_WELCOME_NOTIFICATION = 'CHANGE_WELCOME_NOTIFICATION';
 
-// export const ADJUST_CURRENT_USER_FOLLOWS = 'ADJUST_CURRENT_USER_FOLLOWS';
 export const INCREASE_CURRENT_USER_FOLLOWS = 'INCREASE_CURRENT_USER_FOLLOWS';
 export const DECREASE_CURRENT_USER_FOLLOWS = 'DECREASE_CURRENT_USER_FOLLOWS';
 
@@ -65,10 +64,6 @@ export const changeWelcomeNotification = (status) => {
   };
 };
 
-// export const adjustCurrentUserFollows = (id) => ({
-// 	type: ADJUST_CURRENT_USER_FOLLOWS,
-//   id
-// });
 
 export const increaseCurrentUserFollows = (id) => ({
 	type: INCREASE_CURRENT_USER_FOLLOWS,

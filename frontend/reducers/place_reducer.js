@@ -5,9 +5,6 @@ const defaultPlacesState = {
   popularCities: [],
   popularCountries: [],
   randomCity: [],
-  // regions: [],
-  // singleCountry: {},
-  // countries: [],
 };
 
 const PlaceReducer = (oldState = defaultPlacesState, action) => {

@@ -19,7 +19,6 @@ class UserFeedTop extends React.Component {
   render() {
     let user = this.props.user;
     let currentUser = this.props.currentUser;
-    // let followText = user.followed_by_current_user ? "Yes" : "No"
 
     let followButton = <div className="follow-button" onClick={() => this.props.followUser(user.id)}>
       <i className="material-icons icon-add-circle">add_circle</i>

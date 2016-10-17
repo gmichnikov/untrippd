@@ -11,7 +11,6 @@ $primary-color: rgb(255, 204, 0);
 
 .signup-form {
   width: 534px;
-  // height: 422px;
   padding: 20px 33px;
 }
 
@@ -68,7 +67,6 @@ $primary-color: rgb(255, 204, 0);
   margin-bottom: 10px;
 }
 
-// can these be combined?
 ::-webkit-input-placeholder {
    font-size: 14px;
    color: #ccc;
@@ -104,11 +102,24 @@ $primary-color: rgb(255, 204, 0);
   width: 140px;
 }
 
+.login-button:hover, .signup-button:hover {
+  background-color: rgb(218, 179, 22);
+}
+
+.login-button:active, .signup-button:active {
+  font-size: 18px;
+}
+
+.sign-up-link:hover, .login-link:hover {
+  color: rgb(218, 179, 22);
+  cursor: pointer;
+}
+
+
 //  ************* LOGIN
 
 .login-form {
   width: 300px;
-  // height: 288px;
   padding: 20px 50px;
 }
 
@@ -186,6 +197,14 @@ $primary-color: rgb(255, 204, 0);
   text-align: center;
 }
 
+
+.landing-button:hover {
+  background-color: rgb(218, 179, 22);
+}
+
+.landing-button:active {
+  font-size: 24px;
+}
 
 
 .login-errors, .signup-errors {

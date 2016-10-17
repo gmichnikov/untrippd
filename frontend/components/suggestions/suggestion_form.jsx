@@ -2,13 +2,6 @@ import React from 'react';
 import { Router, Route, IndexRoute, hashHistory, Link, withRouter } from 'react-router';
 import Modal from 'react-modal';
 
-// #  body             :text             not null
-// #  food             :boolean          default(FALSE)
-// #  attraction       :boolean          default(FALSE)
-// #  accommodation    :boolean          default(FALSE)
-// #  highlight        :boolean          default(FALSE)
-
-
 class SuggestionForm extends React.Component {
 
   constructor(props) {
@@ -40,8 +33,6 @@ class SuggestionForm extends React.Component {
       formData.append("suggestion[image]", this.state.imageFile);
     }
 
-    // const suggestion = Object.assign(this.state, {suggestable_type: this.props.placeType, suggestable_id: this.props.placeId});
-    // console.log("submit suggestion attempt", suggestion);
     this.props.processSuggestionForm(formData);
     this.setState(Object.assign(
       {}, this.state, {body: ""}

@@ -4,9 +4,6 @@ import * as ACTIONS from '../../actions/search_actions';
 
 const mapStateToProps = state => {
   return {
-    // loggedIn: state.session.currentUser !== null,
-    // loginErrors: [],
-    // signupErrors: state.session.signupErrors,
     searchPlaces: state.search,
   };
 };
