@@ -29,15 +29,6 @@ const Root = ({ store }) => {
     }
   };
 
-  const redirectIfNotLoggedIn = (nextState, replace) => {
-    if(store.getState().session.currentUser === null) {
-      replace({
-        pathname: '/login'
-      });
-    }
-  };
-
-
   const requestRandomCityOnEnter = (nextState) => {
     store.dispatch(PLACE_ACTIONS.requestRandomCity());
 	};
@@ -68,7 +59,7 @@ const Root = ({ store }) => {
         <Route path="/signup" component={SignupFormContainer} onEnter={redirectIfLoggedIn} />
         <Route path="/login" component={LoginFormContainer} onEnter={redirectIfLoggedIn} />
         <Route path="/home" component={App} >
-          <IndexRoute component={Home} onEnter={redirectIfNotLoggedIn} />
+          <IndexRoute component={Home} />
           <Route path="/cities/:cityId" component={Place} onEnter={requestRandomCityOnEnter} />
           <Route path="/countries/:cityId" component={Place} />
           <Route path="/regions/:cityId" component={Place} />

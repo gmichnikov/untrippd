@@ -10,7 +10,7 @@ export default ({ getState, dispatch }) => next => action => {
       API.fetchAllSearchPlaces(receiveAllSearchSuccess);
       return next(action);
     case ACTIONS.REQUEST_FILTERED_SEARCH_PLACES:
-      API.fetchFilteredSearchPlaces(action.query, receiveAllSearchSuccess, errorCallback);
+      API.fetchFilteredSearchPlaces(action.query, receiveAllSearchSuccess);
       return next(action);
     default:
       return next(action);
