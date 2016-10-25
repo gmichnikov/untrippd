@@ -42,7 +42,7 @@ class PlaceMainTop extends React.Component {
 
     let city = this.props.city;
 
-    let mapComponent = <PlaceMap lat={city.lat} lng={city.lng} refName={"place-map"}/>;
+    let mapComponent = <PlaceMap lat={city.lat} lng={city.lng} refName={"place-map"} zoom={11}/>;
     let fullMapLink = `http://maps.google.com/?ie=UTF8&hq=&ll=${city.lat},${city.lng}&z=13`;
     let writeText = `Add a suggestion about ${city.name}`;
     let followText = `Add ${city.name} to My Places`;

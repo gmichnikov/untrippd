@@ -277,10 +277,8 @@
 }
 
 .suggestion-feed-photo-box {
-  width: 280px;
   height: 210px;
   overflow: hidden;
-  margin: 0 auto 10px auto;
 }
 
 img.suggestion-feed-photo {
@@ -329,4 +327,9 @@ img.suggestion-feed-photo {
 
 ::-webkit-input-placeholder, :-moz-placeholder, ::-moz-placeholder, :-ms-input-placeholder {
   // color: red;
+}
+
+.suggestion-feed-photo-and-map {
+  display: flex;
+  justify-content: space-around;
 }

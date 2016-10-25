@@ -13,7 +13,7 @@ class PlaceMap extends React.Component {
 
     const mapOptions = {
       center: {lat: this.props.lat || 0, lng: this.props.lng || 0},
-      zoom: 11
+      zoom: this.props.zoom
     };
 
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
@@ -25,8 +25,10 @@ class PlaceMap extends React.Component {
 
   render () {
 
+    const klassName = (this.props.refName === "place-map" ? "place-map-container" : "feed-map-container");
+
     return (
-			<div id="place-map-container" ref={this.props.refName}>
+			<div className={klassName} ref={this.props.refName}>
 			</div>
     );
   }

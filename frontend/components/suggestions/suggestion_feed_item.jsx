@@ -3,6 +3,8 @@ import ReactEmoji from 'react-emoji';
 import { Link } from 'react-router';
 import TimeAgo from 'react-timeago';
 import ReactTooltip from 'react-tooltip';
+import PlaceMap from '../places/place_map';
+
 
 class SuggestionFeedItem extends React.Component {
 
@@ -38,6 +40,13 @@ class SuggestionFeedItem extends React.Component {
       )
     }
 
+    let suggestionMap = null;
+    let refName = `suggestion-map-${s.id}`;
+    if (s.lat && s.lng) {
+      suggestionMap = (
+        <PlaceMap lat={s.lat} lng={s.lng} refName={refName} zoom={18}/>
+      )
+    }
 
     let notLoggedInButton = <div>
       <i className="material-icons icon-no-favorite">favorite</i>
@@ -65,7 +74,7 @@ class SuggestionFeedItem extends React.Component {
 
     return (
       <li className="suggestion-feed-item group">
-        <div className="feed-user-profile-photo"><Link to=""><img></img></Link></div>
+        <div className="feed-user-profile-photo"><Link to="{s.user_link}"><img></img></Link></div>
         <div className="feed-middle">
 
           <div className="feed-item-title">
@@ -76,7 +85,10 @@ class SuggestionFeedItem extends React.Component {
           <div className="feed-item-body">
             {ReactEmoji.emojify(s.body)}
           </div>
-          {suggestionImage}
+          <div className="suggestion-feed-photo-and-map">
+            {suggestionImage}
+            {suggestionMap}
+          </div>
           <div className="feed-item-details">
             <TimeAgo date={s.created_at} live={false}/>
 
