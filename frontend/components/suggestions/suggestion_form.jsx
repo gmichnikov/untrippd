@@ -49,6 +49,12 @@ class SuggestionForm extends React.Component {
       formData.append("suggestion[image]", this.state.imageFile);
     }
 
+    if ((this.state.lat || this.state.lat === 0) && (this.state.lng || this.state.lng === 0)) {
+      console.log(this.state.lat, this.state.lng);
+      formData.append("suggestion[lat]", this.state.lat);
+      formData.append("suggestion[lng]", this.state.lng);
+    }
+
     this.props.processSuggestionForm(formData);
     this.setState(Object.assign(
       {}, this.state, {body: ""}

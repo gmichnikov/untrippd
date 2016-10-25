@@ -38,6 +38,6 @@ class Api::SuggestionsController < ApplicationController
 
 
   def suggestion_params
-    params.require(:suggestion).permit(:body, :food, :attraction, :accommodation, :highlight, :suggestable_id, :suggestable_type, :image)
+    params.require(:suggestion).permit(:body, :food, :attraction, :accommodation, :highlight, :suggestable_id, :suggestable_type, :image, :lat, :lng)
   end
 end
