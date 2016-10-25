@@ -19,3 +19,4 @@ bundle.js.map
 
 # Ignore application configuration
 /config/application.yml
+npm-debug.log
