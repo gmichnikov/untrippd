@@ -9,7 +9,7 @@ class PlaceMap extends React.Component {
   }
 
   componentDidMount() {
-    const mapDOMNode = this.refs.map;
+    const mapDOMNode = this.refs[this.props.refName];
 
     const mapOptions = {
       center: {lat: this.props.lat || 0, lng: this.props.lng || 0},
@@ -26,7 +26,7 @@ class PlaceMap extends React.Component {
   render () {
 
     return (
-			<div id="place-map-container" ref="map">
+			<div id="place-map-container" ref={this.props.refName}>
 			</div>
     );
   }
