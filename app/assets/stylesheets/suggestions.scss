@@ -312,3 +312,21 @@ img.suggestion-feed-photo {
 .num-likes {
   font-size: 14px;
 }
+
+
+#suggestion-location {
+  width: 457px;
+  margin-top: 5px;
+}
+
+#suggestion-location-search {
+  font-size: 14px;
+  width: 99%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0 5px;
+}
+
+::-webkit-input-placeholder, :-moz-placeholder, ::-moz-placeholder, :-ms-input-placeholder {
+  // color: red;
+}

@@ -14,9 +14,25 @@ class SuggestionForm extends React.Component {
       highlight: false,
       imageFile: null,
       imageUrl: null,
+      lat: null,
+      lng: null,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
+    this.storeLatLng = this.storeLatLng.bind(this);
+  }
+
+  componentDidMount() {
+    const autocomplete = new google.maps.places.Autocomplete(
+      (document.getElementById('suggestion-location-search')),
+    );
+    this.autocomplete = autocomplete;
+    this.autocomplete.addListener('place_changed', this.storeLatLng);
+  }
+
+  storeLatLng() {
+    const place = this.autocomplete.getPlace();
+    this.setState({lat: place.geometry.location.lat(), lng: place.geometry.location.lng()});
   }
 
   handleSubmit(e) {
@@ -114,6 +130,11 @@ class SuggestionForm extends React.Component {
             checked={this.state.highlight}
             onClick={this.updateCheckbox('highlight')}
           />
+
+          <div id="suggestion-location">
+            <input id="suggestion-location-search" placeholder="[Optional] Tag your suggestion with an address/business/location" type="text"></input>
+          </div>
+
           <button>Create Suggestion</button>
         </form>
       </section>
