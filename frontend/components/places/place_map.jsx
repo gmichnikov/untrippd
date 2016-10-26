@@ -17,6 +17,12 @@ class PlaceMap extends React.Component {
     };
 
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
+
+    if (this.props.lat && this.props.lng) {
+      this.pos = new google.maps.LatLng(this.props.lat, this.props.lng);
+      this.marker = new google.maps.Marker({ position: this.pos, map: this.map });
+    }
+
   }
 
   componentWillReceiveProps(nextProps) {
