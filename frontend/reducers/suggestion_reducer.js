@@ -13,6 +13,7 @@ const SuggestionReducer = (oldState = default_suggestion_state, action) => {
     case ACTIONS.RECEIVE_NEW_SUGGESTION:
       return Object.assign({}, oldState, { manySuggestions: [action.suggestion, ...oldState.manySuggestions] });
     case ACTIONS.RECEIVE_SUGGESTION_ERRORS:
+      console.log("sugg error");
       return Object.assign({}, oldState, { singleSuggestion: null, suggestionErrors: action.suggestionErrors});
     case ACTIONS.RECEIVE_SINGLE_SUGGESTION:
       return Object.assign({}, oldState, { singleSuggestion: action.suggestion });

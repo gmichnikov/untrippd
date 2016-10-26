@@ -50,7 +50,6 @@ class SuggestionForm extends React.Component {
     }
 
     if ((this.state.lat || this.state.lat === 0) && (this.state.lng || this.state.lng === 0)) {
-      console.log(this.state.lat, this.state.lng);
       formData.append("suggestion[lat]", this.state.lat);
       formData.append("suggestion[lng]", this.state.lng);
     }
