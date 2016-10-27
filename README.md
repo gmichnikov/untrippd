@@ -102,6 +102,9 @@ There is a dedicated [search controller](https://github.com/gmichnikov/untrippd/
 
 This allows the search results to appear in three sections (country, state, city), rather than ll together. The result of this can be seen by searching for "New" on any page of the site. New Zealand, New York, and New Orleans appear in three different parts of the search results.
 
+### Google Places API
+The suggestion form contains an optional search field into which a user can enter an address or business associated with each suggestion. The power of Google makes hundreds of millions of address/places available through this search bar. If a location is entered, the suggestion is then rendered with a google map that shows a marker at that location.
+
 ### Travel-Specific Features: Special Regions, Exploring the World
 
 #### Special Regions
@@ -137,9 +140,6 @@ Place data was sourced from [Esri Open Data](http://beta.esri.opendata.arcgis.co
 ## Next steps for further development of Untrippd
 
 I plan to continue to develop Untrippd, since I would genuinely would love to see the number of suggestions reach a point where, at the very least, a small set of users would be sure to visit this site while planning a trip. Some possible features include:
-
-#### Google Place API
-- Several people whom I asked to explore the site suggested adding a field to the suggestion form into which a user could enter an address associated with the suggestions. The suggestion would then be rendered with a google map that showed a marker on that address.
 
 #### Pagination and/or Infinite Scroll
 - Currently, all suggestions are loaded immediately on every page with the suggestion feed. As the site grows, it would be best to load results in batches.
