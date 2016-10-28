@@ -150,6 +150,5 @@ I plan to continue to develop Untrippd, since I would genuinely would love to se
 #### Place following
 - Similar to user follows. This would allow a user to see only suggestions about a subset of the places in the world.
 
-## Screenshots
-
-Coming Soon!
+## Screenshot
+![screenshot](http://gregmichnikov.com/images/untrippd.png)
